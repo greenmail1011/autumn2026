@@ -12,7 +12,7 @@
 <meta property="og:title" content="2026 教定區秋聚｜心靈充電・相聚在秋日">
 <meta property="og:description" content="11/21（六）–11/22（日）　藍鵲渡假莊園 檜意村區　兩天一夜">
 <!-- 想讓 LINE 顯示海報縮圖：把下面這行的註解拿掉，網址改成你的 GitHub Pages 完整路徑。
-<meta property="og:image" content="https://你的帳號.github.io/你的repo/poster.jpg">
+<meta property="og:image" content="https://greenmail1011.github.io/你的repo/2026%E7%A7%8B%E8%81%9ADM.png">
 -->
 <meta name="twitter:card" content="summary_large_image">
 
@@ -449,7 +449,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     <h2 class="ribbon"><span>活動 DM</span></h2>
     <figure class="dm">
       <button class="dm-btn" type="button" aria-label="放大檢視活動 DM">
-        <img src="poster.jpg" width="1400" height="1867" alt="2026 教定區秋聚活動 DM：心靈充電・相聚在秋日，2026 年 11 月 21 日至 22 日，藍鵲渡假莊園檜意村區，成人 2,500 元、學生 1,500 元、幼稚園與嬰幼兒免費。" loading="lazy" decoding="async">
+        <img src="2026%E7%A7%8B%E8%81%9ADM.jpg" data-fallback="2026%E7%A7%8B%E8%81%9ADM.png" width="1400" height="1867" alt="2026 教定區秋聚活動 DM：心靈充電・相聚在秋日，2026 年 11 月 21 日至 22 日，藍鵲渡假莊園檜意村區，成人 2,500 元、學生 1,500 元、幼稚園與嬰幼兒免費。" loading="lazy" decoding="async">
       </button>
 
     </figure>
@@ -538,7 +538,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     <h2 class="ribbon"><span>園區地圖</span></h2>
     <figure class="dm map">
       <button class="dm-btn wide" type="button" aria-label="放大檢視園區地圖">
-        <img src="map.jpg" width="1600" height="1202" alt="藍鵲渡假莊園園區地圖，標示莊園入口與出口、售票亭、停車場、藍鵲會館、藍鵲大草原、落羽松推桿區、肯芙咖啡、生態池、慢活小徑、羽杉步道、兒童遊戲區、雨備場，以及位於園區東側的檜意村住宿區。" loading="lazy" decoding="async">
+        <img src="main-map.webp" width="1600" height="1202" alt="藍鵲渡假莊園園區地圖，標示莊園入口與出口、售票亭、停車場、藍鵲會館、藍鵲大草原、落羽松推桿區、肯芙咖啡、生態池、慢活小徑、羽杉步道、兒童遊戲區、雨備場，以及位於園區東側的檜意村住宿區。" loading="lazy" decoding="async">
       </button>
       <figcaption>我們住在園區東側的<strong>檜意村</strong></figcaption>
     </figure>
@@ -671,6 +671,33 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
       document.body.style.overflow = "";
       if(lastBtn) lastBtn.focus();
     };
+    /* 圖檔載入失敗時（例如檔名對不上），整段隱藏，不要留破圖 */
+    Array.prototype.forEach.call(zoomBtns, function(btn){
+      var im = btn.querySelector("img");
+      if(!im) return;
+      var fail = function(){
+        /* 先試備用檔名（例如壓縮版還沒上傳時，退回原始檔） */
+        var alt = im.getAttribute("data-fallback");
+        if(alt){
+          im.removeAttribute("data-fallback");
+          im.setAttribute("src", alt);
+          return;
+        }
+        /* 都載不到就整段隱藏，不要留破圖 */
+        var sec = btn.closest("section");
+        if(sec){
+          sec.hidden = true;
+          var id = sec.id || (sec.querySelector("[id]") && sec.querySelector("[id]").id);
+          if(id){
+            var chip = document.querySelector('.jump a[href="#' + id + '"]');
+            if(chip) chip.hidden = true;
+          }
+        }
+      };
+      im.addEventListener("error", fail);
+      if(im.complete && im.naturalWidth === 0 && im.getAttribute("src")) fail();
+    });
+
     Array.prototype.forEach.call(zoomBtns, function(btn){
       btn.addEventListener("click", function(){
         var img = btn.querySelector("img");
