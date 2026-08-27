@@ -238,12 +238,6 @@ section{padding:2.75rem 0}
 }
 .dm-btn:hover{transform:translateY(-2px)}
 .dm-btn{position:relative}
-.dm-btn::after{
-  content:"點我放大";position:absolute;right:.75rem;bottom:.75rem;
-  background:rgba(90,62,43,.78);color:#FFF6EC;
-  font-family:var(--f-body);font-size:.82rem;font-weight:700;letter-spacing:.08em;line-height:1;
-  padding:.5rem .85rem;border-radius:999px;pointer-events:none;
-}
 .dm-btn img{width:100%;height:auto;display:block}
 .dm-btn{background:#FFFFFF}
 .dm-btn.wide{max-width:52rem}
@@ -310,7 +304,6 @@ section{padding:2.75rem 0}
 @media (min-width:620px){.roomgrid{grid-template-columns:1fr 1fr}}
 .dm-btn.shot{max-width:none;width:100%;border-radius:var(--radius)}
 .dm-btn.shot img{aspect-ratio:4/3;object-fit:cover}
-.dm-btn.shot::after{content:"放大";font-size:.74rem;padding:.32rem .68rem;right:.55rem;bottom:.55rem}
 .roomnote{font-size:.9rem;color:var(--ink-soft);letter-spacing:.06em;text-align:center}
 
 /* 場勘影片 */
@@ -425,7 +418,6 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
   .addr{flex-direction:column;align-items:stretch;gap:.85rem}
   .addr-btn{justify-content:center}
   .prow .amt{font-size:1.9rem}
-  .dm-btn::after{font-size:.78rem;padding:.45rem .75rem;right:.6rem;bottom:.6rem}
   .dock .lbl b{font-size:.95rem}
   .dock .btn{padding:.7rem 1.2rem}
   .closing{padding-block:2.2rem .5rem}
@@ -603,7 +595,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
           </button>
         </div>
       </div>
-      <p class="roomnote">小木屋住宿實景　‧　點圖片可放大</p>
+      <p class="roomnote">小木屋住宿實景</p>
     </div>
   </div></section>
 
