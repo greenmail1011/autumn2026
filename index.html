@@ -299,6 +299,20 @@ section{padding:2.75rem 0}
 .duo .box p{color:var(--ink-soft);font-size:1rem}
 .duo .box .hand{font-family:var(--f-hand);font-size:1.25rem;color:var(--orange-deep);line-height:1.7;margin-bottom:.5rem;display:block}
 
+/* 住宿實景 */
+.rooms{margin-top:1.6rem;display:flex;flex-direction:column;gap:1.4rem}
+.roomlbl{
+  display:inline-block;font-size:.95rem;font-weight:900;letter-spacing:.14em;
+  color:var(--sage-deep);background:var(--sage-wash);border:1.5px solid var(--sage);
+  padding:.22rem .95rem;border-radius:999px;margin-bottom:.75rem;
+}
+.roomgrid{display:grid;grid-template-columns:1fr;gap:.85rem}
+@media (min-width:620px){.roomgrid{grid-template-columns:1fr 1fr}}
+.dm-btn.shot{max-width:none;width:100%;border-radius:var(--radius)}
+.dm-btn.shot img{aspect-ratio:4/3;object-fit:cover}
+.dm-btn.shot::after{content:"放大";font-size:.74rem;padding:.32rem .68rem;right:.55rem;bottom:.55rem}
+.roomnote{font-size:.9rem;color:var(--ink-soft);letter-spacing:.06em;text-align:center}
+
 /* highlights */
 .spots{display:grid;grid-template-columns:1fr;gap:.85rem}
 @media (min-width:620px){.spots{grid-template-columns:repeat(2,1fr)}}
@@ -425,7 +439,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
   <div class="jump-in">
     <a href="#費用">費用</a>
     <a href="#時間">行程</a>
-    <a href="#住宿">住宿餐食</a>
+    <a href="#住宿">住宿實景</a>
     <a href="#園區">園區亮點</a>
     <a href="#地圖">園區地圖</a>
     <a href="#提醒">行前提醒</a>
@@ -533,6 +547,32 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
         <span class="hand">用一桌好食，延續相聚的溫度</span>
         <p>全程安排由教會餐點，並由園區特約安排獨立餐廳。一桌好食，也可享受美味素食饗宴，彼此交換溫暖問候，自在交流。</p>
       </div>
+    </div>
+
+    <div class="rooms">
+      <div class="roomgroup">
+        <h3 class="roomlbl">四人房</h3>
+        <div class="roomgrid">
+          <button class="dm-btn shot" type="button" aria-label="放大檢視四人房實景（一）">
+            <img src="4%E4%BA%BA%E6%88%BF.JPG" width="558" height="418" alt="四人房實景：斜屋頂木質天花板的房間，兩張床鋪與獨立衛浴。" loading="lazy" decoding="async">
+          </button>
+          <button class="dm-btn shot" type="button" aria-label="放大檢視四人房實景（二）">
+            <img src="4%E4%BA%BA%E6%88%BF2.JPG" width="558" height="418" alt="四人房實景：暖橘色牆面、木質天花板，一張大床與兩盞床頭燈。" loading="lazy" decoding="async">
+          </button>
+        </div>
+      </div>
+      <div class="roomgroup">
+        <h3 class="roomlbl">八人房</h3>
+        <div class="roomgrid">
+          <button class="dm-btn shot" type="button" aria-label="放大檢視八人房實景（一）">
+            <img src="8%E4%BA%BA%E6%88%BF.JPG" width="1000" height="750" alt="八人房實景：檜木牆面與榻榻米和室，中央矮桌與坐墊，整面採光窗。" loading="lazy" decoding="async">
+          </button>
+          <button class="dm-btn shot" type="button" aria-label="放大檢視八人房實景（二）">
+            <img src="8%E4%BA%BA%E6%88%BF2.JPG" width="1000" height="750" alt="八人房實景：兩張大床與臨窗的榻榻米平台，窗外是綠意山景。" loading="lazy" decoding="async">
+          </button>
+        </div>
+      </div>
+      <p class="roomnote">小木屋住宿實景　‧　點圖片可放大</p>
     </div>
   </div></section>
 
@@ -704,7 +744,9 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
           im.setAttribute("src", alt);
           return;
         }
-        /* 都載不到就整段隱藏，不要留破圖 */
+        /* 住宿實景是相簿中的一張，只隱藏該張，其他內容照常顯示 */
+        if(btn.classList.contains("shot")){ btn.hidden = true; return; }
+        /* 其餘（DM、園區地圖）整段隱藏，不要留破圖 */
         var sec = btn.closest("section");
         if(sec){
           sec.hidden = true;
