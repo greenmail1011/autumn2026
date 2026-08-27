@@ -11,8 +11,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:title" content="2026 教定區秋聚｜心靈充電・相聚在秋日">
 <meta property="og:description" content="11/21（六）–11/22（日）　藍鵲渡假莊園 檜意村區　兩天一夜">
-<!-- 想讓 LINE 顯示海報縮圖：把海報圖檔（例如 poster.jpg）一起放進 repo，
-     再把下面這行的註解拿掉，網址改成你的 GitHub Pages 完整路徑。
+<!-- 想讓 LINE 顯示海報縮圖：把下面這行的註解拿掉，網址改成你的 GitHub Pages 完整路徑。
 <meta property="og:image" content="https://你的帳號.github.io/你的repo/poster.jpg">
 -->
 <meta name="twitter:card" content="summary_large_image">
@@ -115,7 +114,7 @@ a{color:var(--blue);text-underline-offset:3px}
 .hero .lights,.hero canvas{position:absolute;left:0;top:0;width:100%;pointer-events:none}
 .hero .lights{height:110px;z-index:2}
 .hero canvas{height:100%;z-index:1}
-.hero-inner{position:relative;z-index:3;padding:4.75rem 0 1rem;display:flex;flex-direction:column;gap:1.15rem}
+.hero-inner{position:relative;z-index:3;padding-block:4.75rem 1rem;display:flex;flex-direction:column;gap:1.15rem}
 
 .pill{
   align-self:flex-start;background:var(--orange);color:#FFF6EC;
@@ -162,7 +161,27 @@ a{color:var(--blue);text-underline-offset:3px}
 .btn-ghost:hover{background:var(--sage-wash)}
 .btn[data-pending="1"]{background:transparent;color:var(--orange);border-color:var(--orange);border-style:dashed}
 
+.deadline{font-size:.98rem;color:var(--ink-soft);letter-spacing:.06em}
+.deadline strong{color:var(--orange-deep)}
 .hills{display:block;width:100%;height:clamp(70px,11vw,120px);margin-top:-1px}
+
+/* 快速跳轉 */
+.jump{background:var(--cream);border-bottom:1.5px dashed var(--line)}
+.jump-in{
+  max-width:var(--maxw);margin-inline:auto;display:flex;gap:.5rem;
+  padding:.8rem 1.25rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+}
+.jump-in::-webkit-scrollbar{display:none}
+.jump a{
+  flex:none;text-decoration:none;background:var(--card);border:1.5px solid var(--line);
+  color:var(--ink);padding:.5rem 1.05rem;border-radius:999px;
+  font-size:.94rem;font-weight:500;white-space:nowrap;
+  transition:border-color .18s ease,color .18s ease,background .18s ease;
+}
+.jump a:hover{border-color:var(--sage);color:var(--sage-deep);background:var(--sage-wash)}
+.jump a:last-child{background:var(--orange);border-color:var(--orange);color:#FFF6EC;font-weight:700}
+.jump a:last-child:hover{background:var(--orange-deep);border-color:var(--orange-deep);color:#FFF6EC}
+[id]{scroll-margin-top:1.25rem}
 
 /* ── sections ── */
 section{padding:2.75rem 0}
@@ -205,6 +224,44 @@ section{padding:2.75rem 0}
 .babycard h3{font-size:1.02rem;color:var(--orange-deep)}
 .babycard ul{margin:0;padding-left:1.15rem;display:flex;flex-direction:column;gap:.25rem;font-size:.97rem}
 .babycard .fine{font-size:.87rem;color:var(--ink-soft)}
+
+/* DM */
+.dm{margin:0;display:flex;flex-direction:column;align-items:center;gap:.7rem}
+.dm-btn{
+  display:block;padding:0;border:0;background:none;cursor:zoom-in;
+  border-radius:var(--radius-lg);overflow:hidden;line-height:0;
+  box-shadow:var(--shadow);border:1.5px solid var(--line-strong);
+  width:100%;max-width:34rem;transition:transform .18s ease;
+}
+.dm-btn:hover{transform:translateY(-2px)}
+.dm-btn{position:relative}
+.dm-btn::after{
+  content:"點我放大";position:absolute;right:.75rem;bottom:.75rem;
+  background:rgba(90,62,43,.78);color:#FFF6EC;
+  font-family:var(--f-body);font-size:.82rem;font-weight:700;letter-spacing:.08em;line-height:1;
+  padding:.5rem .85rem;border-radius:999px;pointer-events:none;
+}
+.dm-btn img{width:100%;height:auto;display:block}
+.dm-btn{background:#FFFFFF}
+.dm-btn.wide{max-width:52rem}
+.dm figcaption strong{color:var(--orange-deep)}
+.dm figcaption{font-size:.9rem;color:var(--ink-soft);letter-spacing:.06em}
+
+.lb{position:fixed;inset:0;z-index:60;background:rgba(38,26,16,.92);overflow:auto;padding:2.5rem 1rem 4rem;-webkit-overflow-scrolling:touch}
+.lb[hidden]{display:none}
+.lb img{display:block;margin:0 auto;width:100%;max-width:52rem;height:auto;border-radius:12px;cursor:zoom-in}
+.lb.zoom img{width:min(1600px,270vw);max-width:none;cursor:zoom-out}
+.lb-hint{
+  position:fixed;left:50%;transform:translateX(-50%);bottom:1.1rem;z-index:61;
+  background:rgba(28,18,10,.72);color:#FFF6EC;font-size:.85rem;letter-spacing:.06em;
+  padding:.45rem 1.1rem;border-radius:999px;pointer-events:none;white-space:nowrap;
+}
+.lb-close{
+  position:fixed;top:1rem;right:1rem;z-index:61;
+  width:2.9rem;height:2.9rem;border-radius:50%;border:0;cursor:pointer;
+  background:var(--orange);color:#FFF6EC;font-size:1.5rem;line-height:1;
+  display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.35);
+}
 
 /* timeline */
 .days{display:grid;grid-template-columns:1fr;gap:1.5rem}
@@ -264,7 +321,7 @@ section{padding:2.75rem 0}
   border-radius:999px;padding:.02rem .6rem;margin-inline-start:.4rem;white-space:nowrap;
 }
 
-.closing{text-align:center;padding:3rem 0 1rem}
+.closing{text-align:center;padding-block:3rem 1rem}
 .closing .big{font-family:var(--f-hand);font-size:clamp(1.4rem,5.5vw,2.05rem);line-height:1.75;color:var(--orange-deep)}
 .closing .sub{font-size:.92rem;color:var(--ink-soft);margin-top:.9rem;letter-spacing:.14em}
 
@@ -280,10 +337,45 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:6rem;z-index:30;background:var(--ink);color:var(--cream);padding:.7rem 1.2rem;border-radius:999px;font-size:.9rem;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s ease;max-width:min(90vw,26rem);text-align:center}
 .toast.on{opacity:1}
 
-@media (max-width:520px){
-  body{font-size:16px}
-  .hero-inner{padding:3.75rem 0 .75rem}
-  .dock .lbl span{display:none}
+/* ── 手機版型 ── */
+@media (max-width:559px){
+  body{line-height:1.75}
+  .hero-inner{padding-block:3.5rem .75rem;gap:.95rem}
+  section{padding:2.1rem 0}
+  .ribbon{margin-bottom:1.05rem}
+  .ribbon span{font-size:1.08rem;padding:.4rem 1.25rem}
+  .feecard,.daycard,.pack{padding:1.2rem 1.1rem}
+  .duo .box{padding:1.2rem 1.15rem}
+  .babycard{padding:1.05rem 1.1rem}
+
+  /* 四張資訊卡在手機上合併成一張條列表，省掉一大段捲動 */
+  .tiles{
+    gap:0;background:var(--card);border:1.5px solid var(--line);
+    border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+  }
+  .tile{
+    border:0;border-radius:0;box-shadow:none;background:transparent;
+    display:grid;grid-template-columns:5rem 1fr;gap:.1rem .85rem;
+    padding:.85rem 1.05rem;border-bottom:1.5px dashed var(--line);
+  }
+  .tiles .tile:last-child{border-bottom:0}
+  .tile .k{grid-column:1;grid-row:1;align-self:center;letter-spacing:.1em}
+  .tile .v{grid-column:2;grid-row:1;font-size:1.3rem}
+  .tile .v.cjk{grid-column:2;grid-row:1;font-size:1.12rem}
+  .tile .n{grid-column:2;grid-row:2;font-size:.85rem;line-height:1.55}
+
+  .tagline{font-size:1.06rem;letter-spacing:.04em;padding:.4rem 1.2rem}
+  .deadline{font-size:.94rem}
+  .prow .amt{font-size:1.9rem}
+  .dm-btn::after{font-size:.78rem;padding:.45rem .75rem;right:.6rem;bottom:.6rem}
+  .dock .lbl b{font-size:.95rem}
+  .dock .btn{padding:.7rem 1.2rem}
+  .closing{padding-block:2.2rem .5rem}
+}
+@media (max-width:380px){
+  .hero h1{font-size:2.5rem}
+  .when .big{font-size:2.2rem}
+  .tile{grid-template-columns:4.5rem 1fr}
 }
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
 </style>
@@ -310,9 +402,22 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
       <a class="btn btn-primary" id="cta-hero" href="#報名">我要報名</a>
       <a class="btn btn-ghost" href="#時間">看看行程</a>
     </div>
+    <p class="deadline">報名至 <strong>9/30（三）</strong>，額滿為止</p>
   </div>
   <svg class="hills" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true"></svg>
 </header>
+
+<nav class="jump" aria-label="頁面導覽">
+  <div class="jump-in">
+    <a href="#費用">費用</a>
+    <a href="#時間">行程</a>
+    <a href="#住宿">住宿餐食</a>
+    <a href="#園區">園區亮點</a>
+    <a href="#地圖">園區地圖</a>
+    <a href="#提醒">行前提醒</a>
+    <a href="#報名">我要報名</a>
+  </div>
+</nav>
 
 <main>
   <section class="wrap" id="資訊" style="padding-top:1.75rem">
@@ -334,11 +439,21 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
       </div>
       <div class="tile">
         <span class="k">報名截止</span>
-        <span class="v cjk">尚未公布<span class="tbd">待確認</span></span>
+        <span class="v">9/30 <span style="font-size:.58em">週三</span></span>
         <span class="n">名額有限，額滿為止</span>
       </div>
     </div>
   </section>
+
+  <section class="band"><div class="wrap" id="DM">
+    <h2 class="ribbon"><span>活動 DM</span></h2>
+    <figure class="dm">
+      <button class="dm-btn" type="button" aria-label="放大檢視活動 DM">
+        <img src="poster.jpg" width="1400" height="1867" alt="2026 教定區秋聚活動 DM：心靈充電・相聚在秋日，2026 年 11 月 21 日至 22 日，藍鵲渡假莊園檜意村區，成人 2,500 元、學生 1,500 元、幼稚園與嬰幼兒免費。" loading="lazy" decoding="async">
+      </button>
+
+    </figure>
+  </div></section>
 
   <section class="band"><div class="wrap" id="費用">
     <h2 class="ribbon"><span>費用包含</span></h2>
@@ -364,7 +479,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
         <li>嬰兒澡盆、小椅凳服務需<strong>事先告知</strong></li>
         <li>嬰兒盥洗用品需自行攜帶、園區無消毒鍋</li>
       </ul>
-      <p class="fine">報名時請在表單備註欄註明需求，方便園區提前準備。</p>
+      <p class="fine">嬰兒澡盆、小椅凳等需求請直接告知承辦人員，方便園區提前準備。</p>
     </div>
   </div></section>
 
@@ -398,7 +513,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     <div class="duo">
       <div class="box">
         <span class="hand">舒適住宿・小木屋</span>
-        <p>入住檜意村區的自然風格小木屋，木質空間、大面採光，感受一夜悠閒。分房方式由承辦人員統一安排，報名時可於備註欄提出同房需求。</p>
+        <p>入住檜意村區的自然風格小木屋，木質空間、大面採光，感受一夜悠閒。分房方式由承辦人員統一安排，有同房需求請直接告知承辦人員。</p>
       </div>
       <div class="box">
         <span class="hand">用一桌好食，延續相聚的溫度</span>
@@ -410,7 +525,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
   <section class="wrap" id="園區">
     <h2 class="ribbon"><span>園區特色亮點</span></h2>
     <div class="spots">
-      <div class="spot"><span class="mk" style="background:var(--orange-wash);color:var(--orange)"><i></i></span><div><h3>落羽松林</h3><p>漫步林間，感受秋日限定的浪漫景觀。</p></div></div>
+      <div class="spot"><span class="mk" style="background:var(--orange-wash);color:var(--orange)"><i></i></span><div><h3>落羽松林</h3><p>十一月正是落羽松轉紅的季節，漫步林間，感受秋日限定的浪漫景觀。</p></div></div>
       <div class="spot"><span class="mk" style="background:var(--sage-wash);color:var(--sage-deep)"><i></i></span><div><h3>漫活小徑</h3><p>放慢腳步，在自然林間慢慢地散步。</p></div></div>
       <div class="spot"><span class="mk" style="background:var(--sage-wash);color:var(--sage)"><i></i></span><div><h3>藍鵲大草原</h3><p>寬廣綠地，自在散步，親近自然。</p></div></div>
       <div class="spot"><span class="mk" style="background:var(--gold-wash);color:var(--gold)"><i></i></span><div><h3>肯芙咖啡</h3><p>手沖咖啡、坐下聊聊，享受悠閒午後。</p></div></div>
@@ -419,10 +534,27 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     </div>
   </section>
 
+  <section class="band"><div class="wrap" id="地圖">
+    <h2 class="ribbon"><span>園區地圖</span></h2>
+    <figure class="dm map">
+      <button class="dm-btn wide" type="button" aria-label="放大檢視園區地圖">
+        <img src="map.jpg" width="1600" height="1202" alt="藍鵲渡假莊園園區地圖，標示莊園入口與出口、售票亭、停車場、藍鵲會館、藍鵲大草原、落羽松推桿區、肯芙咖啡、生態池、慢活小徑、羽杉步道、兒童遊戲區、雨備場，以及位於園區東側的檜意村住宿區。" loading="lazy" decoding="async">
+      </button>
+      <figcaption>我們住在園區東側的<strong>檜意村</strong></figcaption>
+    </figure>
+  </div></section>
+
   <section class="band"><div class="wrap" id="報名">
     <h2 class="ribbon"><span>報名方式</span></h2>
+    <div class="babycard" style="margin-top:0;margin-bottom:1.25rem">
+      <h3>填表前請先準備好這兩樣</h3>
+      <ul>
+        <li><strong>出生年月日</strong>　與　<strong>身分證字號</strong>　——　投保旅遊平安險用</li>
+        <li>因為要逐人投保，<strong>每位參加者各自填一份</strong>，小朋友也要單獨填</li>
+      </ul>
+    </div>
     <ol class="steps">
-      <li><span class="no">STEP 1</span><span class="h">填寫報名表單</span><span class="b">點「我要報名」，填寫姓名、聯絡方式、參加人數與同行需求。</span></li>
+      <li><span class="no">STEP 1</span><span class="h">填寫報名表單</span><span class="b">點「我要報名」開啟 Google 表單，填寫姓名、出生年月日、聯絡電話、身分證字號、是否可提供交通車輛，以及邀請您的人。</span></li>
       <li><span class="no">STEP 2</span><span class="h">完成繳費</span><span class="b">繳費方式待公布，屆時會更新在這一頁。<span class="tbd">待確認</span></span></li>
       <li><span class="no">STEP 3</span><span class="h">收到報名確認</span><span class="b">承辦人員核對後會與您聯繫，確認房間與交通安排。</span></li>
     </ol>
@@ -469,10 +601,16 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
   <div class="dock-inner">
     <span class="lbl">
       <b>2026 教定區秋聚</b>
-      <span>11/21–11/22 ‧ 藍鵲渡假莊園</span>
+      <span>報名至 9/30（三）‧ 額滿為止</span>
     </span>
     <a class="btn btn-primary" id="cta-dock" href="#報名">我要報名</a>
   </div>
+</div>
+
+<div class="lb" id="lb" hidden>
+  <button class="lb-close" type="button" id="lb-close" aria-label="關閉">&times;</button>
+  <img id="lb-img" alt="活動 DM 放大檢視">
+  <span class="lb-hint" id="lb-hint">點圖片可再放大　‧　也可以雙指縮放</span>
 </div>
 
 <div class="toast" id="toast" role="status"></div>
@@ -485,10 +623,11 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
      報名表單網址：Google 表單做好後，把網址填進下面這行的引號中間。
      例：var REGISTER_URL = "https://forms.gle/xxxxxxxx";
      ───────────────────────────────────────────── */
-  var REGISTER_URL = "";
+  var REGISTER_URL = "https://forms.gle/h5HgSjjmsFeQ72cX6";
 
   /* 葉子形狀，給 CSS mask 用 */
-  var LEAF = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5c4.2 6 4.2 15 0 21-4.2-6-4.2-15 0-21z' fill='%23000'/%3E%3C/svg%3E\")";
+  var MAPLE_D = "M50,3L57,24L69,18L66,33L84,28L79,41L97,47L74,59L80,71L57,67L52,97L48,97L43,67L20,71L26,59L3,47L21,41L16,28L34,33L31,18L43,24Z";
+  var LEAF = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='" + MAPLE_D + "' fill='%23000'/%3E%3C/svg%3E\")";
   document.documentElement.style.setProperty("--leaf", LEAF);
 
   var pending = !REGISTER_URL;
@@ -517,6 +656,45 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     toastEl.classList.add("on");
     clearTimeout(toastTimer);
     toastTimer = setTimeout(function(){ toastEl.classList.remove("on"); }, 2600);
+  }
+
+  /* 圖片放大檢視（DM、園區地圖）*/
+  var lb = document.getElementById("lb");
+  var lbImg = document.getElementById("lb-img");
+  var lbClose = document.getElementById("lb-close");
+  var lbHint = document.getElementById("lb-hint");
+  var zoomBtns = document.querySelectorAll(".dm-btn");
+  if(lb && lbImg && lbClose && zoomBtns.length){
+    var lastBtn = null;
+    var closeLb = function(){
+      lb.hidden = true;
+      document.body.style.overflow = "";
+      if(lastBtn) lastBtn.focus();
+    };
+    Array.prototype.forEach.call(zoomBtns, function(btn){
+      btn.addEventListener("click", function(){
+        var img = btn.querySelector("img");
+        if(!img) return;
+        lastBtn = btn;
+        lbImg.setAttribute("src", img.getAttribute("src"));
+        lbImg.setAttribute("alt", img.getAttribute("alt") || "");
+        lb.classList.remove("zoom");
+        if(lbHint) lbHint.textContent = "點圖片可再放大　‧　也可以雙指縮放";
+        lb.scrollTop = 0;
+        lb.scrollLeft = 0;
+        lb.hidden = false;
+        document.body.style.overflow = "hidden";
+        lbClose.focus();
+      });
+    });
+    lbImg.addEventListener("click", function(){
+      var zoomed = lb.classList.toggle("zoom");
+      if(lbHint) lbHint.textContent = zoomed ? "可左右、上下滑動查看　‧　再點一下縮小" : "點圖片可再放大　‧　也可以雙指縮放";
+      lb.scrollLeft = zoomed ? Math.max(0, (lb.scrollWidth - lb.clientWidth) / 2) : 0;
+    });
+    lbClose.addEventListener("click", closeLb);
+    lb.addEventListener("click", function(e){ if(e.target === lb) closeLb(); });
+    document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !lb.hidden) closeLb(); });
   }
 
   var NS = "http://www.w3.org/2000/svg";
@@ -552,14 +730,35 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     var goldC = (css.getPropertyValue("--gold")||"#F3B93F").trim();
 
     hills.appendChild(el("path",{d:"M0,72 C160,34 300,96 460,64 C620,32 760,88 920,58 C1040,35 1140,66 1200,50 L1200,120 L0,120 Z", fill:gold}));
-    var trees = [[90,62],[175,55],[300,74],[395,66],[520,60],[610,68],[720,72],[830,60],[955,58],[1080,55]];
-    var cols = [sageC, orangeC, goldC, sageC, orangeC];
-    trees.forEach(function(p,i){
-      var x=p[0], y=p[1], r=9+(i%3)*2.5;
-      var g = el("g",{opacity:".8"});
-      g.appendChild(el("rect",{x:(x-1.6).toFixed(1), y:(y).toFixed(1), width:"3.2", height:(r+7).toFixed(1), rx:"1.6", fill:"#A8763F"}));
-      g.appendChild(el("circle",{cx:x, cy:y, r:r.toFixed(1), fill:cols[i%cols.length]}));
+
+    /* 落羽松：細高的三層錐形；少數圓樹點綴 */
+    function cypress(x, base, h, w, fill){
+      var g = el("g",{opacity:".88"});
+      g.appendChild(el("rect",{x:(x-1.1).toFixed(1), y:(base-1).toFixed(1), width:"2.2", height:"10", rx:"1.1", fill:"#A8763F"}));
+      var tiers = [[0.58, 1.00, 0.00],[0.82, 0.76, 0.30],[1.00, 0.52, 0.58]];
+      tiers.forEach(function(t){
+        var apex = base - h*t[0], bw = w*t[1], by = base - h*t[2];
+        g.appendChild(el("polygon",{
+          points: x.toFixed(1)+","+apex.toFixed(1)+" "+(x+bw).toFixed(1)+","+by.toFixed(1)+" "+(x-bw).toFixed(1)+","+by.toFixed(1),
+          fill: fill
+        }));
+      });
       hills.appendChild(g);
+    }
+    function roundtree(x, base, r, fill){
+      var g = el("g",{opacity:".8"});
+      g.appendChild(el("rect",{x:(x-1.2).toFixed(1), y:(base-r-1).toFixed(1), width:"2.4", height:(r+8).toFixed(1), rx:"1.2", fill:"#A8763F"}));
+      g.appendChild(el("circle",{cx:x, cy:(base-r-4).toFixed(1), r:r.toFixed(1), fill:fill}));
+      hills.appendChild(g);
+    }
+    var rust = "#C9531C";
+    var pines = [[70,64],[128,58],[196,68],[262,62],[352,72],[430,64],[506,58],[598,70],[676,62],[762,74],[848,60],[928,56],[1012,64],[1096,54],[1164,62]];
+    var pineCols = [rust, orangeC, goldC, orangeC, rust, goldC];
+    pines.forEach(function(p,i){
+      cypress(p[0], p[1], 30 + (i%4)*6, 6.5 + (i%3)*1.2, pineCols[i%pineCols.length]);
+    });
+    [[168,60],[470,62],[720,68],[880,58],[1140,58]].forEach(function(p,i){
+      roundtree(p[0], p[1], 8 + (i%2)*2, i%2 ? sageC : "#6F8449");
     });
     hills.appendChild(el("path",{d:"M0,92 C200,62 350,108 560,84 C770,60 930,104 1200,78 L1200,120 L0,120 Z", fill:sage}));
   }
@@ -570,7 +769,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
   if(cv && cv.getContext){
     var ctx = cv.getContext("2d");
     var w=0,h=0,leaves=[],raf=null;
-    var palette = ["#E4692C","#F3B93F","#C9531C","#D98B2B","#7C8F55"];
+    var palette = ["#E4692C","#C9531C","#F3B93F","#B33F1C","#D98B2B"];
 
     function resize(){
       var dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -586,28 +785,36 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
       for(var i=0;i<n;i++){
         leaves.push({
           x: Math.random()*w, y: Math.random()*h,
-          r: 5 + Math.random()*8,
+          r: 6 + Math.random()*8.5,
           vy: .12 + Math.random()*.26,
           rot: Math.random()*Math.PI*2,
           vr: (Math.random()-.5)*.014,
           sway: .4 + Math.random()*1.1,
           phase: Math.random()*Math.PI*2,
-          a: .18 + Math.random()*.22,
+          a: .24 + Math.random()*.26,
           c: palette[(Math.random()*palette.length)|0]
         });
       }
     }
+    var maplePath = (typeof Path2D !== "undefined") ? new Path2D(MAPLE_D) : null;
     function leaf(L){
       ctx.save();
       ctx.translate(L.x, L.y);
       ctx.rotate(L.rot);
       ctx.globalAlpha = L.a;
       ctx.fillStyle = L.c;
-      ctx.beginPath();
-      ctx.moveTo(0, -L.r);
-      ctx.quadraticCurveTo(L.r*0.7, 0, 0, L.r);
-      ctx.quadraticCurveTo(-L.r*0.7, 0, 0, -L.r);
-      ctx.fill();
+      if(maplePath){
+        var sc = (L.r*2.1)/100;
+        ctx.scale(sc, sc);
+        ctx.translate(-50, -50);
+        ctx.fill(maplePath);
+      } else {
+        ctx.beginPath();
+        ctx.moveTo(0, -L.r);
+        ctx.quadraticCurveTo(L.r*0.7, 0, 0, L.r);
+        ctx.quadraticCurveTo(-L.r*0.7, 0, 0, -L.r);
+        ctx.fill();
+      }
       ctx.restore();
     }
     function frame(ts){
