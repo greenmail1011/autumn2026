@@ -313,6 +313,36 @@ section{padding:2.75rem 0}
 .dm-btn.shot::after{content:"放大";font-size:.74rem;padding:.32rem .68rem;right:.55rem;bottom:.55rem}
 .roomnote{font-size:.9rem;color:var(--ink-soft);letter-spacing:.06em;text-align:center}
 
+/* 場勘影片 */
+.video{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);border:1.5px solid var(--line-strong)}
+.video iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+.videobtn{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;
+  width:100%;aspect-ratio:16/9;border:0;cursor:pointer;padding:1rem;
+  background:
+    radial-gradient(80% 90% at 50% 115%, rgba(228,105,44,.28), transparent 62%),
+    linear-gradient(160deg, #1E2A24 0%, #2E2016 100%);
+  color:#F6EAD7;font-family:var(--f-body);transition:filter .2s ease;
+}
+.videobtn:hover{filter:brightness(1.12)}
+.vplay{
+  width:4.6rem;height:4.6rem;border-radius:50%;background:var(--orange);
+  display:grid;place-items:center;box-shadow:0 10px 28px -8px rgba(0,0,0,.6);
+  transition:transform .2s ease;
+}
+.videobtn:hover .vplay{transform:scale(1.06)}
+.vplay::after{
+  content:"";display:block;width:0;height:0;margin-left:.35rem;
+  border-left:1.5rem solid #FFF6EC;border-top:.95rem solid transparent;border-bottom:.95rem solid transparent;
+}
+.vtitle{font-family:var(--f-head);font-weight:900;font-size:1.35rem;letter-spacing:.08em;margin-top:.4rem}
+.vsub{font-size:.9rem;letter-spacing:.1em;color:#C3AC93}
+@media (max-width:559px){
+  .vplay{width:3.6rem;height:3.6rem}
+  .vplay::after{border-left-width:1.15rem;border-top-width:.72rem;border-bottom-width:.72rem}
+  .vtitle{font-size:1.12rem}
+}
+
 /* highlights */
 .spots{display:grid;grid-template-columns:1fr;gap:.85rem}
 @media (min-width:620px){.spots{grid-template-columns:repeat(2,1fr)}}
@@ -441,6 +471,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     <a href="#時間">行程</a>
     <a href="#住宿">住宿實景</a>
     <a href="#園區">園區亮點</a>
+    <a href="#影片">場勘影片</a>
     <a href="#地圖">園區地圖</a>
     <a href="#提醒">行前提醒</a>
     <a href="#報名">我要報名</a>
@@ -588,7 +619,19 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     </div>
   </section>
 
-  <section class="band"><div class="wrap" id="地圖">
+  <section class="band"><div class="wrap" id="影片">
+    <h2 class="ribbon"><span>場勘影片</span></h2>
+    <div class="video" id="video-wrap">
+      <button class="videobtn" type="button" id="video-play">
+        <span class="vplay" aria-hidden="true"></span>
+        <span class="vtitle">場勘實景影片</span>
+        <span class="vsub">點一下開始播放</span>
+      </button>
+    </div>
+    <p class="roomnote">影片載不出來的話，也可以直接到 <a href="https://youtu.be/5KbZDB1krlk" target="_blank" rel="noopener">YouTube 觀看</a></p>
+  </div></section>
+
+  <section class="wrap" id="地圖">
     <h2 class="ribbon"><span>園區地圖</span></h2>
     <figure class="dm map">
       <button class="dm-btn wide" type="button" aria-label="放大檢視園區地圖">
@@ -785,6 +828,23 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     lbClose.addEventListener("click", closeLb);
     lb.addEventListener("click", function(e){ if(e.target === lb) closeLb(); });
     document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !lb.hidden) closeLb(); });
+  }
+
+  /* 場勘影片：點下去才載入 YouTube */
+  var vplay = document.getElementById("video-play");
+  if(vplay){
+    vplay.addEventListener("click", function(){
+      var wrap = document.getElementById("video-wrap");
+      if(!wrap) return;
+      var f = document.createElement("iframe");
+      f.setAttribute("src", "https://www.youtube-nocookie.com/embed/5KbZDB1krlk?autoplay=1&rel=0&playsinline=1");
+      f.setAttribute("title", "2026 教定區秋聚 場勘實景影片");
+      f.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+      f.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      f.setAttribute("allowfullscreen", "");
+      wrap.textContent = "";
+      wrap.appendChild(f);
+    });
   }
 
   var NS = "http://www.w3.org/2000/svg";
