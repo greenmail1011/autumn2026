@@ -198,9 +198,15 @@ section{padding:2.75rem 0}
   padding:1.2rem 1.3rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.15rem;
 }
 .tile .k{font-size:.78rem;letter-spacing:.18em;color:var(--sage-deep);font-weight:700}
-.tile .v{font-family:var(--f-num);font-size:1.42rem;font-weight:700;line-height:1.35;color:var(--ink)}
+.tile .v{font-family:var(--f-num);font-size:1.3rem;font-weight:700;line-height:1.45;color:var(--ink)}
 .tile .v.cjk{font-family:var(--f-head);font-size:1.18rem;font-weight:900;letter-spacing:.02em}
 .tile .n{font-size:.88rem;color:var(--ink-soft);line-height:1.6}
+.tile .v{display:flex;align-items:center;flex-wrap:wrap;gap:.16rem}
+.tile .dow{width:1.35rem;height:1.35rem;font-size:.66rem;margin-inline:.04rem}
+.tile .drow{display:inline-flex;align-items:center;white-space:nowrap}
+.tile .ddash{margin-inline:.05rem}
+.maplink{color:var(--ink-soft);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;text-decoration-thickness:1px}
+.maplink:hover{color:var(--orange-deep)}
 
 /* fee card */
 .feecard{background:var(--card);border:1.5px solid var(--line-strong);border-radius:var(--radius-lg);padding:1.6rem 1.5rem;box-shadow:var(--shadow)}
@@ -409,7 +415,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
   }
   .tiles .tile:last-child{border-bottom:0}
   .tile .k{grid-column:1;grid-row:1;align-self:center;letter-spacing:.1em}
-  .tile .v{grid-column:2;grid-row:1;font-size:1.3rem}
+  .tile .v{grid-column:2;grid-row:1;font-size:1.24rem}
   .tile .v.cjk{grid-column:2;grid-row:1;font-size:1.12rem}
   .tile .n{grid-column:2;grid-row:2;font-size:.85rem;line-height:1.55}
 
@@ -475,13 +481,13 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     <div class="tiles">
       <div class="tile">
         <span class="k">日期</span>
-        <span class="v">11.21 – 11.22</span>
-        <span class="n">2026 年，週六至週日．兩天一夜</span>
+        <span class="v"><span class="drow">11/21<span class="dow g">六</span></span><span class="ddash">–</span><span class="drow">11/22<span class="dow o">日</span></span></span>
+        <span class="n">2026 年．兩天一夜</span>
       </div>
       <div class="tile">
         <span class="k">地點</span>
         <span class="v cjk">藍鵲渡假莊園</span>
-        <span class="n">苗栗通霄．檜意村區小木屋</span>
+        <span class="n"><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%97%8D%E9%B5%B2%E6%B8%A1%E5%81%87%E8%8E%8A%E5%9C%92%20357%E8%8B%97%E6%A0%97%E7%B8%A3%E9%80%9A%E9%9C%84%E9%8E%AE%E5%8D%97%E5%92%8C%E9%87%8C111%E8%99%9F" target="_blank" rel="noopener">357 苗栗縣通霄鎮南和里 111 號</a><br>檜意村區．小木屋住宿</span>
       </div>
       <div class="tile">
         <span class="k">費用</span>
