@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="2026 教定區秋季聚會「心靈充電・相聚在秋日」。11/21（六）–11/22（日），藍鵲渡假莊園檜意村區，兩天一夜。">
+<meta name="theme-color" content="#FDF6EA">
+
+<!-- LINE / Facebook 分享時顯示的預覽 -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="2026 教定區秋聚｜心靈充電・相聚在秋日">
+<meta property="og:description" content="11/21（六）–11/22（日）　藍鵲渡假莊園 檜意村區　兩天一夜">
+<!-- 想讓 LINE 顯示海報縮圖：把海報圖檔（例如 poster.jpg）一起放進 repo，
+     再把下面這行的註解拿掉，網址改成你的 GitHub Pages 完整路徑。
+<meta property="og:image" content="https://你的帳號.github.io/你的repo/poster.jpg">
+-->
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%82%3C/text%3E%3C/svg%3E">
+
+<title>2026 教定區秋聚</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+
+<style>
+:root{
+  --cream:#FDF6EA;
+  --cream-2:#F8EDDB;
+  --card:#FFFCF5;
+  --ink:#5A3E2B;
+  --ink-soft:#8A6B52;
+  --ink-faint:#A98F76;
+  --line:#EADCC3;
+  --line-strong:#DCC7A4;
+
+  --orange:#E4692C;
+  --orange-deep:#C9531C;
+  --orange-wash:#FBE6D6;
+  --gold:#F3B93F;
+  --gold-wash:#FCEFCE;
+  --sage:#7C8F55;
+  --sage-deep:#5F7040;
+  --sage-wash:#EBEEDD;
+  --blue:#2D5FA8;
+
+  --radius:18px;
+  --radius-lg:24px;
+  --maxw:60rem;
+  --shadow:0 2px 3px rgba(90,62,43,.04), 0 14px 32px -22px rgba(90,62,43,.45);
+
+  --f-head:"Noto Sans TC",-apple-system,BlinkMacSystemFont,sans-serif;
+  --f-body:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  --f-hand:"LXGW WenKai TC","Noto Sans TC",serif;
+  --f-num:"Baloo 2","Noto Sans TC",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --cream:#231A12; --cream-2:#2C2118; --card:#2F241A;
+    --ink:#F6EAD7; --ink-soft:#C3AC93; --ink-faint:#9B8469;
+    --line:#42341F; --line-strong:#57462C;
+    --orange:#F2884E; --orange-deep:#FFA271; --orange-wash:#3D2617;
+    --gold:#F5C560; --gold-wash:#3B2E14;
+    --sage:#93A868; --sage-deep:#75894C; --sage-wash:#2A2E1D;
+    --blue:#86B4EE;
+    --shadow:0 2px 3px rgba(0,0,0,.35), 0 14px 34px -22px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --cream:#231A12; --cream-2:#2C2118; --card:#2F241A;
+  --ink:#F6EAD7; --ink-soft:#C3AC93; --ink-faint:#9B8469;
+  --line:#42341F; --line-strong:#57462C;
+  --orange:#F2884E; --orange-deep:#FFA271; --orange-wash:#3D2617;
+  --gold:#F5C560; --gold-wash:#3B2E14;
+  --sage:#93A868; --sage-deep:#75894C; --sage-wash:#2A2E1D;
+  --blue:#86B4EE;
+  --shadow:0 2px 3px rgba(0,0,0,.35), 0 14px 34px -22px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--cream); color:var(--ink);
+  font-family:var(--f-body); font-size:17px; line-height:1.85;
+  -webkit-font-smoothing:antialiased; padding-bottom:5.5rem;
+}
+h1,h2,h3{font-family:var(--f-head);font-weight:900;text-wrap:balance;margin:0;line-height:1.4}
+p{margin:0}
+a{color:var(--blue);text-underline-offset:3px}
+:focus-visible{outline:2.5px solid var(--orange);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:1.25rem}
+
+/* ── 綠色緞帶標題（沿用 DM 的標籤樣式）── */
+.ribbon{position:relative;display:inline-block;margin-bottom:1.4rem}
+.ribbon span{
+  position:relative;z-index:2;display:inline-block;
+  background:var(--sage);color:#FFF9EC;
+  padding:.45rem 1.5rem;border-radius:11px;
+  font-family:var(--f-head);font-weight:900;font-size:1.18rem;letter-spacing:.1em;
+}
+.ribbon::before,.ribbon::after{
+  content:"";position:absolute;top:50%;transform:translateY(-50%);
+  width:18px;height:27px;background:var(--sage-deep);z-index:1;border-radius:3px;
+}
+.ribbon::before{left:-11px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,36% 50%)}
+.ribbon::after{right:-11px;clip-path:polygon(0 0,100% 0,64% 50%,100% 100%,0 100%)}
+.ribbon.sm span{font-size:1rem;padding:.35rem 1.15rem}
+
+/* ── hero ── */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(90% 60% at 82% 8%, var(--gold-wash), transparent 60%),
+  radial-gradient(70% 50% at 8% 26%, var(--orange-wash), transparent 62%),
+  var(--cream);
+}
+.hero .lights,.hero canvas{position:absolute;left:0;top:0;width:100%;pointer-events:none}
+.hero .lights{height:110px;z-index:2}
+.hero canvas{height:100%;z-index:1}
+.hero-inner{position:relative;z-index:3;padding:4.75rem 0 1rem;display:flex;flex-direction:column;gap:1.15rem}
+
+.pill{
+  align-self:flex-start;background:var(--orange);color:#FFF6EC;
+  font-weight:700;font-size:.88rem;letter-spacing:.18em;
+  padding:.32rem 1.15rem;border-radius:999px;
+}
+.hero h1{font-size:clamp(2.7rem,10.5vw,4.6rem);letter-spacing:.05em;line-height:1.22}
+.hero h1 .hot{color:var(--orange)}
+.heart{color:var(--orange);font-size:.42em;vertical-align:.5em;margin-left:.15em}
+
+.tagline{
+  align-self:flex-start;background:var(--gold);color:#4A3316;
+  font-family:var(--f-hand);font-size:1.22rem;letter-spacing:.1em;line-height:1.6;
+  padding:.4rem 1.5rem;border-radius:999px;
+}
+
+.when{display:flex;flex-direction:column;gap:.15rem;margin-top:.6rem}
+.when .yr{font-family:var(--f-num);font-weight:600;font-size:1.35rem;color:var(--ink-soft);letter-spacing:.02em}
+.when .big{
+  font-family:var(--f-num);font-weight:800;
+  font-size:clamp(2.4rem,10vw,3.9rem);line-height:1.15;color:var(--ink);
+  display:flex;align-items:center;flex-wrap:wrap;gap:.15em;
+}
+.dow{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:1.75em;height:1.75em;border-radius:50%;
+  font-family:var(--f-body);font-size:.34em;font-weight:700;color:#FFF9EC;
+  line-height:1;margin-inline:.12em;flex:none;
+}
+.dow.g{background:var(--sage)}
+.dow.o{background:var(--orange-deep)}
+.where{display:flex;align-items:center;gap:.5rem;font-size:1.12rem;font-weight:500}
+.where svg{flex:none;color:var(--orange)}
+
+.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.9rem}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.7rem;border-radius:999px;
+  border:2px solid transparent;font-family:var(--f-body);font-size:1rem;font-weight:700;letter-spacing:.06em;
+  cursor:pointer;text-decoration:none;transition:transform .15s ease,background .2s ease,border-color .2s ease;
+}
+.btn-primary{background:var(--orange);color:#FFF6EC;border-color:var(--orange)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--orange-deep);border-color:var(--orange-deep)}
+.btn-ghost{background:transparent;color:var(--sage-deep);border-color:var(--sage)}
+.btn-ghost:hover{background:var(--sage-wash)}
+.btn[data-pending="1"]{background:transparent;color:var(--orange);border-color:var(--orange);border-style:dashed}
+
+.hills{display:block;width:100%;height:clamp(70px,11vw,120px);margin-top:-1px}
+
+/* ── sections ── */
+section{padding:2.75rem 0}
+.band{background:var(--cream-2)}
+
+.tiles{display:grid;grid-template-columns:1fr;gap:.9rem}
+@media (min-width:560px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:940px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{
+  background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);
+  padding:1.2rem 1.3rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.15rem;
+}
+.tile .k{font-size:.78rem;letter-spacing:.18em;color:var(--sage-deep);font-weight:700}
+.tile .v{font-family:var(--f-num);font-size:1.42rem;font-weight:700;line-height:1.35;color:var(--ink)}
+.tile .v.cjk{font-family:var(--f-head);font-size:1.18rem;font-weight:900;letter-spacing:.02em}
+.tile .n{font-size:.88rem;color:var(--ink-soft);line-height:1.6}
+
+/* fee card */
+.feecard{background:var(--card);border:1.5px solid var(--line-strong);border-radius:var(--radius-lg);padding:1.6rem 1.5rem;box-shadow:var(--shadow)}
+.leaflist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.55rem 1.75rem}
+.leaflist li{display:flex;gap:.65rem;align-items:flex-start;font-size:1.03rem}
+.leaflist li::before{
+  content:"";flex:none;width:1.05rem;height:1.05rem;margin-top:.42rem;
+  background:var(--orange);
+  -webkit-mask:var(--leaf) center/contain no-repeat; mask:var(--leaf) center/contain no-repeat;
+}
+.dash{border:0;border-top:2px dashed var(--line-strong);margin:1.35rem 0}
+.prices{display:flex;flex-direction:column;gap:.5rem}
+.prow{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.prow .who{font-family:var(--f-head);font-weight:900;font-size:1.15rem;letter-spacing:.06em}
+.prow .amt{font-family:var(--f-num);font-weight:800;font-size:2.15rem;color:var(--orange);line-height:1.2}
+.prow .amt .u{font-family:var(--f-body);font-size:.42em;font-weight:500;color:var(--ink-soft);margin-left:.35em;letter-spacing:.05em}
+.prow.free .amt{font-family:var(--f-head);font-weight:900;font-size:1.7rem}
+
+.babycard{
+  margin-top:1.25rem;background:var(--orange-wash);
+  border:2px dashed var(--orange);border-radius:var(--radius);
+  padding:1.15rem 1.3rem;display:flex;flex-direction:column;gap:.5rem;
+}
+.babycard h3{font-size:1.02rem;color:var(--orange-deep)}
+.babycard ul{margin:0;padding-left:1.15rem;display:flex;flex-direction:column;gap:.25rem;font-size:.97rem}
+.babycard .fine{font-size:.87rem;color:var(--ink-soft)}
+
+/* timeline */
+.days{display:grid;grid-template-columns:1fr;gap:1.5rem}
+@media (min-width:760px){.days{grid-template-columns:1fr 1fr;gap:2rem}}
+.daycard{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius-lg);padding:1.4rem 1.5rem;box-shadow:var(--shadow)}
+.dayhead{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem;padding-bottom:.85rem;border-bottom:2px dashed var(--line-strong)}
+.dayhead .d{font-family:var(--f-num);font-size:1.6rem;font-weight:800;color:var(--ink)}
+.dayhead .dow{width:1.85rem;height:1.85rem;font-size:.82rem;margin-inline:0}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.85rem}
+.tl li{display:flex;gap:.7rem;align-items:flex-start}
+.tl li::before{
+  content:"";flex:none;width:1.05rem;height:1.05rem;margin-top:.45rem;
+  background:var(--gold);
+  -webkit-mask:var(--leaf) center/contain no-repeat; mask:var(--leaf) center/contain no-repeat;
+}
+.tl .t{font-family:var(--f-num);font-weight:700;color:var(--orange);margin-right:.4em}
+.tl .m{display:block;font-size:.9rem;color:var(--ink-soft);line-height:1.6}
+
+/* stay + food */
+.duo{display:grid;grid-template-columns:1fr;gap:1.25rem}
+@media (min-width:760px){.duo{grid-template-columns:1fr 1fr;gap:1.75rem}}
+.duo .box{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius-lg);padding:1.4rem 1.5rem;box-shadow:var(--shadow)}
+.duo .box p{color:var(--ink-soft);font-size:1rem}
+.duo .box .hand{font-family:var(--f-hand);font-size:1.25rem;color:var(--orange-deep);line-height:1.7;margin-bottom:.5rem;display:block}
+
+/* highlights */
+.spots{display:grid;grid-template-columns:1fr;gap:.85rem}
+@media (min-width:620px){.spots{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:940px){.spots{grid-template-columns:repeat(3,1fr)}}
+.spot{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:1.05rem 1.2rem;display:flex;gap:.75rem;align-items:flex-start}
+.spot .mk{flex:none;width:2.1rem;height:2.1rem;border-radius:50%;display:grid;place-items:center;margin-top:.15rem}
+.spot .mk i{display:block;width:1.15rem;height:1.15rem;background:currentColor;-webkit-mask:var(--leaf) center/contain no-repeat;mask:var(--leaf) center/contain no-repeat}
+.spot h3{font-size:1.05rem;letter-spacing:.04em}
+.spot p{font-size:.92rem;color:var(--ink-soft);line-height:1.65}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:.9rem}
+@media (min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:1.2rem 1.3rem;display:flex;flex-direction:column;gap:.3rem;box-shadow:var(--shadow)}
+.steps .no{align-self:flex-start;background:var(--sage-wash);color:var(--sage-deep);font-family:var(--f-num);font-weight:700;font-size:.85rem;letter-spacing:.1em;padding:.1rem .7rem;border-radius:999px}
+.steps .h{font-family:var(--f-head);font-weight:900;font-size:1.08rem}
+.steps .b{font-size:.94rem;color:var(--ink-soft);line-height:1.7}
+
+/* packing */
+.pack{background:var(--sage-wash);border:1.5px solid var(--sage);border-radius:var(--radius-lg);padding:1.5rem}
+.pack .fine{font-size:.87rem;color:var(--ink-soft);margin-top:1rem}
+
+.contact{display:grid;grid-template-columns:1fr;gap:.9rem}
+@media (min-width:620px){.contact{grid-template-columns:repeat(3,1fr)}}
+.contact .c{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.25rem}
+.contact .c .r{font-size:.78rem;letter-spacing:.18em;color:var(--sage-deep);font-weight:700;display:block;margin-bottom:.2rem}
+.contact .c .n{font-size:1.08rem;font-weight:500}
+
+.tbd{
+  display:inline-block;vertical-align:middle;font-size:.72rem;letter-spacing:.12em;font-weight:700;
+  color:var(--orange-deep);background:var(--orange-wash);border:1.5px dashed var(--orange);
+  border-radius:999px;padding:.02rem .6rem;margin-inline-start:.4rem;white-space:nowrap;
+}
+
+.closing{text-align:center;padding:3rem 0 1rem}
+.closing .big{font-family:var(--f-hand);font-size:clamp(1.4rem,5.5vw,2.05rem);line-height:1.75;color:var(--orange-deep)}
+.closing .sub{font-size:.92rem;color:var(--ink-soft);margin-top:.9rem;letter-spacing:.14em}
+
+footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--ink-faint);font-size:.87rem;display:flex;flex-direction:column;gap:.35rem}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--card) 94%,transparent);backdrop-filter:blur(12px);border-top:2px solid var(--line-strong);padding:.65rem 1.25rem calc(.65rem + env(safe-area-inset-bottom))}
+.dock-inner{max-width:var(--maxw);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.dock .lbl{display:flex;flex-direction:column;line-height:1.45;min-width:0}
+.dock .lbl b{font-family:var(--f-head);font-weight:900;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dock .lbl span{font-size:.78rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dock .btn{padding:.65rem 1.35rem;flex:none}
+
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:6rem;z-index:30;background:var(--ink);color:var(--cream);padding:.7rem 1.2rem;border-radius:999px;font-size:.9rem;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s ease;max-width:min(90vw,26rem);text-align:center}
+.toast.on{opacity:1}
+
+@media (max-width:520px){
+  body{font-size:16px}
+  .hero-inner{padding:3.75rem 0 .75rem}
+  .dock .lbl span{display:none}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <svg class="lights" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true"></svg>
+  <canvas id="leaves" aria-hidden="true"></canvas>
+  <div class="wrap hero-inner">
+    <span class="pill">教定區 秋季聚會</span>
+    <h1>心靈充電<br>相聚在<span class="hot">秋日</span><span class="heart">♥</span></h1>
+    <span class="tagline">放慢腳步，感受自然，凝聚情誼</span>
+
+    <div class="when">
+      <span class="yr">2026</span>
+      <span class="big">11/21<span class="dow g">六</span>–<span></span>11/22<span class="dow o">日</span></span>
+    </div>
+    <p class="where">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"/></svg>
+      藍鵲渡假莊園　檜意村區
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" id="cta-hero" href="#報名">我要報名</a>
+      <a class="btn btn-ghost" href="#時間">看看行程</a>
+    </div>
+  </div>
+  <svg class="hills" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true"></svg>
+</header>
+
+<main>
+  <section class="wrap" id="資訊" style="padding-top:1.75rem">
+    <div class="tiles">
+      <div class="tile">
+        <span class="k">日期</span>
+        <span class="v">11.21 – 11.22</span>
+        <span class="n">2026 年，週六至週日．兩天一夜</span>
+      </div>
+      <div class="tile">
+        <span class="k">地點</span>
+        <span class="v cjk">藍鵲渡假莊園</span>
+        <span class="n">檜意村區．小木屋住宿</span>
+      </div>
+      <div class="tile">
+        <span class="k">費用</span>
+        <span class="v">2,500 <span style="font-size:.55em">元／成人</span></span>
+        <span class="n">學生 1,500，幼稚園與嬰幼兒免費</span>
+      </div>
+      <div class="tile">
+        <span class="k">報名截止</span>
+        <span class="v cjk">尚未公布<span class="tbd">待確認</span></span>
+        <span class="n">名額有限，額滿為止</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band"><div class="wrap" id="費用">
+    <h2 class="ribbon"><span>費用包含</span></h2>
+    <div class="feecard">
+      <ul class="leaflist">
+        <li>11／21　晚餐</li>
+        <li>住宿一晚（檜意村區）</li>
+        <li>11／22　早餐 ＋ 午餐</li>
+        <li>旅遊平安保險</li>
+      </ul>
+      <hr class="dash">
+      <div class="prices">
+        <div class="prow"><span class="who">成人</span><span class="amt">2,500<span class="u">元 / 人</span></span></div>
+        <div class="prow"><span class="who">學生</span><span class="amt">1,500<span class="u">元 / 人</span></span></div>
+        <div class="prow free"><span class="who">幼稚園 ‧ 嬰幼兒</span><span class="amt">免費</span></div>
+      </div>
+    </div>
+
+    <div class="babycard">
+      <h3>帶嬰幼兒同行的家長請留意</h3>
+      <ul>
+        <li>免費提供嬰兒床（小棉被、枕頭需自行攜帶）</li>
+        <li>嬰兒澡盆、小椅凳服務需<strong>事先告知</strong></li>
+        <li>嬰兒盥洗用品需自行攜帶、園區無消毒鍋</li>
+      </ul>
+      <p class="fine">報名時請在表單備註欄註明需求，方便園區提前準備。</p>
+    </div>
+  </div></section>
+
+  <section class="wrap" id="時間">
+    <h2 class="ribbon"><span>時間安排</span></h2>
+    <div class="days">
+      <div class="daycard">
+        <div class="dayhead"><span class="d">11/21</span><span class="dow g">六</span></div>
+        <ul class="tl">
+          <li><div><span class="t">中午 12:00</span>入園<span class="m">先進園區走走，不必等到入住時間</span></div></li>
+          <li><div><span class="t">下午 15:00</span>辦理入住<span class="m">檜意村區小木屋</span></div></li>
+          <li><div>相見歡、談天說地</div></li>
+          <li><div><span class="t">傍晚</span>晚餐<span class="m">費用已包含</span></div></li>
+        </ul>
+      </div>
+      <div class="daycard">
+        <div class="dayhead"><span class="d">11/22</span><span class="dow o">日</span></div>
+        <ul class="tl">
+          <li><div>早安晨之美</div></li>
+          <li><div>早餐<span class="m">費用已包含</span></div></li>
+          <li><div><span class="t">中午 11:00</span>退房</div></li>
+          <li><div>午餐<span class="m">費用已包含</span></div></li>
+          <li><div><span class="t">– 下午 15:00</span>園區自由活動<span class="m">下午三點前都可以留在園區</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band"><div class="wrap" id="住宿">
+    <h2 class="ribbon"><span>舒適住宿 ‧ 好食相聚</span></h2>
+    <div class="duo">
+      <div class="box">
+        <span class="hand">舒適住宿・小木屋</span>
+        <p>入住檜意村區的自然風格小木屋，木質空間、大面採光，感受一夜悠閒。分房方式由承辦人員統一安排，報名時可於備註欄提出同房需求。</p>
+      </div>
+      <div class="box">
+        <span class="hand">用一桌好食，延續相聚的溫度</span>
+        <p>全程安排由教會餐點，並由園區特約安排獨立餐廳。一桌好食，也可享受美味素食饗宴，彼此交換溫暖問候，自在交流。</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="wrap" id="園區">
+    <h2 class="ribbon"><span>園區特色亮點</span></h2>
+    <div class="spots">
+      <div class="spot"><span class="mk" style="background:var(--orange-wash);color:var(--orange)"><i></i></span><div><h3>落羽松林</h3><p>漫步林間，感受秋日限定的浪漫景觀。</p></div></div>
+      <div class="spot"><span class="mk" style="background:var(--sage-wash);color:var(--sage-deep)"><i></i></span><div><h3>漫活小徑</h3><p>放慢腳步，在自然林間慢慢地散步。</p></div></div>
+      <div class="spot"><span class="mk" style="background:var(--sage-wash);color:var(--sage)"><i></i></span><div><h3>藍鵲大草原</h3><p>寬廣綠地，自在散步，親近自然。</p></div></div>
+      <div class="spot"><span class="mk" style="background:var(--gold-wash);color:var(--gold)"><i></i></span><div><h3>肯芙咖啡</h3><p>手沖咖啡、坐下聊聊，享受悠閒午後。</p></div></div>
+      <div class="spot"><span class="mk" style="background:var(--sage-wash);color:var(--blue)"><i></i></span><div><h3>生態湖畔</h3><p>湖光映照樹影，享受悠閒的時光。</p></div></div>
+      <div class="spot"><span class="mk" style="background:var(--orange-wash);color:var(--orange-deep)"><i></i></span><div><h3>檜意村小木屋</h3><p>入住自然風格的小木屋，感受一夜悠閒。</p></div></div>
+    </div>
+  </section>
+
+  <section class="band"><div class="wrap" id="報名">
+    <h2 class="ribbon"><span>報名方式</span></h2>
+    <ol class="steps">
+      <li><span class="no">STEP 1</span><span class="h">填寫報名表單</span><span class="b">點「我要報名」，填寫姓名、聯絡方式、參加人數與同行需求。</span></li>
+      <li><span class="no">STEP 2</span><span class="h">完成繳費</span><span class="b">繳費方式待公布，屆時會更新在這一頁。<span class="tbd">待確認</span></span></li>
+      <li><span class="no">STEP 3</span><span class="h">收到報名確認</span><span class="b">承辦人員核對後會與您聯繫，確認房間與交通安排。</span></li>
+    </ol>
+  </div></section>
+
+  <section class="wrap" id="提醒">
+    <h2 class="ribbon"><span>行前提醒</span></h2>
+    <div class="pack">
+      <h3 style="font-size:1.05rem;margin-bottom:.85rem">建議攜帶<span class="tbd">草擬，待確認</span></h3>
+      <ul class="leaflist">
+        <li>換洗衣物、盥洗用品（兩天一夜）</li>
+        <li>保暖外套　十一月早晚溫差大</li>
+        <li>個人常備藥品、健保卡</li>
+        <li>環保杯、環保餐具</li>
+        <li>雨具、防蚊液</li>
+        <li>嬰幼兒的小棉被、枕頭與盥洗用品</li>
+      </ul>
+      <p class="fine">以上為建議清單，實際攜帶物品以主辦方最新公告為準。</p>
+    </div>
+  </section>
+
+  <section class="wrap" id="聯絡" style="padding-top:0">
+    <h2 class="ribbon sm"><span>聯絡窗口</span></h2>
+    <div class="contact">
+      <div class="c"><span class="r">報名 ‧ 繳費</span><span class="n">尚未公布<span class="tbd">待確認</span></span></div>
+      <div class="c"><span class="r">交通 ‧ 共乘</span><span class="n">尚未公布<span class="tbd">待確認</span></span></div>
+      <div class="c"><span class="r">住宿 ‧ 分房</span><span class="n">尚未公布<span class="tbd">待確認</span></span></div>
+    </div>
+  </section>
+
+  <div class="wrap closing">
+    <p class="big">一起走進自然，充電身心靈，<br>共創美好回憶！</p>
+    <p class="sub">教定區　2026 秋季聚會</p>
+  </div>
+
+  <footer class="wrap">
+    <div>主辦｜教定區</div>
+    <div>本頁資訊將隨籌備進度更新，實際安排以主辦方最新公告為準。</div>
+    <div>最後更新：2026.08.27</div>
+  </footer>
+</main>
+
+<div class="dock">
+  <div class="dock-inner">
+    <span class="lbl">
+      <b>2026 教定區秋聚</b>
+      <span>11/21–11/22 ‧ 藍鵲渡假莊園</span>
+    </span>
+    <a class="btn btn-primary" id="cta-dock" href="#報名">我要報名</a>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ─────────────────────────────────────────────
+     報名表單網址：Google 表單做好後，把網址填進下面這行的引號中間。
+     例：var REGISTER_URL = "https://forms.gle/xxxxxxxx";
+     ───────────────────────────────────────────── */
+  var REGISTER_URL = "";
+
+  /* 葉子形狀，給 CSS mask 用 */
+  var LEAF = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.5c4.2 6 4.2 15 0 21-4.2-6-4.2-15 0-21z' fill='%23000'/%3E%3C/svg%3E\")";
+  document.documentElement.style.setProperty("--leaf", LEAF);
+
+  var pending = !REGISTER_URL;
+  ["cta-hero","cta-dock"].forEach(function(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    if(pending){
+      el.setAttribute("data-pending","1");
+      el.setAttribute("href","#報名");
+      el.textContent = "報名表單準備中";
+      el.addEventListener("click", function(e){
+        e.preventDefault();
+        showToast("報名表單開放後，這個按鈕就會直接連到表單");
+      });
+    } else {
+      el.setAttribute("href", REGISTER_URL);
+      el.setAttribute("target","_blank");
+      el.setAttribute("rel","noopener");
+    }
+  });
+
+  var toastEl = document.getElementById("toast"), toastTimer;
+  function showToast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add("on");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove("on"); }, 2600);
+  }
+
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs){
+    var e = document.createElementNS(NS, tag);
+    for(var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  /* 串燈 */
+  var lights = document.querySelector(".hero .lights");
+  if(lights){
+    [[0,600],[600,1200]].forEach(function(sp){
+      var x0=sp[0], x1=sp[1], cx=(x0+x1)/2, y0=6, cy=88;
+      lights.appendChild(el("path",{d:"M "+x0+" "+y0+" Q "+cx+" "+cy+" "+x1+" "+y0, fill:"none", stroke:"#B08B5E", "stroke-width":"1.6", opacity:".55"}));
+      for(var i=1;i<=7;i++){
+        var t=i/8, mt=1-t;
+        var x = mt*mt*x0 + 2*mt*t*cx + t*t*x1;
+        var y = mt*mt*y0 + 2*mt*t*cy + t*t*y0;
+        lights.appendChild(el("circle",{cx:x.toFixed(1), cy:(y+6).toFixed(1), r:"5", fill:"#F6D98C", stroke:"#E0AE55", "stroke-width":"1.2"}));
+      }
+    });
+  }
+
+  /* 山丘與樹 */
+  var hills = document.querySelector(".hills");
+  if(hills){
+    var css = getComputedStyle(document.documentElement);
+    var gold = (css.getPropertyValue("--gold-wash")||"#FCEFCE").trim();
+    var sage = (css.getPropertyValue("--sage-wash")||"#EBEEDD").trim();
+    var sageC = (css.getPropertyValue("--sage")||"#7C8F55").trim();
+    var orangeC = (css.getPropertyValue("--orange")||"#E4692C").trim();
+    var goldC = (css.getPropertyValue("--gold")||"#F3B93F").trim();
+
+    hills.appendChild(el("path",{d:"M0,72 C160,34 300,96 460,64 C620,32 760,88 920,58 C1040,35 1140,66 1200,50 L1200,120 L0,120 Z", fill:gold}));
+    var trees = [[90,62],[175,55],[300,74],[395,66],[520,60],[610,68],[720,72],[830,60],[955,58],[1080,55]];
+    var cols = [sageC, orangeC, goldC, sageC, orangeC];
+    trees.forEach(function(p,i){
+      var x=p[0], y=p[1], r=9+(i%3)*2.5;
+      var g = el("g",{opacity:".8"});
+      g.appendChild(el("rect",{x:(x-1.6).toFixed(1), y:(y).toFixed(1), width:"3.2", height:(r+7).toFixed(1), rx:"1.6", fill:"#A8763F"}));
+      g.appendChild(el("circle",{cx:x, cy:y, r:r.toFixed(1), fill:cols[i%cols.length]}));
+      hills.appendChild(g);
+    });
+    hills.appendChild(el("path",{d:"M0,92 C200,62 350,108 560,84 C770,60 930,104 1200,78 L1200,120 L0,120 Z", fill:sage}));
+  }
+
+  /* 飄落的葉子 */
+  var cv = document.getElementById("leaves");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(cv && cv.getContext){
+    var ctx = cv.getContext("2d");
+    var w=0,h=0,leaves=[],raf=null;
+    var palette = ["#E4692C","#F3B93F","#C9531C","#D98B2B","#7C8F55"];
+
+    function resize(){
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var r = cv.getBoundingClientRect();
+      w = r.width; h = r.height;
+      cv.width = Math.max(1, Math.round(w*dpr));
+      cv.height = Math.max(1, Math.round(h*dpr));
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    function seed(){
+      var n = w < 620 ? 11 : 20;
+      leaves = [];
+      for(var i=0;i<n;i++){
+        leaves.push({
+          x: Math.random()*w, y: Math.random()*h,
+          r: 5 + Math.random()*8,
+          vy: .12 + Math.random()*.26,
+          rot: Math.random()*Math.PI*2,
+          vr: (Math.random()-.5)*.014,
+          sway: .4 + Math.random()*1.1,
+          phase: Math.random()*Math.PI*2,
+          a: .18 + Math.random()*.22,
+          c: palette[(Math.random()*palette.length)|0]
+        });
+      }
+    }
+    function leaf(L){
+      ctx.save();
+      ctx.translate(L.x, L.y);
+      ctx.rotate(L.rot);
+      ctx.globalAlpha = L.a;
+      ctx.fillStyle = L.c;
+      ctx.beginPath();
+      ctx.moveTo(0, -L.r);
+      ctx.quadraticCurveTo(L.r*0.7, 0, 0, L.r);
+      ctx.quadraticCurveTo(-L.r*0.7, 0, 0, -L.r);
+      ctx.fill();
+      ctx.restore();
+    }
+    function frame(ts){
+      ctx.clearRect(0,0,w,h);
+      for(var i=0;i<leaves.length;i++){
+        var L = leaves[i];
+        L.y += L.vy;
+        L.x += Math.sin((ts/1400) + L.phase) * L.sway * 0.35;
+        L.rot += L.vr;
+        if(L.y - L.r > h){ L.y = -L.r*2; L.x = Math.random()*w; }
+        if(L.x < -30) L.x = w+20;
+        if(L.x > w+30) L.x = -20;
+        leaf(L);
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    function start(){
+      resize(); seed();
+      if(raf) cancelAnimationFrame(raf);
+      if(reduce){ ctx.clearRect(0,0,w,h); leaves.forEach(leaf); }
+      else raf = requestAnimationFrame(frame);
+    }
+    start();
+    var rt;
+    window.addEventListener("resize", function(){ clearTimeout(rt); rt = setTimeout(start,180); });
+  }
+})();
+</script>
+</body>
+</html>
