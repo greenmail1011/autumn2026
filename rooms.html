@@ -53,7 +53,8 @@
 
 *{box-sizing:border-box}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);
-  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:5.5rem}
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+body.editing{padding-bottom:5.5rem}
 h1,h2,h3{font-family:var(--f-head);font-weight:900;margin:0;line-height:1.4}
 p{margin:0}
 a{color:var(--blue);text-underline-offset:3px}
@@ -71,7 +72,18 @@ a{color:var(--blue);text-underline-offset:3px}
 .top{background:radial-gradient(70% 70% at 88% 6%, var(--gold-wash), transparent 60%),
   radial-gradient(60% 60% at 5% 40%, var(--orange-wash), transparent 64%), var(--cream);
   border-bottom:2px dashed var(--line-strong)}
-.top-in{padding-block:2.2rem 1.6rem;display:flex;flex-direction:column;gap:.75rem;align-items:flex-start}
+.top{position:relative}
+.gear{
+  position:absolute;top:1.5rem;right:1.25rem;z-index:5;
+  width:2.6rem;height:2.6rem;border-radius:50%;cursor:pointer;
+  background:var(--card);border:1.5px solid var(--line);color:var(--ink-faint);
+  display:grid;place-items:center;padding:0;
+  transition:color .2s ease,border-color .2s ease,transform .35s ease,background .2s ease;
+}
+.gear svg{width:1.3rem;height:1.3rem}
+.gear:hover{color:var(--orange);border-color:var(--orange);transform:rotate(60deg)}
+body.editing .gear{background:var(--orange);border-color:var(--orange);color:#FFF6EC;transform:rotate(120deg)}
+.top-in{padding-block:2.2rem 1.6rem;padding-right:3.6rem;display:flex;flex-direction:column;gap:.75rem;align-items:flex-start}
 .pill{background:var(--orange);color:#FFF6EC;font-weight:700;font-size:.82rem;letter-spacing:.16em;padding:.28rem 1rem;border-radius:999px}
 .top h1{font-size:clamp(1.7rem,5.5vw,2.4rem);letter-spacing:.05em}
 .top .sub{color:var(--ink-soft);font-size:.98rem}
@@ -118,6 +130,8 @@ body.editing .person:active{cursor:grabbing}
 .room.full{border-color:var(--line-strong)}
 .room-h{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem}
 .room-h .nm{font-family:var(--f-head);font-weight:900;font-size:1rem;letter-spacing:.04em}
+body.editing .room-h .nm{cursor:text;border-bottom:1.5px dashed var(--line-strong)}
+body.editing .room-h .nm:hover{border-bottom-color:var(--orange);color:var(--orange-deep)}
 .room-h .cap{font-family:var(--f-num);font-size:.86rem;font-weight:700;color:var(--ink-faint)}
 .room.filled .room-h .cap{color:var(--sage-deep)}
 .room-b{display:flex;flex-wrap:wrap;gap:.45rem;min-height:2.1rem;align-content:flex-start}
@@ -151,8 +165,9 @@ body.editing .editbar{display:block}
 footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:var(--ink-faint);
   font-size:.86rem;display:flex;flex-direction:column;gap:.3rem}
 
-.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--card) 94%,transparent);
+.dock{display:none;position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--card) 94%,transparent);
   backdrop-filter:blur(12px);border-top:2px solid var(--line-strong);padding:.6rem 1.25rem calc(.6rem + env(safe-area-inset-bottom))}
+body.editing .dock{display:block}
 .dock-in{max-width:var(--maxw);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
 .dock .lbl{display:flex;flex-direction:column;line-height:1.4;min-width:0}
 .dock .lbl b{font-family:var(--f-head);font-weight:900;font-size:.96rem}
@@ -173,9 +188,15 @@ footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:
 <body>
 <header class="top">
   <div class="wrap top-in">
+    <button class="gear" id="btn-edit" type="button" title="承辦人員登入" aria-label="承辦人員登入">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+    </button>
     <span class="pill">2026 教定區秋聚</span>
     <h1>房間分配</h1>
-    <p class="sub">檜意村　8 人房 1 間　‧　4 人房 15 間</p>
+    <p class="sub">檜意村　8 人房 1 間　‧　4 人房 15 間　<span style="color:var(--ink-faint)">（房號待莊園提供）</span></p>
     <div class="stats">
       <span class="stat">已分配 <b id="s-done">0</b> 人</span>
       <span class="stat">待分配 <b id="s-left">0</b> 人</span>
@@ -188,11 +209,13 @@ footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:
   <section class="wrap">
     <div class="viewonly">
       <span>🔎</span>
-      <span>在下面的房間卡片裡找到自己的名字，就知道住哪一間。<br>
-      名單還在調整中，最終以承辦人員公告為準。承辦人員請按右下角「編輯模式」。</span>
+      <span>在下面的房間卡片裡找到自己的名字，就知道跟誰同一間。<br>
+      <strong>A、B、C… 只是暫用代號，不是房號</strong>，實際房號由莊園提供後會更新。<br>
+      名單還在調整中，最終以承辦人員公告為準。<br>承辦人員請按<strong>右上角的齒輪 ⚙</strong> 登入。</span>
     </div>
     <div class="editbar">
-      ✏️ <strong>編輯模式</strong>：把人名拖到房間卡片即可分房。房間離得遠時，<strong>先點一下人名、再點房間</strong>更快。變更會自動存在這台裝置。改完請按「<strong>匯出分房檔</strong>」，把檔案上傳到網站才會讓大家看到。
+      ✏️ <strong>編輯模式</strong>：把人名拖到房間卡片即可分房。房間離得遠時，<strong>先點一下人名、再點房間</strong>更快。<br>
+      拿到實際房號後，<strong>點一下房間名稱</strong>就能改成真正的房號。變更會自動存在這台裝置。改完請按「<strong>匯出分房檔</strong>」，把檔案上傳到網站才會讓大家看到。
     </div>
   </section>
 
@@ -240,9 +263,9 @@ footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:
   <div class="dock-in">
     <span class="lbl">
       <b id="dock-t">房間分配</b>
-      <span id="dock-s">檢視模式</span>
+      <span id="dock-s">編輯模式 ‧ 變更存在本機</span>
     </span>
-    <button class="btn btn-primary" id="btn-edit">編輯模式</button>
+    <button class="btn btn-quiet" id="btn-done" type="button">結束編輯</button>
   </div>
 </div>
 
@@ -261,10 +284,11 @@ footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:
   var DATA_URL = "rooms-data.json";     // 站上的分房檔
   var LS_KEY = "qiuju2026-rooms";
 
+  var CODES = "ABCDEFGHIJKLMNO";
   var ROOMS = [{id:"R8", name:"檜意村 8 人房", cap:8, big:true}];
-  for(var i=1;i<=15;i++) ROOMS.push({id:"A"+i, name:"4 人房 "+String(i).padStart(2,"0"), cap:4, big:false});
+  for(var i=1;i<=15;i++) ROOMS.push({id:"A"+i, name:"4 人房 "+CODES[i-1], cap:4, big:false});
 
-  var state = { assign: {}, updated: "" };
+  var state = { assign: {}, names: {}, updated: "" };
   var editing = false;
 
   /* ───────── 工具 ───────── */
@@ -279,6 +303,7 @@ footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:
     return d.getFullYear()+"/"+String(d.getMonth()+1).padStart(2,"0")+"/"+String(d.getDate()).padStart(2,"0");
   }
   function roomById(id){ for(var i=0;i<ROOMS.length;i++) if(ROOMS[i].id===id) return ROOMS[i]; return null; }
+  function roomLabel(r){ return (state.names && state.names[r.id]) || r.name; }
   function inRoom(id){ return PEOPLE.filter(function(p){ return state.assign[p.n] === id; }); }
 
   /* ───────── 即時報名名單 ───────── */
@@ -309,7 +334,7 @@ footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:
       if(!r.ok) throw new Error("no file");
       return r.json();
     }).then(function(j){
-      var remote = { assign: j.assign || {}, updated: j.updated || "" };
+      var remote = { assign: j.assign || {}, names: j.names || {}, updated: j.updated || "" };
       // 本機若比站上的新，優先用本機（代表管理者還沒匯出）
       if(local && local.updated && remote.updated && local.updated > remote.updated){
         state = local; $("src").textContent = "本機暫存（尚未匯出）";
@@ -320,7 +345,7 @@ footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:
       }
       render();
     }).catch(function(){
-      state = local || { assign: JSON.parse(JSON.stringify(DEFAULT_ASSIGN)), updated: "" };
+      state = local || { assign: JSON.parse(JSON.stringify(DEFAULT_ASSIGN)), names: {}, updated: "" };
       $("src").textContent = local ? "本機暫存（尚未匯出）" : "內建預設";
       render();
     });
@@ -366,7 +391,21 @@ footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:
 
       var h = document.createElement("div");
       h.className = "room-h";
-      h.innerHTML = '<span class="nm">' + r.name + '</span><span class="cap">' + people.length + ' / ' + r.cap + '</span>';
+      h.innerHTML = '<span class="nm">' + roomLabel(r) + '</span><span class="cap">' + people.length + ' / ' + r.cap + '</span>';
+      (function(room){
+        h.querySelector(".nm").addEventListener("click", function(e){
+          if(!editing) return;
+          e.stopPropagation();
+          var cur = roomLabel(room);
+          var val = window.prompt("房間名稱（拿到實際房號後可以改成房號，留白恢復預設）", cur);
+          if(val === null) return;
+          val = val.trim();
+          if(!state.names) state.names = {};
+          if(val === "" || val === room.name) delete state.names[room.id];
+          else state.names[room.id] = val;
+          save();
+        });
+      })(r);
       card.appendChild(h);
 
       var b = document.createElement("div");
@@ -516,16 +555,16 @@ footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:
     return Array.prototype.map.call(new Uint8Array(h), function(b){ return b.toString(16).padStart(2,"0"); }).join("");
   }
 
-  $("btn-edit").addEventListener("click", async function(){
-    if(editing){
-      editing = false;
-      document.body.classList.remove("editing");
-      $("btn-edit").textContent = "編輯模式";
-      $("dock-s").textContent = "檢視模式";
-      clearPicked();
-      render();
-      return;
-    }
+  function exitEdit(){
+    editing = false;
+    document.body.classList.remove("editing");
+    $("btn-edit").setAttribute("title", "承辦人員登入");
+    $("btn-edit").setAttribute("aria-label", "承辦人員登入");
+    clearPicked();
+    render();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  async function enterEdit(){
     var code = window.prompt("請輸入承辦人員通行碼");
     if(code === null) return;
     var ok = false;
@@ -533,17 +572,19 @@ footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:
     if(!ok){ toast("通行碼不正確"); return; }
     editing = true;
     document.body.classList.add("editing");
-    $("btn-edit").textContent = "結束編輯";
-    $("dock-s").textContent = "編輯模式 ‧ 變更存在本機";
+    $("btn-edit").setAttribute("title", "結束編輯");
+    $("btn-edit").setAttribute("aria-label", "結束編輯");
     render();
     toast("可以開始拖拉分房了");
-  });
+  }
+  $("btn-edit").addEventListener("click", function(){ editing ? exitEdit() : enterEdit(); });
+  $("btn-done").addEventListener("click", exitEdit);
 
   /* ───────── 匯出 / 清空 ───────── */
   $("btn-export").addEventListener("click", function(){
     if(!editing){ toast("請先進入編輯模式"); return; }
     state.updated = today();
-    var blob = new Blob([JSON.stringify({assign: state.assign, updated: state.updated}, null, 2)],
+    var blob = new Blob([JSON.stringify({assign: state.assign, names: state.names || {}, updated: state.updated}, null, 2)],
                         {type:"application/json"});
     var a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
