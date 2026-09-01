@@ -369,6 +369,10 @@ section{padding:2.75rem 0}
 .contact .c{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.25rem}
 .contact .c .r{font-size:.78rem;letter-spacing:.18em;color:var(--sage-deep);font-weight:700;display:block;margin-bottom:.2rem}
 .contact .c .n{font-size:1.08rem;font-weight:500}
+.contact .c .n a{color:var(--orange-deep);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px;text-decoration-thickness:1.5px}
+.contact .c .n a:hover{color:var(--orange)}
+.contact-note{margin-top:1.1rem;font-size:.95rem;color:var(--ink-soft);line-height:1.8}
+.contact-note strong{color:var(--ink)}
 
 .tbd{
   display:inline-block;vertical-align:middle;font-size:.72rem;letter-spacing:.12em;font-weight:700;
@@ -472,6 +476,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     <a href="#影片">場勘影片</a>
     <a href="#地圖">園區地圖</a>
     <a href="#提醒">行前提醒</a>
+    <a href="status.html">報名進度</a>
     <a href="#報名">我要報名</a>
   </div>
 </nav>
@@ -657,9 +662,12 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     </div>
     <ol class="steps">
       <li><span class="no">STEP 1</span><span class="h">填寫報名表單</span><span class="b">點「我要報名」開啟 Google 表單，填寫姓名、出生年月日、聯絡電話、身分證字號、是否可提供交通車輛，以及邀請您的人。</span></li>
-      <li><span class="no">STEP 2</span><span class="h">完成繳費</span><span class="b">繳費方式待公布，屆時會更新在這一頁。<span class="tbd">待確認</span></span></li>
+      <li><span class="no">STEP 2</span><span class="h">完成繳費</span><span class="b">報名費用請<strong>繳交給邀請人</strong>，由邀請人統一彙整。</span></li>
       <li><span class="no">STEP 3</span><span class="h">收到報名確認</span><span class="b">承辦人員核對後會與您聯繫，確認房間與交通安排。</span></li>
     </ol>
+    <p class="roomnote" style="margin-top:1.1rem">
+      想看目前有多少人報名？<a href="status.html">看報名進度</a>
+    </p>
   </div></section>
 
   <section class="wrap" id="提醒">
@@ -681,10 +689,14 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
   <section class="wrap" id="聯絡" style="padding-top:0">
     <h2 class="ribbon sm"><span>聯絡窗口</span></h2>
     <div class="contact">
-      <div class="c"><span class="r">報名 ‧ 繳費</span><span class="n">尚未公布<span class="tbd">待確認</span></span></div>
-      <div class="c"><span class="r">交通 ‧ 共乘</span><span class="n">尚未公布<span class="tbd">待確認</span></span></div>
-      <div class="c"><span class="r">住宿 ‧ 分房</span><span class="n">尚未公布<span class="tbd">待確認</span></span></div>
+      <div class="c"><span class="r">報名 ‧ 繳費</span><span class="n">繳交給邀請人</span></div>
+      <div class="c"><span class="r">交通 ‧ 共乘</span><span class="n">活動前一週公布</span></div>
+      <div class="c"><span class="r">住宿 ‧ 分房</span><span class="n"><a href="rooms.html">查看分房表</a></span></div>
     </div>
+    <p class="contact-note">
+      交通原則上<strong>各自前往</strong>；若沒有交通工具，會安排<strong>共乘車輛</strong>，
+      實際共乘分配於<strong>活動前一週公布</strong>。報名表單裡有一欄「是否可提供交通車輛」，請記得填。
+    </p>
   </section>
 
   <div class="wrap closing">
