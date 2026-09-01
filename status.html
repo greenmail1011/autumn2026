@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="2026 教定區秋聚報名進度：目前報名人數與年齡分佈，報名截止 9/30（三）。">
+<meta name="theme-color" content="#FDF6EA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%81%3C/text%3E%3C/svg%3E">
+
+<meta name="robots" content="noindex, nofollow">
+<title>秋聚報名進度</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+
+<style>
+:root{
+  --cream:#FDF6EA; --cream-2:#F8EDDB; --card:#FFFCF5;
+  --ink:#5A3E2B; --ink-soft:#8A6B52; --ink-faint:#A98F76;
+  --line:#EADCC3; --line-strong:#DCC7A4;
+  --orange:#E4692C; --orange-deep:#C9531C; --orange-wash:#FBE6D6;
+  --gold:#F3B93F; --gold-wash:#FCEFCE;
+  --sage:#7C8F55; --sage-deep:#5F7040; --sage-wash:#EBEEDD;
+  --blue:#2D5FA8;
+  --radius:18px; --radius-lg:24px; --maxw:54rem;
+  --shadow:0 2px 3px rgba(90,62,43,.04), 0 14px 32px -22px rgba(90,62,43,.45);
+  --f-head:"Noto Sans TC",-apple-system,BlinkMacSystemFont,sans-serif;
+  --f-body:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  --f-hand:"LXGW WenKai TC","Noto Sans TC",serif;
+  --f-num:"Baloo 2","Noto Sans TC",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --cream:#231A12; --cream-2:#2C2118; --card:#2F241A;
+    --ink:#F6EAD7; --ink-soft:#C3AC93; --ink-faint:#9B8469;
+    --line:#42341F; --line-strong:#57462C;
+    --orange:#F2884E; --orange-deep:#FFA271; --orange-wash:#3D2617;
+    --gold:#F5C560; --gold-wash:#3B2E14;
+    --sage:#93A868; --sage-deep:#75894C; --sage-wash:#2A2E1D;
+    --blue:#86B4EE;
+    --shadow:0 2px 3px rgba(0,0,0,.35), 0 14px 34px -22px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --cream:#231A12; --cream-2:#2C2118; --card:#2F241A;
+  --ink:#F6EAD7; --ink-soft:#C3AC93; --ink-faint:#9B8469;
+  --line:#42341F; --line-strong:#57462C;
+  --orange:#F2884E; --orange-deep:#FFA271; --orange-wash:#3D2617;
+  --gold:#F5C560; --gold-wash:#3B2E14;
+  --sage:#93A868; --sage-deep:#75894C; --sage-wash:#2A2E1D;
+  --blue:#86B4EE;
+  --shadow:0 2px 3px rgba(0,0,0,.35), 0 14px 34px -22px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);
+     font-size:17px;line-height:1.8;-webkit-font-smoothing:antialiased;padding-bottom:5.5rem}
+h1,h2,h3{font-family:var(--f-head);font-weight:900;text-wrap:balance;margin:0;line-height:1.4}
+p{margin:0}
+a{color:var(--blue);text-underline-offset:3px}
+:focus-visible{outline:2.5px solid var(--orange);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:1.25rem}
+
+.ribbon{position:relative;display:inline-block;margin-bottom:1.3rem}
+.ribbon span{position:relative;z-index:2;display:inline-block;background:var(--sage);color:#FFF9EC;
+  padding:.45rem 1.5rem;border-radius:11px;font-family:var(--f-head);font-weight:900;font-size:1.18rem;letter-spacing:.1em}
+.ribbon::before,.ribbon::after{content:"";position:absolute;top:50%;transform:translateY(-50%);
+  width:18px;height:27px;background:var(--sage-deep);z-index:1;border-radius:3px}
+.ribbon::before{left:-11px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,36% 50%)}
+.ribbon::after{right:-11px;clip-path:polygon(0 0,100% 0,64% 50%,100% 100%,0 100%)}
+
+/* ── header ── */
+.top{position:relative;overflow:hidden;background:
+  radial-gradient(80% 70% at 85% 4%, var(--gold-wash), transparent 62%),
+  radial-gradient(70% 60% at 6% 30%, var(--orange-wash), transparent 66%), var(--cream)}
+.top canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.top-in{position:relative;z-index:1;padding-block:3.25rem 2.5rem;display:flex;flex-direction:column;gap:.9rem;align-items:flex-start}
+.pill{background:var(--orange);color:#FFF6EC;font-weight:700;font-size:.86rem;letter-spacing:.18em;padding:.3rem 1.1rem;border-radius:999px}
+.top h1{font-size:clamp(2rem,7vw,2.9rem);letter-spacing:.05em}
+.top .sub{font-family:var(--f-hand);font-size:1.2rem;color:var(--ink-soft);letter-spacing:.06em}
+
+/* ── hero number ── */
+.hero-n{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;margin-top:.4rem}
+.hero-n .big{font-family:var(--f-num);font-weight:800;font-size:clamp(4rem,17vw,6.5rem);line-height:1;color:var(--orange)}
+.hero-n .unit{font-family:var(--f-head);font-weight:900;font-size:1.4rem}
+.hero-n .cap{font-size:1rem;color:var(--ink-soft);letter-spacing:.08em}
+
+/* ── countdown ── */
+.count{display:inline-flex;align-items:center;gap:.6rem;flex-wrap:wrap;
+  background:var(--gold);color:#4A3316;font-weight:700;padding:.5rem 1.3rem;border-radius:999px;font-size:1.02rem}
+.count b{font-family:var(--f-num);font-size:1.5rem;line-height:1;font-weight:800}
+.count.over{background:var(--line-strong);color:var(--ink-soft)}
+
+.hills{display:block;width:100%;height:clamp(60px,9vw,96px);margin-top:-1px}
+
+section{padding-block:2.4rem}
+.band{background:var(--cream-2)}
+
+/* ── stat tiles ── */
+.stats{display:grid;grid-template-columns:1fr;gap:.9rem}
+@media (min-width:560px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);
+  padding:1.15rem 1.3rem;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.1rem}
+.stat .k{font-size:.76rem;letter-spacing:.18em;color:var(--sage-deep);font-weight:700}
+.stat .v{font-family:var(--f-num);font-size:1.9rem;font-weight:800;line-height:1.25}
+.stat .v small{font-family:var(--f-head);font-size:.5em;font-weight:900;margin-left:.15em}
+.stat .n{font-size:.86rem;color:var(--ink-soft)}
+
+/* ── age distribution ── */
+.chart{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius-lg);
+  padding:1.5rem 1.4rem;box-shadow:var(--shadow)}
+.chart-h{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.15rem}
+.chart-h h3{font-size:1.1rem}
+.chart-h .note{font-size:.85rem;color:var(--ink-faint)}
+.bars{display:flex;flex-direction:column;gap:.7rem}
+.row{display:grid;grid-template-columns:4.6rem 1fr;align-items:center;gap:.85rem}
+.row .lbl{font-size:.92rem;color:var(--ink-soft);text-align:right;font-variant-numeric:tabular-nums}
+.track{position:relative;height:1.65rem;background:var(--cream-2);border-radius:5px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--orange);border-radius:0 5px 5px 0;
+  transition:width .9s cubic-bezier(.22,1,.36,1);display:flex;align-items:center;justify-content:flex-end;padding-right:.5rem}
+.fill.zero{background:transparent}
+.row .val{font-family:var(--f-num);font-weight:800;font-size:.92rem;color:#FFF6EC}
+.fill.thin .val{color:var(--ink);position:absolute;left:calc(var(--w) + .5rem)}
+.row{cursor:default}
+.row:hover .track{outline:2px solid var(--gold);outline-offset:2px}
+.row:hover .fill{filter:brightness(1.08)}
+
+/* ── name list ── */
+.names{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{display:inline-flex;align-items:center;gap:.45rem;background:var(--card);
+  border:1.5px solid var(--line);border-radius:999px;padding:.42rem 1rem;font-size:1.02rem;
+  box-shadow:var(--shadow);animation:pop .45s cubic-bezier(.22,1,.36,1) backwards}
+.chip .dot{width:.5rem;height:.5rem;border-radius:50%;background:var(--orange);flex:none}
+.chip .age{font-family:var(--f-num);font-weight:700;font-size:.86rem;color:var(--ink-faint)}
+@keyframes pop{from{opacity:0;transform:translateY(6px) scale(.96)}to{opacity:1;transform:none}}
+.privacy{margin-top:1rem;font-size:.87rem;color:var(--ink-faint);line-height:1.7}
+
+.updated{font-size:.85rem;color:var(--ink-faint);letter-spacing:.04em}
+
+footer{border-top:2px dashed var(--line-strong);padding-block:1.8rem 3rem;color:var(--ink-faint);
+  font-size:.87rem;display:flex;flex-direction:column;gap:.35rem}
+
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.7rem;border-radius:999px;
+  border:2px solid transparent;font-family:var(--f-body);font-size:1rem;font-weight:700;letter-spacing:.06em;
+  cursor:pointer;text-decoration:none;transition:transform .15s ease,background .2s ease,border-color .2s ease}
+.btn-primary{background:var(--orange);color:#FFF6EC;border-color:var(--orange)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--orange-deep);border-color:var(--orange-deep)}
+.btn-ghost{background:transparent;color:var(--sage-deep);border-color:var(--sage)}
+.btn-ghost:hover{background:var(--sage-wash)}
+.cta-row{display:flex;flex-wrap:wrap;gap:.7rem}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--card) 94%,transparent);
+  backdrop-filter:blur(12px);border-top:2px solid var(--line-strong);padding:.65rem 1.25rem calc(.65rem + env(safe-area-inset-bottom))}
+.dock-in{max-width:var(--maxw);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.dock .lbl{display:flex;flex-direction:column;line-height:1.45;min-width:0}
+.dock .lbl b{font-family:var(--f-head);font-weight:900;font-size:1rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dock .lbl span{font-size:.78rem;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dock .btn{padding:.65rem 1.35rem;flex:none}
+
+@media (max-width:559px){
+  body{line-height:1.75}
+  section{padding-block:1.9rem}
+  .top-in{padding-block:2.6rem 2rem}
+  .chart{padding:1.25rem 1.1rem}
+  .row{grid-template-columns:4.1rem 1fr;gap:.6rem}
+  .dock .lbl span{display:none}
+}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <canvas id="leaves" aria-hidden="true"></canvas>
+  <div class="wrap top-in">
+    <span class="pill">2026 教定區秋聚</span>
+    <h1>報名進度</h1>
+    <p class="sub">相聚在秋日，等你一起來</p>
+
+    <div class="hero-n">
+      <span class="big" id="n-total">0</span>
+      <span class="unit">位教定家人已報名</span>
+    </div>
+
+    <p class="count" id="countdown">報名截止 <b>9/30</b> （三）</p>
+  </div>
+  <svg class="hills" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true"></svg>
+</header>
+
+<main>
+  <section class="wrap">
+    <div class="stats">
+      <div class="stat">
+        <span class="k">報名人數</span>
+        <span class="v" id="s-total">0<small>位</small></span>
+        <span class="n">截止前都還可以報名</span>
+      </div>
+      <div class="stat">
+        <span class="k">年齡範圍</span>
+        <span class="v" id="s-range">–</span>
+        <span class="n">老中青都有，歡迎揪伴</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band"><div class="wrap">
+    <h2 class="ribbon"><span>年齡分佈</span></h2>
+    <div class="chart">
+      <div class="chart-h">
+        <h3>各年齡層報名人數</h3>
+        <span class="note">以 2026/11/21 活動當日計算</span>
+      </div>
+      <div class="bars" id="bars"></div>
+    </div>
+  </div></section>
+
+  <section class="wrap">
+    <h2 class="ribbon"><span>報名名單</span></h2>
+    <div class="names" id="names"></div>
+    <p class="privacy">
+      為保護個人隱私，姓名中間以「Ｏ」代替，只顯示姓名與年齡，不會公開電話、生日或身分證字號。<br>
+      名單如有誤，請聯繫承辦人員協助更正。
+    </p>
+  </section>
+
+  <section class="band"><div class="wrap">
+    <h2 class="ribbon"><span>還沒報名嗎</span></h2>
+    <p style="color:var(--ink-soft);margin-bottom:1.2rem">
+      11/21（六）–11/22（日）兩天一夜，藍鵲渡假莊園檜意村區。<br>
+      成人 2,500 元、學生 1,500 元，幼稚園與嬰幼兒免費，名額有限。
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" id="cta" href="https://forms.gle/h5HgSjjmsFeQ72cX6" target="_blank" rel="noopener">我要報名</a>
+      <a class="btn btn-ghost" href="rooms.html">查看分房</a>
+      <a class="btn btn-ghost" href="index.html">回活動網站</a>
+    </div>
+  </div></section>
+
+  <footer class="wrap">
+    <div class="updated">名單更新時間：<span id="updated">2026/09/01</span></div>
+    <div>主辦｜教定區　‧　本頁僅供報名進度參考，實際以承辦人員確認為準</div>
+  </footer>
+</main>
+
+<div class="dock">
+  <div class="dock-in">
+    <span class="lbl">
+      <b id="dock-n">報名中</b>
+      <span id="dock-sub">報名至 9/30（三）</span>
+    </span>
+    <a class="btn btn-primary" id="cta-dock" href="https://forms.gle/h5HgSjjmsFeQ72cX6" target="_blank" rel="noopener">我要報名</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ───────── 資料來源 ───────── */
+  // 報名表 → 跳板試算表（只含遮罩姓名與年齡）→ 發布成 CSV
+  var CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRAQgIEYVWPOQUYLaTkMMBma3TmiglvfcHvlznukG_8S6z6O9KDox3Tk6u53kEKzetjKZ3rQKI0t070/pub?output=csv";
+  var SNAPSHOT = [{"n": "周Ｏ順", "a": 47}, {"n": "莊Ｏ容", "a": 47}, {"n": "陳Ｏ秀", "a": 60}, {"n": "張Ｏ環", "a": 58}, {"n": "李Ｏ卿", "a": 38}, {"n": "莊Ｏ勳", "a": 78}, {"n": "蔡Ｏ烽", "a": 72}, {"n": "張Ｏ光", "a": 74}, {"n": "林Ｏ", "a": 71}, {"n": "李Ｏ德", "a": 28}];          // 抓不到 CSV 時的備援
+  var SNAPSHOT_DATE = "2026/09/01";
+  var DEADLINE = new Date(2026, 8, 30, 23, 59, 59); // 2026/9/30
+  var DL_LABEL = "9/30";
+
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $ = function(id){ return document.getElementById(id); };
+  var shown = 0;
+
+  /* ───────── 數字跑動 ───────── */
+  function countUp(el, from, to, dur){
+    if(reduce || from === to){ el.textContent = to; return; }
+    var t0 = null;
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / dur);
+      el.textContent = Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3)));
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ───────── 倒數（用瀏覽器當下時間，每天自己變）───────── */
+  function renderCountdown(){
+    var cd = $("countdown");
+    var days = Math.ceil((DEADLINE - new Date()) / 86400000);
+    if(days > 0){
+      cd.className = "count";
+      cd.innerHTML = '距報名截止 ' + DL_LABEL + '（三）還有 <b>' + days + '</b> 天';
+    } else {
+      cd.className = "count over";
+      cd.textContent = "報名已於 " + DL_LABEL + "（三）截止";
+      $("dock-sub").textContent = "報名已截止";
+    }
+  }
+
+  /* ───────── 主畫面 ───────── */
+  var BUCKETS = [
+    ["未滿 20", 0, 19], ["20–29", 20, 29], ["30–39", 30, 39],
+    ["40–49", 40, 49], ["50–59", 50, 59], ["60–69", 60, 69], ["70 以上", 70, 999]
+  ];
+
+  function render(people){
+    var ages = people.map(function(p){ return p.a; }).filter(function(a){ return a > 0; });
+    var total = people.length;
+    var lo = ages.length ? Math.min.apply(null, ages) : 0;
+    var hi = ages.length ? Math.max.apply(null, ages) : 0;
+
+    countUp($("n-total"), shown, total, 1000);
+    shown = total;
+    $("s-total").innerHTML = total + '<small>位</small>';
+    $("s-range").innerHTML = ages.length ? (lo + ' – ' + hi + '<small>歲</small>') : '–';
+    $("dock-n").textContent = "已報名 " + total + " 位";
+
+    var counts = BUCKETS.map(function(b){
+      return ages.filter(function(a){ return a >= b[1] && a <= b[2]; }).length;
+    });
+    var first = 0, last = counts.length - 1;
+    while(first < last && counts[first] === 0) first++;
+    while(last > first && counts[last] === 0) last--;
+    var maxC = Math.max.apply(null, counts) || 1;
+
+    var barsEl = $("bars");
+    barsEl.textContent = "";
+    for(var i = first; i <= last; i++){
+      (function(c, label){
+        var pct = (c / maxC) * 100, thin = pct < 16;
+        var row = document.createElement("div");
+        row.className = "row";
+        row.innerHTML =
+          '<span class="lbl">' + label + '</span>' +
+          '<div class="track"><div class="fill' + (c === 0 ? ' zero' : '') + (thin ? ' thin' : '') +
+          '" data-w="' + pct + '" style="--w:' + pct + '%"><span class="val">' + c + '</span></div></div>';
+        var pctTxt = total ? Math.round(c / total * 100) : 0;
+        row.setAttribute("title", label + " 歲　" + c + " 位　" + pctTxt + "%");
+        row.setAttribute("role", "img");
+        row.setAttribute("aria-label", label + " 歲：" + c + " 位，佔 " + pctTxt + "%");
+
+        // 滑過（手機是點一下）數字從 1 跑到該年齡層人數
+        var valEl = row.querySelector(".val"), raf = null;
+        row.addEventListener("pointerenter", function(){
+          if(reduce || c <= 1){ valEl.textContent = c; return; }
+          var t0 = null;
+          if(raf) cancelAnimationFrame(raf);
+          (function tick(ts){
+            if(!t0) t0 = ts;
+            var pr = Math.min(1, (ts - t0) / 600);
+            valEl.textContent = Math.max(1, Math.round(1 + (c - 1) * (1 - Math.pow(1 - pr, 3))));
+            if(pr < 1) raf = requestAnimationFrame(tick);
+          })(performance.now());
+        });
+        row.addEventListener("pointerleave", function(){
+          if(raf) cancelAnimationFrame(raf);
+          valEl.textContent = c;
+        });
+        barsEl.appendChild(row);
+      })(counts[i], BUCKETS[i][0]);
+    }
+    requestAnimationFrame(function(){
+      Array.prototype.forEach.call(barsEl.querySelectorAll(".fill"), function(f, i){
+        var w = f.getAttribute("data-w") + "%";
+        if(reduce){ f.style.width = w; return; }
+        setTimeout(function(){ f.style.width = w; }, 100 + i * 80);
+      });
+    });
+
+    var namesEl = $("names");
+    namesEl.textContent = "";
+    people.forEach(function(p, i){
+      var s = document.createElement("span");
+      s.className = "chip";
+      s.style.animationDelay = (reduce ? 0 : 0.3 + i * 0.045) + "s";
+      s.innerHTML = '<span class="dot"></span>' + p.n;
+      namesEl.appendChild(s);
+    });
+  }
+
+  /* ───────── 讀取即時名單 ───────── */
+  function parseCSV(text){
+    var out = [];
+    text.split(/\r?\n/).forEach(function(line){
+      if(!line.trim()) return;
+      var cells = line.split(",");
+      var name = (cells[0] || "").trim().replace(/^"|"$/g, "");
+      var age = parseInt((cells[1] || "").trim().replace(/^"|"$/g, ""), 10);
+      if(!name) return;
+      if(/^(姓名|name)$/i.test(name)) return;      // 標題列
+      out.push({ n: name, a: isNaN(age) ? 0 : age });
+    });
+    return out;
+  }
+
+  function stamp(){
+    var d = new Date();
+    return d.getFullYear() + "/" + String(d.getMonth()+1).padStart(2,"0") + "/" +
+           String(d.getDate()).padStart(2,"0") + " " +
+           String(d.getHours()).padStart(2,"0") + ":" + String(d.getMinutes()).padStart(2,"0");
+  }
+
+  renderCountdown();
+  render(SNAPSHOT);
+  $("updated").textContent = SNAPSHOT_DATE + "（快照）";
+
+  if(CSV_URL){
+    fetch(CSV_URL, { cache: "no-store" })
+      .then(function(r){ if(!r.ok) throw new Error("bad response"); return r.text(); })
+      .then(function(t){
+        var live = parseCSV(t);
+        if(!live.length) throw new Error("empty");
+        render(live);
+        $("updated").textContent = stamp() + "（即時同步自報名表）";
+      })
+      .catch(function(){
+        $("updated").textContent = SNAPSHOT_DATE + "（快照，暫時讀不到即時名單）";
+      });
+  }
+
+  /* ───────── 飄落的楓葉 ───────── */
+  var MAPLE_D = "M50,3L57,24L69,18L66,33L84,28L79,41L97,47L74,59L80,71L57,67L52,97L48,97L43,67L20,71L26,59L3,47L21,41L16,28L34,33L31,18L43,24Z";
+  var cv = $("leaves");
+  if(cv && cv.getContext){
+    var ctx = cv.getContext("2d"), w=0, h=0, leaves=[], raf=null;
+    var pal = ["#E4692C","#C9531C","#F3B93F","#B33F1C","#D98B2B"];
+    var path = (typeof Path2D !== "undefined") ? new Path2D(MAPLE_D) : null;
+    function resize(){
+      var dpr=Math.min(window.devicePixelRatio||1,2), r=cv.getBoundingClientRect();
+      w=r.width; h=r.height;
+      cv.width=Math.max(1,Math.round(w*dpr)); cv.height=Math.max(1,Math.round(h*dpr));
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    function seed(){
+      var n = w<620?9:16; leaves=[];
+      for(var i=0;i<n;i++) leaves.push({x:Math.random()*w,y:Math.random()*h,r:6+Math.random()*8,
+        vy:.12+Math.random()*.24,rot:Math.random()*6.3,vr:(Math.random()-.5)*.014,
+        sway:.4+Math.random()*1,phase:Math.random()*6.3,a:.2+Math.random()*.24,
+        c:pal[(Math.random()*pal.length)|0]});
+    }
+    function leaf(L){
+      ctx.save(); ctx.translate(L.x,L.y); ctx.rotate(L.rot);
+      ctx.globalAlpha=L.a; ctx.fillStyle=L.c;
+      if(path){ var sc=(L.r*2.1)/100; ctx.scale(sc,sc); ctx.translate(-50,-50); ctx.fill(path); }
+      else { ctx.beginPath(); ctx.arc(0,0,L.r*.6,0,6.3); ctx.fill(); }
+      ctx.restore();
+    }
+    function frame(ts){
+      ctx.clearRect(0,0,w,h);
+      for(var i=0;i<leaves.length;i++){
+        var L=leaves[i];
+        L.y+=L.vy; L.x+=Math.sin(ts/1400+L.phase)*L.sway*.35; L.rot+=L.vr;
+        if(L.y-L.r>h){L.y=-L.r*2;L.x=Math.random()*w;}
+        if(L.x<-30)L.x=w+20; if(L.x>w+30)L.x=-20;
+        leaf(L);
+      }
+      raf=requestAnimationFrame(frame);
+    }
+    function start(){ resize(); seed(); if(raf)cancelAnimationFrame(raf);
+      if(reduce){ ctx.clearRect(0,0,w,h); leaves.forEach(leaf); } else raf=requestAnimationFrame(frame); }
+    start();
+    var rt; window.addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(start,180);});
+  }
+
+  /* 山丘 */
+  var NS = "http://www.w3.org/2000/svg";
+  function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  var H = document.querySelector(".hills");
+  if(H){
+    var css = getComputedStyle(document.documentElement);
+    var gold = (css.getPropertyValue("--gold-wash")||"#FCEFCE").trim();
+    var sage = (css.getPropertyValue("--sage-wash")||"#EBEEDD").trim();
+    H.appendChild(el("path",{d:"M0,66 C160,32 300,90 460,60 C620,30 760,82 920,54 C1040,32 1140,62 1200,48 L1200,110 L0,110 Z",fill:gold}));
+    function cypress(x,base,hh,ww,fill){
+      var g=el("g",{opacity:".88"});
+      g.appendChild(el("rect",{x:(x-1.1).toFixed(1),y:(base-1).toFixed(1),width:"2.2",height:"9",rx:"1.1",fill:"#A8763F"}));
+      [[0.58,1.00,0.00],[0.82,0.76,0.30],[1.00,0.52,0.58]].forEach(function(t){
+        var apex=base-hh*t[0],bw=ww*t[1],by=base-hh*t[2];
+        g.appendChild(el("polygon",{points:x.toFixed(1)+","+apex.toFixed(1)+" "+(x+bw).toFixed(1)+","+by.toFixed(1)+" "+(x-bw).toFixed(1)+","+by.toFixed(1),fill:fill}));
+      });
+      H.appendChild(g);
+    }
+    var cols=["#C9531C","#E4692C","#F3B93F","#E4692C","#C9531C","#F3B93F"];
+    [[70,58],[150,52],[240,62],[330,56],[430,64],[530,54],[640,62],[750,58],[860,52],[970,60],[1080,54],[1160,60]]
+      .forEach(function(p,i){cypress(p[0],p[1],24+(i%4)*5,5.4+(i%3)*1,cols[i%cols.length]);});
+    H.appendChild(el("path",{d:"M0,86 C200,58 350,98 560,78 C770,56 930,94 1200,72 L1200,110 L0,110 Z",fill:sage}));
+  }
+})();
+</script>
+</body>
+</html>

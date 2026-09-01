@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="2026 教定區秋聚 房間分配作業表">
+<meta name="theme-color" content="#FDF6EA">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%81%3C/text%3E%3C/svg%3E">
+
+<meta name="robots" content="noindex, nofollow">
+<title>秋聚房間分配</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+
+<style>
+:root{
+  --cream:#FDF6EA; --cream-2:#F8EDDB; --card:#FFFCF5;
+  --ink:#5A3E2B; --ink-soft:#8A6B52; --ink-faint:#A98F76;
+  --line:#EADCC3; --line-strong:#DCC7A4;
+  --orange:#E4692C; --orange-deep:#C9531C; --orange-wash:#FBE6D6;
+  --gold:#F3B93F; --gold-wash:#FCEFCE;
+  --sage:#7C8F55; --sage-deep:#5F7040; --sage-wash:#EBEEDD;
+  --blue:#2D5FA8;
+  --radius:16px; --radius-lg:22px; --maxw:70rem;
+  --shadow:0 2px 3px rgba(90,62,43,.04), 0 12px 28px -20px rgba(90,62,43,.45);
+  --f-head:"Noto Sans TC",-apple-system,BlinkMacSystemFont,sans-serif;
+  --f-body:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
+  --f-num:"Baloo 2","Noto Sans TC",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --cream:#231A12; --cream-2:#2C2118; --card:#2F241A;
+    --ink:#F6EAD7; --ink-soft:#C3AC93; --ink-faint:#9B8469;
+    --line:#42341F; --line-strong:#57462C;
+    --orange:#F2884E; --orange-deep:#FFA271; --orange-wash:#3D2617;
+    --gold:#F5C560; --gold-wash:#3B2E14;
+    --sage:#93A868; --sage-deep:#75894C; --sage-wash:#2A2E1D;
+    --blue:#86B4EE;
+    --shadow:0 2px 3px rgba(0,0,0,.35), 0 12px 30px -20px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --cream:#231A12; --cream-2:#2C2118; --card:#2F241A;
+  --ink:#F6EAD7; --ink-soft:#C3AC93; --ink-faint:#9B8469;
+  --line:#42341F; --line-strong:#57462C;
+  --orange:#F2884E; --orange-deep:#FFA271; --orange-wash:#3D2617;
+  --gold:#F5C560; --gold-wash:#3B2E14;
+  --sage:#93A868; --sage-deep:#75894C; --sage-wash:#2A2E1D;
+  --blue:#86B4EE;
+  --shadow:0 2px 3px rgba(0,0,0,.35), 0 12px 30px -20px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;padding-bottom:5.5rem}
+h1,h2,h3{font-family:var(--f-head);font-weight:900;margin:0;line-height:1.4}
+p{margin:0}
+a{color:var(--blue);text-underline-offset:3px}
+:focus-visible{outline:2.5px solid var(--orange);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:1.25rem}
+
+.ribbon{position:relative;display:inline-block;margin-bottom:1rem}
+.ribbon span{position:relative;z-index:2;display:inline-block;background:var(--sage);color:#FFF9EC;
+  padding:.4rem 1.35rem;border-radius:10px;font-family:var(--f-head);font-weight:900;font-size:1.08rem;letter-spacing:.1em}
+.ribbon::before,.ribbon::after{content:"";position:absolute;top:50%;transform:translateY(-50%);
+  width:16px;height:24px;background:var(--sage-deep);z-index:1;border-radius:3px}
+.ribbon::before{left:-10px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,36% 50%)}
+.ribbon::after{right:-10px;clip-path:polygon(0 0,100% 0,64% 50%,100% 100%,0 100%)}
+
+.top{background:radial-gradient(70% 70% at 88% 6%, var(--gold-wash), transparent 60%),
+  radial-gradient(60% 60% at 5% 40%, var(--orange-wash), transparent 64%), var(--cream);
+  border-bottom:2px dashed var(--line-strong)}
+.top-in{padding-block:2.2rem 1.6rem;display:flex;flex-direction:column;gap:.75rem;align-items:flex-start}
+.pill{background:var(--orange);color:#FFF6EC;font-weight:700;font-size:.82rem;letter-spacing:.16em;padding:.28rem 1rem;border-radius:999px}
+.top h1{font-size:clamp(1.7rem,5.5vw,2.4rem);letter-spacing:.05em}
+.top .sub{color:var(--ink-soft);font-size:.98rem}
+
+.stats{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
+.stat{background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:.35rem 1rem;
+  font-size:.92rem;display:inline-flex;align-items:center;gap:.45rem}
+.stat b{font-family:var(--f-num);font-size:1.15rem;font-weight:800;color:var(--orange)}
+
+section{padding-block:1.6rem}
+.band{background:var(--cream-2)}
+.sec-h{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.sec-h .hint{font-size:.86rem;color:var(--ink-faint)}
+
+/* ── 待分配 ── */
+.pool{background:var(--card);border:2px dashed var(--line-strong);border-radius:var(--radius-lg);
+  padding:1rem 1.1rem;min-height:4.6rem;display:flex;flex-wrap:wrap;gap:.5rem;align-content:flex-start}
+.pool.drop{border-color:var(--orange);background:var(--orange-wash)}
+.pool .empty{color:var(--ink-faint);font-size:.92rem;align-self:center}
+
+/* ── 人名 ── */
+.person{
+  display:inline-flex;align-items:center;gap:.4rem;background:var(--card);
+  border:1.5px solid var(--line-strong);border-radius:999px;padding:.35rem .85rem;
+  font-size:.98rem;box-shadow:var(--shadow);user-select:none;-webkit-user-select:none;
+  touch-action:none;
+}
+.person .dot{width:.45rem;height:.45rem;border-radius:50%;background:var(--orange);flex:none}
+body.editing .person{cursor:grab}
+body.editing .person:active{cursor:grabbing}
+.person.picked{border-color:var(--orange);background:var(--orange-wash);box-shadow:0 0 0 3px var(--gold-wash)}
+.person.ghost{opacity:.35}
+#drag-layer{position:fixed;inset:0;pointer-events:none;z-index:60}
+#drag-layer .person{position:absolute;transform:translate(-50%,-50%) scale(1.06);
+  box-shadow:0 14px 30px -10px rgba(90,62,43,.55);border-color:var(--orange)}
+
+/* ── 房間 ── */
+.rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.9rem}
+.room{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);
+  padding:.85rem .95rem;display:flex;flex-direction:column;gap:.55rem;box-shadow:var(--shadow);
+  transition:border-color .15s ease,background .15s ease}
+.room.big{grid-column:1/-1;border-color:var(--sage);background:linear-gradient(180deg,var(--card),color-mix(in srgb,var(--sage) 6%,var(--card)))}
+.room.drop{border-color:var(--orange);background:var(--orange-wash)}
+.room.full{border-color:var(--line-strong)}
+.room-h{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem}
+.room-h .nm{font-family:var(--f-head);font-weight:900;font-size:1rem;letter-spacing:.04em}
+.room-h .cap{font-family:var(--f-num);font-size:.86rem;font-weight:700;color:var(--ink-faint)}
+.room.filled .room-h .cap{color:var(--sage-deep)}
+.room-b{display:flex;flex-wrap:wrap;gap:.45rem;min-height:2.1rem;align-content:flex-start}
+.slot{border:1.5px dashed var(--line-strong);border-radius:999px;padding:.35rem .85rem;
+  font-size:.88rem;color:var(--ink-faint);opacity:.6}
+.room.big .room-b{min-height:4.4rem}
+
+.emptynote{grid-column:1/-1;font-size:.9rem;color:var(--ink-faint);letter-spacing:.05em;padding:.6rem 0}
+.controls{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.6rem 1.25rem;border-radius:999px;
+  border:2px solid transparent;font-family:var(--f-body);font-size:.95rem;font-weight:700;letter-spacing:.04em;
+  cursor:pointer;text-decoration:none;transition:transform .15s ease,background .2s ease,border-color .2s ease}
+.btn-primary{background:var(--orange);color:#FFF6EC;border-color:var(--orange)}
+.btn-primary:hover{transform:translateY(-2px);background:var(--orange-deep);border-color:var(--orange-deep)}
+.btn-ghost{background:transparent;color:var(--sage-deep);border-color:var(--sage)}
+.btn-ghost:hover{background:var(--sage-wash)}
+.btn-quiet{background:transparent;color:var(--ink-soft);border-color:var(--line-strong)}
+.btn-quiet:hover{border-color:var(--ink-faint)}
+.btn[disabled]{opacity:.45;pointer-events:none}
+
+.note{font-size:.88rem;color:var(--ink-soft);line-height:1.7}
+.viewonly{background:var(--sage-wash);border:1.5px solid var(--sage);border-radius:var(--radius);
+  padding:.9rem 1.1rem;font-size:.92rem;color:var(--sage-deep);display:flex;gap:.6rem;align-items:flex-start}
+body.editing .viewonly{display:none}
+.admin-only{display:none}
+body.editing .admin-only{display:block}
+.editbar{display:none;background:var(--orange-wash);border:1.5px solid var(--orange);border-radius:var(--radius);
+  padding:.9rem 1.1rem;font-size:.92rem;color:var(--orange-deep)}
+body.editing .editbar{display:block}
+
+footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:var(--ink-faint);
+  font-size:.86rem;display:flex;flex-direction:column;gap:.3rem}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--card) 94%,transparent);
+  backdrop-filter:blur(12px);border-top:2px solid var(--line-strong);padding:.6rem 1.25rem calc(.6rem + env(safe-area-inset-bottom))}
+.dock-in{max-width:var(--maxw);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
+.dock .lbl{display:flex;flex-direction:column;line-height:1.4;min-width:0}
+.dock .lbl b{font-family:var(--f-head);font-weight:900;font-size:.96rem}
+.dock .lbl span{font-size:.78rem;color:var(--ink-soft)}
+
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:5.5rem;z-index:70;background:var(--ink);
+  color:var(--cream);padding:.65rem 1.15rem;border-radius:999px;font-size:.9rem;box-shadow:var(--shadow);
+  opacity:0;pointer-events:none;transition:opacity .25s ease;max-width:min(90vw,26rem);text-align:center}
+.toast.on{opacity:1}
+
+@media (max-width:559px){
+  .rooms{grid-template-columns:1fr}
+  .dock .lbl span{display:none}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none !important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <span class="pill">2026 教定區秋聚</span>
+    <h1>房間分配</h1>
+    <p class="sub">檜意村　8 人房 1 間　‧　4 人房 15 間</p>
+    <div class="stats">
+      <span class="stat">已分配 <b id="s-done">0</b> 人</span>
+      <span class="stat">待分配 <b id="s-left">0</b> 人</span>
+      <span class="stat">使用房間 <b id="s-rooms">0</b> 間</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap">
+    <div class="viewonly">
+      <span>🔎</span>
+      <span>在下面的房間卡片裡找到自己的名字，就知道住哪一間。<br>
+      名單還在調整中，最終以承辦人員公告為準。承辦人員請按右下角「編輯模式」。</span>
+    </div>
+    <div class="editbar">
+      ✏️ <strong>編輯模式</strong>：把人名拖到房間卡片即可分房。房間離得遠時，<strong>先點一下人名、再點房間</strong>更快。變更會自動存在這台裝置。改完請按「<strong>匯出分房檔</strong>」，把檔案上傳到網站才會讓大家看到。
+    </div>
+  </section>
+
+  <section class="wrap" style="padding-top:.6rem">
+    <div class="sec-h">
+      <h2 class="ribbon"><span>待分配</span></h2>
+      <span class="hint" id="pool-hint"></span>
+    </div>
+    <div class="pool" id="pool"></div>
+  </section>
+
+  <section class="band"><div class="wrap">
+    <h2 class="ribbon"><span>檜意村 8 人房</span></h2>
+    <div class="rooms" id="rooms-big"></div>
+  </div></section>
+
+  <section class="wrap">
+    <h2 class="ribbon"><span>4 人房 ‧ 15 間</span></h2>
+    <div class="rooms" id="rooms-small"></div>
+  </section>
+
+  <section class="band admin-only"><div class="wrap">
+    <h2 class="ribbon"><span>存檔與匯出</span></h2>
+    <div class="controls">
+      <button class="btn btn-primary" id="btn-export">匯出分房檔</button>
+      <button class="btn btn-quiet" id="btn-reset">全部清空</button>
+      <a class="btn btn-ghost" href="status.html">報名進度</a>
+      <a class="btn btn-ghost" href="index.html">活動網站</a>
+    </div>
+    <p class="note" style="margin-top:.9rem">
+      匯出會下載一個 <code>rooms-data.json</code>。把它上傳到網站的 repo 根目錄（覆蓋舊的），
+      其他人打開這頁就會看到最新分房。<br>
+      沒有匯出前，你的變更只留在這台裝置的瀏覽器裡，別人看不到。
+    </p>
+  </div></section>
+
+  <footer class="wrap">
+    <div>報名名單：<span id="src-people">讀取中…</span>　‧　分房資料：<span id="src">內建預設</span>　‧　最後更新：<span id="updated">—</span></div>
+    <div>主辦｜教定區　‧　姓名以「Ｏ」遮罩</div>
+    <div style="margin-top:.5rem"><a href="status.html">報名進度</a>　‧　<a href="index.html">活動網站</a></div>
+  </footer>
+</main>
+
+<div class="dock">
+  <div class="dock-in">
+    <span class="lbl">
+      <b id="dock-t">房間分配</b>
+      <span id="dock-s">檢視模式</span>
+    </span>
+    <button class="btn btn-primary" id="btn-edit">編輯模式</button>
+  </div>
+</div>
+
+<div id="drag-layer"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ───────── 設定 ───────── */
+  var PEOPLE = [{"n": "周Ｏ順"}, {"n": "莊Ｏ容"}, {"n": "陳Ｏ秀"}, {"n": "張Ｏ環"}, {"n": "李Ｏ卿"}, {"n": "莊Ｏ勳"}, {"n": "蔡Ｏ烽"}, {"n": "張Ｏ光"}, {"n": "林Ｏ"}, {"n": "李Ｏ德"}];              // 抓不到 CSV 時的備援名單
+  var CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRAQgIEYVWPOQUYLaTkMMBma3TmiglvfcHvlznukG_8S6z6O9KDox3Tk6u53kEKzetjKZ3rQKI0t070/pub?output=csv";              // 即時報名名單（遮罩姓名, 年齡）
+  var DEFAULT_ASSIGN = {};      // 內建預設分房
+  var PASS_HASH = "429b2e327f26b60f524e7842aecb04b6d436dd61e73ef86495e69eed2f7152b7";       // 編輯模式通行碼的 SHA-256
+  var DATA_URL = "rooms-data.json";     // 站上的分房檔
+  var LS_KEY = "qiuju2026-rooms";
+
+  var ROOMS = [{id:"R8", name:"檜意村 8 人房", cap:8, big:true}];
+  for(var i=1;i<=15;i++) ROOMS.push({id:"A"+i, name:"4 人房 "+String(i).padStart(2,"0"), cap:4, big:false});
+
+  var state = { assign: {}, updated: "" };
+  var editing = false;
+
+  /* ───────── 工具 ───────── */
+  var $ = function(id){ return document.getElementById(id); };
+  var toastEl = $("toast"), toastTimer;
+  function toast(msg){
+    toastEl.textContent = msg; toastEl.classList.add("on");
+    clearTimeout(toastTimer); toastTimer = setTimeout(function(){ toastEl.classList.remove("on"); }, 2400);
+  }
+  function today(){
+    var d = new Date();
+    return d.getFullYear()+"/"+String(d.getMonth()+1).padStart(2,"0")+"/"+String(d.getDate()).padStart(2,"0");
+  }
+  function roomById(id){ for(var i=0;i<ROOMS.length;i++) if(ROOMS[i].id===id) return ROOMS[i]; return null; }
+  function inRoom(id){ return PEOPLE.filter(function(p){ return state.assign[p.n] === id; }); }
+
+  /* ───────── 即時報名名單 ───────── */
+  function parseCSV(text){
+    var out = [];
+    text.split(/\r?\n/).forEach(function(line){
+      if(!line.trim()) return;
+      var name = (line.split(",")[0] || "").trim().replace(/^"|"$/g, "");
+      if(!name || /^(姓名|name)$/i.test(name)) return;
+      out.push({ n: name });
+    });
+    return out;
+  }
+  function loadPeople(){
+    if(!CSV_URL) return Promise.resolve(null);
+    return fetch(CSV_URL, {cache:"no-store"})
+      .then(function(r){ if(!r.ok) throw new Error("bad"); return r.text(); })
+      .then(function(t){ var l = parseCSV(t); return l.length ? l : null; })
+      .catch(function(){ return null; });
+  }
+
+  /* ───────── 載入：站上的檔案 > 本機暫存 > 內建 ───────── */
+  function load(){
+    var local = null;
+    try { local = JSON.parse(localStorage.getItem(LS_KEY) || "null"); } catch(e){}
+
+    fetch(DATA_URL, {cache:"no-store"}).then(function(r){
+      if(!r.ok) throw new Error("no file");
+      return r.json();
+    }).then(function(j){
+      var remote = { assign: j.assign || {}, updated: j.updated || "" };
+      // 本機若比站上的新，優先用本機（代表管理者還沒匯出）
+      if(local && local.updated && remote.updated && local.updated > remote.updated){
+        state = local; $("src").textContent = "本機暫存（尚未匯出）";
+      } else if(local && !remote.updated){
+        state = local; $("src").textContent = "本機暫存（尚未匯出）";
+      } else {
+        state = remote; $("src").textContent = "網站上的 rooms-data.json";
+      }
+      render();
+    }).catch(function(){
+      state = local || { assign: JSON.parse(JSON.stringify(DEFAULT_ASSIGN)), updated: "" };
+      $("src").textContent = local ? "本機暫存（尚未匯出）" : "內建預設";
+      render();
+    });
+  }
+  function save(){
+    state.updated = today();
+    try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch(e){}
+    render();
+  }
+
+  /* ───────── 畫面 ───────── */
+  function personEl(p){
+    var s = document.createElement("span");
+    s.className = "person";
+    s.dataset.name = p.n;
+    s.innerHTML = '<span class="dot"></span>' + p.n;
+    return s;
+  }
+
+  function render(){
+    var pool = $("pool");
+    pool.textContent = "";
+    var unassigned = PEOPLE.filter(function(p){ return !state.assign[p.n]; });
+    if(unassigned.length === 0){
+      var e = document.createElement("span");
+      e.className = "empty"; e.textContent = "全部都分好房了 🍁";
+      pool.appendChild(e);
+    } else {
+      unassigned.forEach(function(p){ pool.appendChild(personEl(p)); });
+    }
+    $("pool-hint").textContent = unassigned.length ? (unassigned.length + " 位待分配") : "";
+
+    var big = $("rooms-big"), small = $("rooms-small");
+    big.textContent = ""; small.textContent = "";
+
+    var hiddenEmpty = 0;
+    ROOMS.forEach(function(r){
+      var people = inRoom(r.id);
+      if(!editing && !r.big && people.length === 0){ hiddenEmpty++; return; }
+      var card = document.createElement("div");
+      card.className = "room" + (r.big ? " big" : "") + (people.length ? " filled" : "") + (people.length >= r.cap ? " full" : "");
+      card.dataset.room = r.id;
+
+      var h = document.createElement("div");
+      h.className = "room-h";
+      h.innerHTML = '<span class="nm">' + r.name + '</span><span class="cap">' + people.length + ' / ' + r.cap + '</span>';
+      card.appendChild(h);
+
+      var b = document.createElement("div");
+      b.className = "room-b";
+      people.forEach(function(p){ b.appendChild(personEl(p)); });
+      for(var k = people.length; k < r.cap; k++){
+        var slot = document.createElement("span");
+        slot.className = "slot"; slot.textContent = "空位";
+        b.appendChild(slot);
+      }
+      card.appendChild(b);
+      (r.big ? big : small).appendChild(card);
+    });
+    if(!editing && hiddenEmpty){
+      var note = document.createElement("p");
+      note.className = "emptynote";
+      note.textContent = "其餘 " + hiddenEmpty + " 間 4 人房尚未安排";
+      small.appendChild(note);
+    }
+
+    var done = PEOPLE.length - unassigned.length;
+    $("s-done").textContent = done;
+    $("s-left").textContent = unassigned.length;
+    $("s-rooms").textContent = ROOMS.filter(function(r){ return inRoom(r.id).length > 0; }).length;
+    $("updated").textContent = state.updated || "—";
+    $("dock-t").textContent = "已分配 " + done + " / " + PEOPLE.length + " 人";
+  }
+
+  /* ───────── 指派 ───────── */
+  function assign(name, roomId){
+    if(!name) return;
+    if(roomId){
+      var r = roomById(roomId);
+      if(!r) return;
+      if(state.assign[name] !== roomId && inRoom(roomId).length >= r.cap){
+        toast(r.name + " 已經滿了");
+        return;
+      }
+      state.assign[name] = roomId;
+    } else {
+      delete state.assign[name];
+    }
+    save();
+  }
+
+  /* ───────── 拖拉（滑鼠與觸控通用）＋ 點兩下 ───────── */
+  var picked = null, dragging = null, startX = 0, startY = 0, moved = false;
+  var layer = $("drag-layer");
+
+  function clearPicked(){
+    picked = null;
+    Array.prototype.forEach.call(document.querySelectorAll(".person.picked"), function(el){ el.classList.remove("picked"); });
+  }
+  function clearDrop(){
+    Array.prototype.forEach.call(document.querySelectorAll(".drop"), function(el){ el.classList.remove("drop"); });
+  }
+  function targetAt(x, y){
+    var el = document.elementFromPoint(x, y);
+    while(el && el !== document.body){
+      if(el.dataset && el.dataset.room) return el.dataset.room;
+      if(el.id === "pool") return "";
+      el = el.parentElement;
+    }
+    return null;
+  }
+
+  document.addEventListener("pointerdown", function(e){
+    if(!editing) return;
+    var el = e.target.closest ? e.target.closest(".person") : null;
+    if(!el) return;
+    e.preventDefault();
+    dragging = { name: el.dataset.name, src: el };
+    startX = e.clientX; startY = e.clientY; moved = false;
+    el.setPointerCapture && el.setPointerCapture(e.pointerId);
+  });
+
+  var autoTimer = null;
+  function autoScroll(y){
+    var edge = 90, speed = 0;
+    if(y < edge) speed = -Math.ceil((edge - y) / 6);
+    else if(y > window.innerHeight - edge) speed = Math.ceil((y - (window.innerHeight - edge)) / 6);
+    if(speed === 0){ if(autoTimer){ clearInterval(autoTimer); autoTimer = null; } return; }
+    if(autoTimer) return;
+    autoTimer = setInterval(function(){
+      if(!dragging){ clearInterval(autoTimer); autoTimer = null; return; }
+      window.scrollBy(0, speed * 2);
+    }, 16);
+  }
+  function stopScroll(){ if(autoTimer){ clearInterval(autoTimer); autoTimer = null; } }
+
+  document.addEventListener("pointermove", function(e){
+    if(!dragging) return;
+    var dx = e.clientX - startX, dy = e.clientY - startY;
+    if(!moved && Math.hypot(dx, dy) < 6) return;
+    if(!moved){
+      moved = true;
+      dragging.src.classList.add("ghost");
+      var clone = dragging.src.cloneNode(true);
+      clone.classList.remove("ghost","picked");
+      layer.appendChild(clone);
+      dragging.clone = clone;
+    }
+    dragging.clone.style.left = e.clientX + "px";
+    dragging.clone.style.top  = e.clientY + "px";
+    autoScroll(e.clientY);
+    clearDrop();
+    var t = targetAt(e.clientX, e.clientY);
+    if(t !== null){
+      var node = t === "" ? $("pool") : document.querySelector('[data-room="' + t + '"]');
+      if(node) node.classList.add("drop");
+    }
+  });
+
+  document.addEventListener("pointerup", function(e){
+    if(!dragging) return;
+    var d = dragging; dragging = null;
+    stopScroll();
+    clearDrop();
+    if(d.clone) d.clone.remove();
+    d.src.classList.remove("ghost");
+
+    if(!moved){
+      // 當成點選
+      if(picked === d.name){ clearPicked(); }
+      else { clearPicked(); picked = d.name; d.src.classList.add("picked"); toast("已選取 " + d.name + "，再點一個房間"); }
+      return;
+    }
+    var t = targetAt(e.clientX, e.clientY);
+    if(t !== null) assign(d.name, t);
+  });
+
+  document.addEventListener("click", function(e){
+    if(!editing || !picked) return;
+    // 點到「剛剛選起來的那個人」= 取消選取，交給 pointer 流程；點別人則視為點到他所在的房間
+    var pEl = e.target.closest ? e.target.closest(".person") : null;
+    if(pEl && pEl.dataset.name === picked) return;
+    var roomEl = e.target.closest ? e.target.closest("[data-room]") : null;
+    var poolEl = e.target.closest ? e.target.closest("#pool") : null;
+    if(roomEl){ assign(picked, roomEl.dataset.room); clearPicked(); }
+    else if(poolEl){ assign(picked, ""); clearPicked(); }
+  });
+
+  /* ───────── 編輯模式 ───────── */
+  async function sha256(str){
+    var buf = new TextEncoder().encode(str);
+    var h = await crypto.subtle.digest("SHA-256", buf);
+    return Array.prototype.map.call(new Uint8Array(h), function(b){ return b.toString(16).padStart(2,"0"); }).join("");
+  }
+
+  $("btn-edit").addEventListener("click", async function(){
+    if(editing){
+      editing = false;
+      document.body.classList.remove("editing");
+      $("btn-edit").textContent = "編輯模式";
+      $("dock-s").textContent = "檢視模式";
+      clearPicked();
+      render();
+      return;
+    }
+    var code = window.prompt("請輸入承辦人員通行碼");
+    if(code === null) return;
+    var ok = false;
+    try { ok = (await sha256(code.trim())) === PASS_HASH; } catch(e){ ok = false; }
+    if(!ok){ toast("通行碼不正確"); return; }
+    editing = true;
+    document.body.classList.add("editing");
+    $("btn-edit").textContent = "結束編輯";
+    $("dock-s").textContent = "編輯模式 ‧ 變更存在本機";
+    render();
+    toast("可以開始拖拉分房了");
+  });
+
+  /* ───────── 匯出 / 清空 ───────── */
+  $("btn-export").addEventListener("click", function(){
+    if(!editing){ toast("請先進入編輯模式"); return; }
+    state.updated = today();
+    var blob = new Blob([JSON.stringify({assign: state.assign, updated: state.updated}, null, 2)],
+                        {type:"application/json"});
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "rooms-data.json";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+    toast("已下載 rooms-data.json，記得上傳到網站");
+  });
+
+  $("btn-reset").addEventListener("click", function(){
+    if(!editing){ toast("請先進入編輯模式"); return; }
+    if(!window.confirm("確定要把所有人移回「待分配」嗎？")) return;
+    state.assign = {};
+    save();
+    toast("已清空");
+  });
+
+  loadPeople().then(function(live){
+    if(live){
+      PEOPLE = live;
+      $("src-people").textContent = "即時同步自報名表";
+    } else {
+      $("src-people").textContent = "備援名單";
+    }
+    load();
+  });
+})();
+</script>
+</body>
+</html>
