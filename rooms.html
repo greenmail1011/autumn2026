@@ -2,616 +2,776 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="2026 教定區秋聚 房間分配作業表">
-<meta name="theme-color" content="#FDF6EA">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%81%3C/text%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2f6f9e">
+<title>教定區｜彌勒山12人小組 9/27(日)~10/4(日) 勤務表</title>
+<meta name="description" content="9/27(日)~10/4(日) 教定區彌勒山12人小組勤務表。即日起～9/13 向區中心報名了愿日期。">
+<link rel="canonical" href="https://greenmail1011.github.io/12/">
 
-<meta name="robots" content="noindex, nofollow">
-<title>秋聚房間分配</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
-
+<!-- 分享到 LINE / Facebook 等平台時的預覽卡片（Open Graph）。
+     og:image 一定要用完整網址，圖檔要跟 index.html 放同一層。
+     改了 og.jpg 之後，把下面兩個 ?v=1 改成 ?v=2，對方才會看到新圖（平台會快取舊圖）。 -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="教定區｜彌勒山12人小組">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:url" content="https://greenmail1011.github.io/12/">
+<meta property="og:title" content="9/27(日)~10/4(日) 教定區｜彌勒山12人小組">
+<meta property="og:description" content="勤務表與報名流程。即日起～9/13 向區中心報名了愿日期。">
+<meta property="og:image" content="https://greenmail1011.github.io/12/og.jpg?v=1">
+<meta property="og:image:secure_url" content="https://greenmail1011.github.io/12/og.jpg?v=1">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="彌勒山12人小組勤務表">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="9/27(日)~10/4(日) 教定區｜彌勒山12人小組">
+<meta name="twitter:description" content="勤務表與報名流程。即日起～9/13 向區中心報名了愿日期。">
+<meta name="twitter:image" content="https://greenmail1011.github.io/12/og.jpg?v=1">
+<!-- Google Visualization Query：直接讀取已「發布到網路」的 Google 試算表 -->
+<script src="https://www.gstatic.com/charts/loader.js"></script>
 <style>
 :root{
-  --cream:#FDF6EA; --cream-2:#F8EDDB; --card:#FFFCF5;
-  --ink:#5A3E2B; --ink-soft:#8A6B52; --ink-faint:#A98F76;
-  --line:#EADCC3; --line-strong:#DCC7A4;
-  --orange:#E4692C; --orange-deep:#C9531C; --orange-wash:#FBE6D6;
-  --gold:#F3B93F; --gold-wash:#FCEFCE;
-  --sage:#7C8F55; --sage-deep:#5F7040; --sage-wash:#EBEEDD;
-  --blue:#2D5FA8;
-  --radius:16px; --radius-lg:22px; --maxw:70rem;
-  --shadow:0 2px 3px rgba(90,62,43,.04), 0 12px 28px -20px rgba(90,62,43,.45);
-  --f-head:"Noto Sans TC",-apple-system,BlinkMacSystemFont,sans-serif;
-  --f-body:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
-  --f-num:"Baloo 2","Noto Sans TC",system-ui,sans-serif;
+  --bg:#eef4f9;--ink:#152633;--muted:#54697c;--line:#c2d4e2;
+  --brand:#8fc0e2;--brand-dark:#2f6f9e;--brand-soft:#e8f2fa;
+  --today:#dcecfa;--today-head:#a6d0f0;
+  --stripe:#e4eef7;
+  --shadow:0 10px 28px rgba(24,58,84,.10)
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --cream:#231A12; --cream-2:#2C2118; --card:#2F241A;
-    --ink:#F6EAD7; --ink-soft:#C3AC93; --ink-faint:#9B8469;
-    --line:#42341F; --line-strong:#57462C;
-    --orange:#F2884E; --orange-deep:#FFA271; --orange-wash:#3D2617;
-    --gold:#F5C560; --gold-wash:#3B2E14;
-    --sage:#93A868; --sage-deep:#75894C; --sage-wash:#2A2E1D;
-    --blue:#86B4EE;
-    --shadow:0 2px 3px rgba(0,0,0,.35), 0 12px 30px -20px rgba(0,0,0,.9);
-  }
-}
-:root[data-theme="dark"]{
-  --cream:#231A12; --cream-2:#2C2118; --card:#2F241A;
-  --ink:#F6EAD7; --ink-soft:#C3AC93; --ink-faint:#9B8469;
-  --line:#42341F; --line-strong:#57462C;
-  --orange:#F2884E; --orange-deep:#FFA271; --orange-wash:#3D2617;
-  --gold:#F5C560; --gold-wash:#3B2E14;
-  --sage:#93A868; --sage-deep:#75894C; --sage-wash:#2A2E1D;
-  --blue:#86B4EE;
-  --shadow:0 2px 3px rgba(0,0,0,.35), 0 12px 30px -20px rgba(0,0,0,.9);
-}
-
 *{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);
-  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
-body.editing{padding-bottom:5.5rem}
-h1,h2,h3{font-family:var(--f-head);font-weight:900;margin:0;line-height:1.4}
-p{margin:0}
-a{color:var(--blue);text-underline-offset:3px}
-:focus-visible{outline:2.5px solid var(--orange);outline-offset:3px;border-radius:8px}
-.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:1.25rem}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
 
-.ribbon{position:relative;display:inline-block;margin-bottom:1rem}
-.ribbon span{position:relative;z-index:2;display:inline-block;background:var(--sage);color:#FFF9EC;
-  padding:.4rem 1.35rem;border-radius:10px;font-family:var(--f-head);font-weight:900;font-size:1.08rem;letter-spacing:.1em}
-.ribbon::before,.ribbon::after{content:"";position:absolute;top:50%;transform:translateY(-50%);
-  width:16px;height:24px;background:var(--sage-deep);z-index:1;border-radius:3px}
-.ribbon::before{left:-10px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,36% 50%)}
-.ribbon::after{right:-10px;clip-path:polygon(0 0,100% 0,64% 50%,100% 100%,0 100%)}
-
-.top{background:radial-gradient(70% 70% at 88% 6%, var(--gold-wash), transparent 60%),
-  radial-gradient(60% 60% at 5% 40%, var(--orange-wash), transparent 64%), var(--cream);
-  border-bottom:2px dashed var(--line-strong)}
-.top{position:relative}
-.gear{
-  position:absolute;top:1.5rem;right:1.25rem;z-index:5;
-  width:2.6rem;height:2.6rem;border-radius:50%;cursor:pointer;
-  background:var(--card);border:1.5px solid var(--line);color:var(--ink-faint);
-  display:grid;place-items:center;padding:0;
-  transition:color .2s ease,border-color .2s ease,transform .35s ease,background .2s ease;
+/* Banner */
+/* 預設（窄螢幕）：照片在上、文字在下，字絕不會蓋到建築 */
+.hero{position:relative;color:#fff;background:linear-gradient(135deg,#2b6b99 0%,#4e93c4 48%,#86bade 100%)}
+.hero-photo{height:clamp(125px,27vw,210px);background:url('banner.jpg') center 44%/cover no-repeat}
+.hero-inner{max-width:1500px;margin:0 auto;padding:14px 14px 16px}
+h1{margin:0;font-size:clamp(27px,4.5vw,42px);line-height:1.24;text-shadow:0 1px 3px rgba(4,20,34,.3)}
+h1 .t-date,h1 .t-name{display:block}
+/* 寬螢幕：高度夠了才把文字疊回照片上，並讓文字落在前方步道、不壓到建築 */
+@media(min-width:1080px){
+  .hero{display:flex;align-items:flex-end;overflow:hidden;min-height:calc(13.5vw + 160px)}
+  /* 用 px 定位而不是百分比：照片高度 = 寬度/2.157，圓頂頂端在圖高 33% 處，
+     所以 16px - 15.3vw 會把圓頂固定釘在距離頂端 16px，任何寬度都一樣，
+     建築下緣永遠落在文字上方約 26px。 */
+  .hero-photo{position:absolute;inset:0;height:auto;background-position:center calc(16px - 15.3vw)}
+  .hero::after{content:'';position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(6,26,43,0) 0%,rgba(6,26,43,.05) 42%,rgba(6,26,43,.5) 72%,rgba(6,26,43,.88) 100%)}
+  /* 上內距 = 建築下緣(16px + 13.44vw) + 26px 淨空，
+     所以不管階段折成幾行、文字多高，都一定從建築下方開始；
+     內容變高時 hero 會自己長高，不需要為每個斷點調數字。 */
+  .hero-inner{position:relative;z-index:1;width:100%;padding:calc(13.44vw + 42px) 14px 18px}
+  h1{text-shadow:0 2px 12px rgba(4,20,34,.75),0 1px 3px rgba(4,20,34,.6)}
 }
-.gear svg{width:1.3rem;height:1.3rem}
-.gear:hover{color:var(--orange);border-color:var(--orange);transform:rotate(60deg)}
-body.editing .gear{background:var(--orange);border-color:var(--orange);color:#FFF6EC;transform:rotate(120deg)}
-.top-in{padding-block:2.2rem 1.6rem;padding-right:3.6rem;display:flex;flex-direction:column;gap:.75rem;align-items:flex-start}
-.pill{background:var(--orange);color:#FFF6EC;font-weight:700;font-size:.82rem;letter-spacing:.16em;padding:.28rem 1rem;border-radius:999px}
-.top h1{font-size:clamp(1.7rem,5.5vw,2.4rem);letter-spacing:.05em}
-.top .sub{color:var(--ink-soft);font-size:.98rem}
+.steps{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.steps[hidden]{display:none}
+.step{display:flex;align-items:baseline;gap:8px;padding:6px 13px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.45);background:rgba(10,32,50,.34);color:#fff;
+  line-height:1.5;text-shadow:0 1px 4px rgba(4,20,34,.55);opacity:.88}
+.step .top{display:flex;align-items:baseline;gap:6px;flex:0 0 auto}
+.step .num{font-size:15px;font-weight:900;opacity:.85}
+.step .wh{font-size:13.5px;font-weight:800;opacity:.94;white-space:nowrap;font-variant-numeric:tabular-nums}
+.step .lb{font-size:15.5px;font-weight:900;white-space:nowrap}
+.step.on{background:#fff;border-color:#fff;color:#11486d;opacity:1;text-shadow:none;
+  box-shadow:0 3px 14px rgba(4,20,34,.32)}
+.step.on .wh{color:#2f6f9e;opacity:1}
 
-.stats{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.4rem}
-.stat{background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:.35rem 1rem;
-  font-size:.92rem;display:inline-flex;align-items:center;gap:.45rem}
-.stat b{font-family:var(--f-num);font-size:1.15rem;font-weight:800;color:var(--orange)}
+/* 工具列 */
+.wrap{max-width:1500px;margin:0 auto;padding:10px 10px 22px}
+.toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:2px 0 8px;padding:0 2px}
+.hint{margin-left:0;color:var(--muted);font-size:15px}
+/* 讀取失敗提醒：整頁唯一的暖色，才不會混在藍色裡看不見 */
+.warnbar{margin:0 0 9px;padding:10px 12px;border:1px solid #e8c08f;background:#fff5e8;color:#7a4b1c;border-radius:11px;font-size:15px;font-weight:800;line-height:1.55}
+.warnbar[hidden]{display:none}
 
-section{padding-block:1.6rem}
-.band{background:var(--cream-2)}
-.sec-h{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.sec-h .hint{font-size:.86rem;color:var(--ink-faint)}
+/* 有備註的名字：可以點，點了在旁邊跳出小氣泡 */
+.person.has-note{appearance:none;border:0;background:none;font:inherit;color:inherit;
+  cursor:pointer;display:inline-flex;align-items:center;gap:5px;
+  padding:2px 6px;border-radius:9px;box-shadow:inset 0 -2px 0 rgba(47,111,158,.4)}
+.person.has-note:hover{background:var(--brand-soft)}
+.person.has-note:focus-visible{outline:3px solid var(--brand-dark);outline-offset:1px}
+.person .mk{display:inline-grid;place-items:center;flex:0 0 auto;
+  width:19px;height:19px;border-radius:50%;background:var(--brand-dark);color:#fff;
+  font-size:11px;font-weight:900;line-height:1}
 
-/* ── 待分配 ── */
-.pool{background:var(--card);border:2px dashed var(--line-strong);border-radius:var(--radius-lg);
-  padding:1rem 1.1rem;min-height:4.6rem;display:flex;flex-wrap:wrap;gap:.5rem;align-content:flex-start}
-.pool.drop{border-color:var(--orange);background:var(--orange-wash)}
-.pool .empty{color:var(--ink-faint);font-size:.92rem;align-self:center}
+/* 備註氣泡：用 fixed 定位，才不會被會左右捲動的表格裁掉 */
+.pop{position:fixed;z-index:200;max-width:min(330px,calc(100vw - 24px));
+  background:#fff;border:1.5px solid var(--brand-dark);border-radius:12px;
+  box-shadow:0 14px 34px rgba(16,48,74,.3);padding:13px 34px 13px 15px;
+  font-size:16.5px;line-height:1.7;color:#31465a}
+.pop[hidden]{display:none}
+.pop::before{content:'';position:absolute;left:var(--ax,20px);width:13px;height:13px;
+  background:#fff;transform:rotate(45deg)}
+.pop.below::before{top:-8px;border-left:1.5px solid var(--brand-dark);border-top:1.5px solid var(--brand-dark)}
+.pop.above::before{bottom:-8px;border-right:1.5px solid var(--brand-dark);border-bottom:1.5px solid var(--brand-dark)}
+.pop-name{font-size:17px;font-weight:900;color:var(--brand-dark);margin-bottom:5px}
+.pop-body p{margin:0}
+.pop-body p+p{margin-top:7px}
+.pop-x{position:absolute;top:5px;right:7px;appearance:none;border:0;background:none;
+  font-size:23px;line-height:1;color:#8ba4b8;cursor:pointer;padding:2px 5px;border-radius:7px}
+.pop-x:hover{background:#eef4f9;color:var(--ink)}
 
-/* ── 人名 ── */
-.person{
-  display:inline-flex;align-items:center;gap:.4rem;background:var(--card);
-  border:1.5px solid var(--line-strong);border-radius:999px;padding:.35rem .85rem;
-  font-size:.98rem;box-shadow:var(--shadow);user-select:none;-webkit-user-select:none;
-  touch-action:none;
+/* 備註：從表格裡搬出來，一行一則、整頁寬度，手機才讀得完 */
+.notes-box{margin-top:12px;background:#fff;border:1px solid var(--line);border-radius:13px;
+  box-shadow:var(--shadow);overflow:hidden}
+.notes-box[hidden]{display:none}
+.notes-head{padding:11px 16px;background:linear-gradient(180deg,#eef6fc 0%,#d3e6f6 100%);
+  border-bottom:1px solid var(--line);color:#1c4c6d;font-size:19px;font-weight:900}
+.notes-list{padding:2px 16px 8px}
+.note-item{padding:11px 0;border-bottom:1px solid #e2ebf3;font-size:17px;line-height:1.7;color:#3f5262}
+.note-item:last-child{border-bottom:0}
+.note-item b{color:var(--ink);font-weight:900}
+
+/* 折疊區：職司說明 */
+.folds{display:grid;grid-template-columns:1fr;gap:10px;align-items:start;margin:12px 0 4px}
+details.fold{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+details.fold>summary{list-style:none;cursor:pointer;padding:12px 15px;font-size:18px;font-weight:900;
+  color:#1c4c6d;background:linear-gradient(180deg,#eef6fc 0%,#d9e9f7 100%);display:flex;align-items:center;gap:9px}
+details.fold>summary::-webkit-details-marker{display:none}
+details.fold>summary::after{content:'\25BE';margin-left:auto;font-size:15px;color:#4c7ea6;transition:transform .18s ease}
+details.fold[open]>summary::after{transform:rotate(180deg)}
+details.fold>summary:focus-visible{outline:3px solid var(--brand-dark);outline-offset:-3px}
+.fold-body{padding:12px 15px 14px}
+.rows{display:flex;flex-direction:column}
+.r{display:flex;gap:14px;padding:10px 8px;border-bottom:1px solid #dde7f0;border-radius:7px;
+  font-size:16.5px;line-height:1.62;color:#3f5262}
+.r:last-child{border-bottom:0}
+.r .d{flex:0 0 auto;white-space:nowrap;font-weight:900;color:var(--brand-dark);font-variant-numeric:tabular-nums}
+.r .d small{font-weight:700;color:var(--muted);font-size:13.5px}
+.r b{font-weight:900;color:var(--ink)}
+.r em{display:block;font-style:normal;font-size:14.5px;font-weight:800;color:#5c7183;margin-top:3px}
+.r.now{background:#dcecfa}
+.r.now .d::before{content:'\25B6 ';color:#2f6f9e}
+
+/* 報名按鈕：整頁最醒目的一顆，金色底＋光帶掃過的金光閃閃效果 */
+.signup{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;
+  max-width:280px;margin:2px auto 12px;padding:11px 26px;border-radius:999px;
+  text-decoration:none;color:#5b3d09;font-weight:900;line-height:1.3;
+  background:linear-gradient(180deg,#fff3c4 0%,#f7dc76 22%,#eec144 50%,#dda92c 74%,#c9931a 100%);
+  border:1px solid #b8860b;animation:signupGlow 2.6s ease-in-out infinite}
+.signup-tx{position:relative;z-index:1;font-size:20px;letter-spacing:.06em;
+  text-shadow:0 1px 0 rgba(255,248,214,.85)}
+/* 斜向的光帶，每 3.4 秒掃過一次 */
+.signup::after{content:'';position:absolute;top:-60%;left:-70%;width:42%;height:230%;
+  transform:rotate(18deg);pointer-events:none;
+  background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.88) 50%,rgba(255,255,255,0) 100%);
+  animation:signupShine 3.4s ease-in-out infinite}
+@keyframes signupShine{0%{left:-70%}42%{left:135%}100%{left:135%}}
+@keyframes signupGlow{
+  0%,100%{box-shadow:inset 0 1px 0 rgba(255,252,232,.8),inset 0 -2px 0 rgba(146,101,10,.3),0 5px 16px rgba(196,145,25,.42)}
+  50%{box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 -2px 0 rgba(146,101,10,.3),0 6px 30px rgba(247,205,80,.8)}}
+.signup:hover{filter:brightness(1.05)}
+.signup:active{transform:translateY(1px)}
+.signup:focus-visible{outline:3px solid #7a5410;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){
+  .signup{animation:none;
+    box-shadow:inset 0 1px 0 rgba(255,252,232,.8),inset 0 -2px 0 rgba(146,101,10,.3),0 5px 16px rgba(196,145,25,.42)}
+  .signup::after{animation:none;opacity:0}
 }
-.person .dot{width:.45rem;height:.45rem;border-radius:50%;background:var(--orange);flex:none}
-body.editing .person{cursor:grab}
-body.editing .person:active{cursor:grabbing}
-.person.picked{border-color:var(--orange);background:var(--orange-wash);box-shadow:0 0 0 3px var(--gold-wash)}
-.person.ghost{opacity:.35}
-#drag-layer{position:fixed;inset:0;pointer-events:none;z-index:60}
-#drag-layer .person{position:absolute;transform:translate(-50%,-50%) scale(1.06);
-  box-shadow:0 14px 30px -10px rgba(90,62,43,.55);border-color:var(--orange)}
 
-/* ── 房間 ── */
-.rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.9rem}
-.room{background:var(--card);border:1.5px solid var(--line);border-radius:var(--radius);
-  padding:.85rem .95rem;display:flex;flex-direction:column;gap:.55rem;box-shadow:var(--shadow);
-  transition:border-color .15s ease,background .15s ease}
-.room.big{grid-column:1/-1;border-color:var(--sage);background:linear-gradient(180deg,var(--card),color-mix(in srgb,var(--sage) 6%,var(--card)))}
-.room.drop{border-color:var(--orange);background:var(--orange-wash)}
-.room.full{border-color:var(--line-strong)}
-.room-h{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem}
-.room-h .nm{font-family:var(--f-head);font-weight:900;font-size:1rem;letter-spacing:.04em}
-body.editing .room-h .nm{cursor:text;border-bottom:1.5px dashed var(--line-strong)}
-body.editing .room-h .nm:hover{border-bottom-color:var(--orange);color:var(--orange-deep)}
-.room-h .cap{font-family:var(--f-num);font-size:.86rem;font-weight:700;color:var(--ink-faint)}
-.room.filled .room-h .cap{color:var(--sage-deep)}
-.room-b{display:flex;flex-wrap:wrap;gap:.45rem;min-height:2.1rem;align-content:flex-start}
-.slot{border:1.5px dashed var(--line-strong);border-radius:999px;padding:.35rem .85rem;
-  font-size:.88rem;color:var(--ink-faint);opacity:.6}
-.room.big .room-b{min-height:4.4rem}
+/* 手機才出現的左右滑動提示（電腦上表格通常一次看得完，不需要） */
+.swipe-hint{display:none}
+.swipe-hint i{font-style:normal;display:inline-block;font-size:19px;vertical-align:-1px}
+.swipe-hint i.l{animation:nudgeL 1.6s ease-in-out infinite}
+.swipe-hint i.r{animation:nudgeR 1.6s ease-in-out infinite}
+@keyframes nudgeL{0%,100%{transform:translateX(0)}50%{transform:translateX(-6px)}}
+@keyframes nudgeR{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+@media (prefers-reduced-motion:reduce){.swipe-hint i.l,.swipe-hint i.r{animation:none}}
 
-.emptynote{grid-column:1/-1;font-size:.9rem;color:var(--ink-faint);letter-spacing:.05em;padding:.6rem 0}
-.controls{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.6rem 1.25rem;border-radius:999px;
-  border:2px solid transparent;font-family:var(--f-body);font-size:.95rem;font-weight:700;letter-spacing:.04em;
-  cursor:pointer;text-decoration:none;transition:transform .15s ease,background .2s ease,border-color .2s ease}
-.btn-primary{background:var(--orange);color:#FFF6EC;border-color:var(--orange)}
-.btn-primary:hover{transform:translateY(-2px);background:var(--orange-deep);border-color:var(--orange-deep)}
-.btn-ghost{background:transparent;color:var(--sage-deep);border-color:var(--sage)}
-.btn-ghost:hover{background:var(--sage-wash)}
-.btn-quiet{background:transparent;color:var(--ink-soft);border-color:var(--line-strong)}
-.btn-quiet:hover{border-color:var(--ink-faint)}
-.btn[disabled]{opacity:.45;pointer-events:none}
+/* 表格 */
+.shell{position:relative;background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);overflow:hidden}
+/* 右緣漸層：還有沒看到的日期時才出現 */
+.shell::after{content:'';position:absolute;top:0;right:0;bottom:0;width:38px;pointer-events:none;z-index:6;
+  background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.55) 45%,rgba(198,220,238,.96) 100%);
+  opacity:0;transition:opacity .22s ease}
+.shell.more-right::after{opacity:1}
+.scroll{overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;
+  max-height:none;overscroll-behavior:auto;
+  scroll-snap-type:x proximity;scroll-padding-left:58px}
+/* 左右滑動吸附到整欄日期，不會停在半欄 */
+.date-row .day-col{scroll-snap-align:start}
+/* 左右滑時編號欄固定在最左邊 */
+.corner,.row-label{position:sticky;left:0;z-index:2}
+table{border-collapse:separate;border-spacing:0;width:max-content;min-width:100%;table-layout:fixed;background:#fff}
+th,td{border-right:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;vertical-align:middle}
+tr>*:last-child{border-right:0}
+tbody tr:last-child>*{border-bottom:0}
+.corner,.row-label{width:58px;min-width:58px;max-width:58px;background:#e6eff7;font-weight:900}
+.group-row th{height:52px;padding:7px 8px;background:linear-gradient(180deg,#eef6fc 0%,#d3e6f6 100%);color:#1c4c6d;font-size:23px;font-weight:900;line-height:1.28;white-space:nowrap;vertical-align:middle}
+.date-row th{height:64px;padding:7px 8px;background:linear-gradient(180deg,#f8fbfe 0%,#e0eef9 100%);font-size:23px;font-weight:900;white-space:nowrap;line-height:1.28;text-align:center;vertical-align:middle}
+.time-row th{height:88px;padding:8px 7px;background:#f9fcfe;color:#2c6b96;font-size:16px;line-height:1.55;font-weight:900;white-space:normal;overflow:visible;vertical-align:middle}
+.time-row .corner{color:var(--ink)}
+.count-row th{height:46px;padding:6px 8px;background:#f3f9fd;font-size:16px;font-weight:900;white-space:nowrap;vertical-align:middle}
+.count-row .corner{color:var(--ink);font-size:15px}
+.cnt{color:#3a5266}
+.cnt-zero{color:#a9bcca}
+.day-col{width:170px;min-width:170px;max-width:170px}
+.today-col{background:var(--today)!important}
+.date-row .today-col{background:var(--today-head)!important;color:#0f4266}
+.today-mark{display:block;margin-top:2px;font-size:10px;color:#0f4266;font-weight:900}
+tbody td{height:60px;padding:9px 8px;background:#fff;font-size:22px;line-height:1.3;word-break:break-word}
+/* 隔行底色：橫向對照時不容易看錯列 */
+tbody tr:nth-child(even) td:not(.today-col){background:var(--stripe)}
+tbody tr:nth-child(even) .row-label{background:#d5e4f1}
+.person{font-size:22px;font-weight:900}
+.empty{color:#bccbd7}
+.group-start{border-left:3px solid #9cc6e5!important}
+.status{padding:42px 18px;text-align:center;color:var(--muted)}
+.error-title{font-weight:900;color:#8f3f34;margin-bottom:7px}
+.footer{padding:9px 6px 0;text-align:center;color:var(--muted);font-size:15px;line-height:1.6}
 
-.note{font-size:.88rem;color:var(--ink-soft);line-height:1.7}
-.viewonly{background:var(--sage-wash);border:1.5px solid var(--sage);border-radius:var(--radius);
-  padding:.9rem 1.1rem;font-size:.92rem;color:var(--sage-deep);display:flex;gap:.6rem;align-items:flex-start}
-body.editing .viewonly{display:none}
-.admin-only{display:none}
-body.editing .admin-only{display:block}
-.editbar{display:none;background:var(--orange-wash);border:1.5px solid var(--orange);border-radius:var(--radius);
-  padding:.9rem 1.1rem;font-size:.92rem;color:var(--orange-deep)}
-body.editing .editbar{display:block}
-
-footer{border-top:2px dashed var(--line-strong);padding-block:1.6rem 3rem;color:var(--ink-faint);
-  font-size:.86rem;display:flex;flex-direction:column;gap:.3rem}
-
-.dock{display:none;position:fixed;left:0;right:0;bottom:0;z-index:20;background:color-mix(in srgb,var(--card) 94%,transparent);
-  backdrop-filter:blur(12px);border-top:2px solid var(--line-strong);padding:.6rem 1.25rem calc(.6rem + env(safe-area-inset-bottom))}
-body.editing .dock{display:block}
-.dock-in{max-width:var(--maxw);margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:.8rem;flex-wrap:wrap}
-.dock .lbl{display:flex;flex-direction:column;line-height:1.4;min-width:0}
-.dock .lbl b{font-family:var(--f-head);font-weight:900;font-size:.96rem}
-.dock .lbl span{font-size:.78rem;color:var(--ink-soft)}
-
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:5.5rem;z-index:70;background:var(--ink);
-  color:var(--cream);padding:.65rem 1.15rem;border-radius:999px;font-size:.9rem;box-shadow:var(--shadow);
-  opacity:0;pointer-events:none;transition:opacity .25s ease;max-width:min(90vw,26rem);text-align:center}
-.toast.on{opacity:1}
-
-@media (max-width:559px){
-  .rooms{grid-template-columns:1fr}
-  .dock .lbl span{display:none}
+@media(max-width:640px){
+  .hero-inner{padding:13px 12px 15px}
+  .hero-inner{padding:14px 12px 14px}
+  h1{font-size:26px;line-height:1.25}
+  /* 手機：四顆排成兩欄兩列，文字上下疊，比擠成三行整齊 */
+  .steps{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px}
+  .step{flex-direction:column;align-items:flex-start;gap:1px;padding:7px 11px}
+  .step .lb{font-size:14px;white-space:normal;line-height:1.4}
+  .step .num{font-size:13px}
+  .step .wh{font-size:12.5px}
+  .wrap{padding:8px 6px calc(76px + env(safe-area-inset-bottom,0px))}   /* 底部留白，內容才不會被浮動報名鈕蓋住 */
+  .hint{width:100%;margin-left:0;font-size:14px;line-height:1.5}
+  .folds{gap:8px}
+  details.fold>summary{font-size:17px;padding:12px 13px}
+  .fold-body{padding:11px 13px 13px}
+  .notes-head{font-size:17px;padding:10px 13px}
+  .notes-list{padding:2px 13px 6px}
+  .note-item{font-size:16px;padding:10px 0}
+  .person .mk{width:17px;height:17px;font-size:10px}
+  .person.has-note{gap:4px;padding:2px 4px}
+  .pop{font-size:16px;padding:12px 32px 12px 14px}
+  .r{flex-direction:column;gap:3px;padding:10px 6px;font-size:16px}
+  .shell{border-radius:10px}
+  .shell::after{width:30px}
+  /* 手機：報名鈕做成浮在底部的圓角按鈕。
+     安全區（iPhone home 橫條）留成透明距離，不要填金色，
+     否則按鈕下方會多出一塊沒有用途的「下巴」。 */
+  .signup{position:fixed;z-index:60;left:50%;right:auto;
+    transform:translateX(-50%);
+    bottom:calc(11px + env(safe-area-inset-bottom,0px));
+    width:auto;min-width:58%;max-width:calc(100% - 32px);
+    margin:0;padding:12px 30px;border-radius:999px;border-width:1px}
+  .signup:active{transform:translateX(-50%) translateY(1px)}
+  .signup-tx{font-size:19px}
+  .swipe-hint{display:block;overflow:hidden;max-height:90px;opacity:1;
+    margin:0 2px 8px;padding:10px 12px;border-radius:11px;
+    background:#fff3e2;border:1.5px solid #e0a463;color:#7a4b1c;
+    font-size:16px;font-weight:900;text-align:center;line-height:1.5;
+    transition:opacity .26s ease,max-height .32s ease,margin .32s ease,
+               padding .32s ease,border-width .32s ease,visibility .32s}
+  /* 滑過一次就收起來，長輩學會了就不再佔位置 */
+  .swipe-hint.gone{opacity:0;max-height:0;margin-top:0;margin-bottom:0;
+    padding-top:0;padding-bottom:0;border-width:0;visibility:hidden}
+  .scroll{max-height:none}
+  /* 手機：欄位縮小，一次看得到 3 天 */
+  /* 編號欄再寬 4px，「小組」「日期」才不會被擠成兩行 */
+  .corner,.row-label{width:44px;min-width:44px;max-width:44px;font-size:13px}
+  .scroll{scroll-padding-left:44px}
+  .day-col{width:110px;min-width:110px;max-width:110px}
+  .group-row th{height:38px;padding:5px 3px;font-size:17px;line-height:1.3}
+  .date-row th{height:auto;padding:7px 3px;font-size:17px;line-height:1.3}
+  .time-row th{height:auto;padding:7px 3px;font-size:13px;line-height:1.45;overflow:visible}
+  .count-row th{height:36px;padding:5px 3px;font-size:13px}
+  tbody td{height:44px;padding:6px 3px;font-size:17px}
+  .person{font-size:17px;font-weight:900}
+  .today-mark{font-size:9px;margin-top:1px}
+  .footer{font-size:13px;line-height:1.5}
 }
-@media (prefers-reduced-motion: reduce){*{transition:none !important}}
 </style>
 </head>
 <body>
-<header class="top">
-  <div class="wrap top-in">
-    <button class="gear" id="btn-edit" type="button" title="承辦人員登入" aria-label="承辦人員登入">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="3"></circle>
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-      </svg>
-    </button>
-    <span class="pill">2026 教定區秋聚</span>
-    <h1>房間分配</h1>
-    <p class="sub">檜意村　8 人房 1 間　‧　4 人房 15 間　<span style="color:var(--ink-faint)">（房號待莊園提供）</span></p>
-    <div class="stats">
-      <span class="stat">已分配 <b id="s-done">0</b> 人</span>
-      <span class="stat">待分配 <b id="s-left">0</b> 人</span>
-      <span class="stat">使用房間 <b id="s-rooms">0</b> 間</span>
+<section class="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-inner">
+    <h1><span class="t-date">9/27(日)~10/4(日)</span><span class="t-name">教定區｜彌勒山12人小組</span></h1>
+    <div class="steps" id="steps" hidden></div>
+  </div>
+</section>
+<main class="wrap">
+  <a class="signup" href="https://line.me/ti/p/PIDoBE3SUS" target="_blank" rel="noopener noreferrer">
+    <span class="signup-tx">點我報名</span>
+  </a>
+  <div class="toolbar">
+    <span class="hint" id="updated">正在讀取…</span>
+  </div>
+  <div class="warnbar" id="warnbar" hidden></div>
+
+  <div class="swipe-hint gone" id="swipeHint">
+    <i class="l">←</i> 左右滑動看其他日期 <i class="r">→</i>
+  </div>
+  <div class="shell">
+    <div class="scroll" id="tableScroll">
+      <div id="content" class="status">正在讀取勤務表…</div>
     </div>
   </div>
-</header>
-
-<main>
-  <section class="wrap">
-    <div class="viewonly">
-      <span>🔎</span>
-      <span>在下面的房間卡片裡找到自己的名字，就知道跟誰同一間。<br>
-      <strong>A、B、C… 只是暫用代號，不是房號</strong>，實際房號由莊園提供後會更新。<br>
-      名單還在調整中，最終以承辦人員公告為準。<br>承辦人員請按<strong>右上角的齒輪 ⚙</strong> 登入。</span>
-    </div>
-    <div class="editbar">
-      ✏️ <strong>編輯模式</strong>：把人名拖到房間卡片即可分房。房間離得遠時，<strong>先點一下人名、再點房間</strong>更快。<br>
-      拿到實際房號後，<strong>點一下房間名稱</strong>就能改成真正的房號。變更會自動存在這台裝置。改完請按「<strong>匯出分房檔</strong>」，把檔案上傳到網站才會讓大家看到。
-    </div>
-  </section>
-
-  <section class="wrap" style="padding-top:.6rem">
-    <div class="sec-h">
-      <h2 class="ribbon"><span>待分配</span></h2>
-      <span class="hint" id="pool-hint"></span>
-    </div>
-    <div class="pool" id="pool"></div>
-  </section>
-
-  <section class="band"><div class="wrap">
-    <h2 class="ribbon"><span>檜意村 8 人房</span></h2>
-    <div class="rooms" id="rooms-big"></div>
-  </div></section>
-
-  <section class="wrap">
-    <h2 class="ribbon"><span>4 人房 ‧ 15 間</span></h2>
-    <div class="rooms" id="rooms-small"></div>
-  </section>
-
-  <section class="band admin-only"><div class="wrap">
-    <h2 class="ribbon"><span>存檔與匯出</span></h2>
-    <div class="controls">
-      <button class="btn btn-primary" id="btn-export">匯出分房檔</button>
-      <button class="btn btn-quiet" id="btn-reset">全部清空</button>
-      <a class="btn btn-ghost" href="status.html">報名進度</a>
-      <a class="btn btn-ghost" href="index.html">活動網站</a>
-    </div>
-    <p class="note" style="margin-top:.9rem">
-      匯出會下載一個 <code>rooms-data.json</code>。把它上傳到網站的 repo 根目錄（覆蓋舊的），
-      其他人打開這頁就會看到最新分房。<br>
-      沒有匯出前，你的變更只留在這台裝置的瀏覽器裡，別人看不到。
-    </p>
-  </div></section>
-
-  <footer class="wrap">
-    <div>報名名單：<span id="src-people">讀取中…</span>　‧　分房資料：<span id="src">內建預設</span>　‧　最後更新：<span id="updated">—</span></div>
-    <div>主辦｜教定區　‧　姓名以「Ｏ」遮罩</div>
-    <div style="margin-top:.5rem"><a href="status.html">報名進度</a>　‧　<a href="index.html">活動網站</a></div>
-  </footer>
+  <div class="notes-box" id="notesBox" hidden></div>
+  <div class="folds">
+    <details class="fold">
+      <summary>第二階段：職司規劃說明</summary>
+      <div class="fold-body">
+        <div class="rows">
+          <div class="r"><span class="d">🍳 烹飪</span>
+            <span>主要烹飪要<b>前一天晚上</b>先到，與頭手交接，並確認<b>隔天早上人力是否足夠</b>。<em>職司完整不空窗：前一天晚上 → 當天</em></span></div>
+          <div class="r"><span class="d">🛡️ 維安</span>
+            <span>要<b>睡一晚</b>，隔天執完早香、完成交接後才離開。<em>職司完整不空窗：當天 → 隔天早香後</em></span></div>
+          <div class="r"><span class="d">🧹 清潔</span>
+            <span>沒有跨日的交接規則。<em>職司完整不空窗：當天</em></span></div>
+        </div>
+      </div>
+    </details>
+  </div>
+  <div class="footer">每 30 秒自動同步 Google 試算表；內容有變更才更新。｜已採大字、高對比版面。</div>
 </main>
 
-<div class="dock">
-  <div class="dock-in">
-    <span class="lbl">
-      <b id="dock-t">房間分配</b>
-      <span id="dock-s">編輯模式 ‧ 變更存在本機</span>
-    </span>
-    <button class="btn btn-quiet" id="btn-done" type="button">結束編輯</button>
-  </div>
+<div class="pop" id="pop" hidden role="dialog" aria-label="備註">
+  <button type="button" class="pop-x" id="popX" aria-label="關閉">×</button>
+  <div class="pop-name" id="popName"></div>
+  <div class="pop-body" id="popBody"></div>
 </div>
 
-<div id="drag-layer"></div>
-<div class="toast" id="toast" role="status"></div>
-
 <script>
-(function(){
-  "use strict";
+const CONFIG = {
+  SPREADSHEET_ID:'1GEE-2ISgzqAca-SblK2SSu8e7a_rlwyrkjH73wiHiW4',
+  DATA_GID:'303688467',
+  CHECK_MS:30000,
+  // 報名階段。until 是這個階段的最後一天（含）；最後一個階段的 until 設 null。
+  // 系統會依台北時間自動切換，不用手動改。
+  PHASES:[
+    { until:'2026-09-13', n:'①', wh:'即日起～9/13', lb:'向區中心報名了愿日期' },
+    { until:'2026-09-18', n:'②', wh:'9/14～9/18',  lb:'職司初安排' },
+    { until:'2026-09-21', n:'③', wh:'9/21(一)',    lb:'線上壇辦班職司最後調整' },
+    { until:null,         n:'④', wh:'9/27～10/4',  lb:'12人小組輪值' }
+  ]
+};
 
-  /* ───────── 設定 ───────── */
-  var PEOPLE = [{"n": "周Ｏ順"}, {"n": "莊Ｏ容"}, {"n": "陳Ｏ秀"}, {"n": "張Ｏ環"}, {"n": "李Ｏ卿"}, {"n": "莊Ｏ勳"}, {"n": "蔡Ｏ烽"}, {"n": "張Ｏ光"}, {"n": "林Ｏ"}, {"n": "李Ｏ德"}];              // 抓不到 CSV 時的備援名單
-  var CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRAQgIEYVWPOQUYLaTkMMBma3TmiglvfcHvlznukG_8S6z6O9KDox3Tk6u53kEKzetjKZ3rQKI0t070/pub?output=csv";              // 即時報名名單（遮罩姓名, 年齡）
-  var DEFAULT_ASSIGN = {};      // 內建預設分房
-  var PASS_HASH = "429b2e327f26b60f524e7842aecb04b6d436dd61e73ef86495e69eed2f7152b7";       // 編輯模式通行碼的 SHA-256
-  var DATA_URL = "rooms-data.json";     // 站上的分房檔
-  var LS_KEY = "qiuju2026-rooms";
+let currentData=null;
+let noteByName=new Map();   // 姓名 → 備註內容（給表格裡的名字用）
+let currentHash='';
+let timer=null;
+let querySerial=0;
 
-  var CODES = "ABCDEFGHIJKLMNO";
-  var ROOMS = [{id:"R8", name:"檜意村 8 人房", cap:8, big:true}];
-  for(var i=1;i<=15;i++) ROOMS.push({id:"A"+i, name:"4 人房 "+CODES[i-1], cap:4, big:false});
+const $=id=>document.getElementById(id);
 
-  var state = { assign: {}, names: {}, updated: "" };
-  var editing = false;
-
-  /* ───────── 工具 ───────── */
-  var $ = function(id){ return document.getElementById(id); };
-  var toastEl = $("toast"), toastTimer;
-  function toast(msg){
-    toastEl.textContent = msg; toastEl.classList.add("on");
-    clearTimeout(toastTimer); toastTimer = setTimeout(function(){ toastEl.classList.remove("on"); }, 2400);
+/* ---------- 小工具 ---------- */
+function nowText(){
+  return new Intl.DateTimeFormat('zh-TW',{
+    timeZone:'Asia/Taipei',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false
+  }).format(new Date());
+}
+function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
+function setStatus(text){const el=$('updated');if(el)el.textContent=text}
+function setWarn(text){
+  const el=$('warnbar');if(!el)return;
+  if(text){el.textContent=text;el.hidden=false}else{el.hidden=true;el.textContent=''}
+}
+function esc(v){
+  return String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+}
+function cell(rows,r,c){return String((rows[r]&&rows[r][c])??'')}
+function padSlice(arr,a,b){const o=[];for(let i=a;i<b;i++)o.push(String(arr[i]??''));return o}
+function toIso(text){
+  const m=String(text).match(/(\d{1,2})\/(\d{1,2})/);
+  return m?`2026-${String(+m[1]).padStart(2,'0')}-${String(+m[2]).padStart(2,'0')}`:'';
+}
+// 依日期挑出目前階段。抽成純函式方便測試。
+function pickPhase(today){
+  const list=CONFIG.PHASES||[];
+  for(let i=0;i<list.length;i++){
+    if(!list[i].until || today<=list[i].until) return list[i];
   }
-  function today(){
-    var d = new Date();
-    return d.getFullYear()+"/"+String(d.getMonth()+1).padStart(2,"0")+"/"+String(d.getDate()).padStart(2,"0");
-  }
-  function roomById(id){ for(var i=0;i<ROOMS.length;i++) if(ROOMS[i].id===id) return ROOMS[i]; return null; }
-  function roomLabel(r){ return (state.names && state.names[r.id]) || r.name; }
-  function inRoom(id){ return PEOPLE.filter(function(p){ return state.assign[p.n] === id; }); }
+  return list[list.length-1]||null;
+}
+function currentPhase(){return pickPhase(todayIso())}
+function todayIso(){
+  const p=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Taipei',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+  const o={};p.forEach(x=>o[x.type]=x.value);
+  return `${o.year}-${o.month}-${o.day}`;
+}
 
-  /* ───────── 即時報名名單 ───────── */
-  function parseCSV(text){
-    var out = [];
-    text.split(/\r?\n/).forEach(function(line){
-      if(!line.trim()) return;
-      var name = (line.split(",")[0] || "").trim().replace(/^"|"$/g, "");
-      if(!name || /^(姓名|name)$/i.test(name)) return;
-      out.push({ n: name });
-    });
-    return out;
-  }
-  function loadPeople(){
-    if(!CSV_URL) return Promise.resolve(null);
-    return fetch(CSV_URL, {cache:"no-store"})
-      .then(function(r){ if(!r.ok) throw new Error("bad"); return r.text(); })
-      .then(function(t){ var l = parseCSV(t); return l.length ? l : null; })
-      .catch(function(){ return null; });
-  }
+/* ---------- 讀取 Google 試算表 ---------- */
+google.charts.load('current',{packages:['table']});
+google.charts.setOnLoadCallback(()=>refresh(true));
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='visible') refresh(false);
+});
 
-  /* ───────── 載入：站上的檔案 > 本機暫存 > 內建 ───────── */
-  function load(){
-    var local = null;
-    try { local = JSON.parse(localStorage.getItem(LS_KEY) || "null"); } catch(e){}
-
-    fetch(DATA_URL, {cache:"no-store"}).then(function(r){
-      if(!r.ok) throw new Error("no file");
-      return r.json();
-    }).then(function(j){
-      var remote = { assign: j.assign || {}, names: j.names || {}, updated: j.updated || "" };
-      // 本機若比站上的新，優先用本機（代表管理者還沒匯出）
-      if(local && local.updated && remote.updated && local.updated > remote.updated){
-        state = local; $("src").textContent = "本機暫存（尚未匯出）";
-      } else if(local && !remote.updated){
-        state = local; $("src").textContent = "本機暫存（尚未匯出）";
-      } else {
-        state = remote; $("src").textContent = "網站上的 rooms-data.json";
+function queryUrl(gid,range){
+  return 'https://docs.google.com/spreadsheets/d/'+CONFIG.SPREADSHEET_ID+
+         '/gviz/tq?gid='+encodeURIComponent(gid)+
+         '&range='+encodeURIComponent(range)+
+         '&headers=1'+
+         '&_='+Date.now()+'_'+(++querySerial);
+}
+function runQuery(gid,range){
+  return new Promise((resolve,reject)=>{
+    try{
+      const query=new google.visualization.Query(queryUrl(gid,range));
+      query.setQuery('select *');
+      query.send(response=>{
+        if(response.isError()){
+          reject(new Error(response.getMessage()+(response.getDetailedMessage()?'：'+response.getDetailedMessage():'')));
+          return;
+        }
+        resolve(dataTableToRows(response.getDataTable()));
+      });
+    }catch(err){
+      reject(err);
+    }
+  });
+}
+function dataTableToRows(dt){
+  const rows=[];
+  // GViz 會把試算表第一列當成欄位標題，不放在資料列中。
+  // 這裡把欄位標題補回第一列，才能和原始 Google Sheet 列號完全一致。
+  const header=[];
+  for(let c=0;c<dt.getNumberOfColumns();c++){
+    header.push(String(dt.getColumnLabel(c) || ''));
+  }
+  rows.push(header);
+  for(let r=0;r<dt.getNumberOfRows();r++){
+    const row=[];
+    for(let c=0;c<dt.getNumberOfColumns();c++){
+      let v=dt.getFormattedValue(r,c);
+      if(v==null || v===''){
+        const raw=dt.getValue(r,c);
+        v=raw==null?'':String(raw);
       }
-      render();
-    }).catch(function(){
-      state = local || { assign: JSON.parse(JSON.stringify(DEFAULT_ASSIGN)), names: {}, updated: "" };
-      $("src").textContent = local ? "本機暫存（尚未匯出）" : "內建預設";
-      render();
-    });
-  }
-  function save(){
-    state.updated = today();
-    try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch(e){}
-    render();
-  }
-
-  /* ───────── 畫面 ───────── */
-  function personEl(p){
-    var s = document.createElement("span");
-    s.className = "person";
-    s.dataset.name = p.n;
-    s.innerHTML = '<span class="dot"></span>' + p.n;
-    return s;
-  }
-
-  function render(){
-    var pool = $("pool");
-    pool.textContent = "";
-    var unassigned = PEOPLE.filter(function(p){ return !state.assign[p.n]; });
-    if(unassigned.length === 0){
-      var e = document.createElement("span");
-      e.className = "empty"; e.textContent = "全部都分好房了 🍁";
-      pool.appendChild(e);
-    } else {
-      unassigned.forEach(function(p){ pool.appendChild(personEl(p)); });
+      row.push(String(v??''));
     }
-    $("pool-hint").textContent = unassigned.length ? (unassigned.length + " 位待分配") : "";
+    rows.push(row);
+  }
+  return rows;
+}
 
-    var big = $("rooms-big"), small = $("rooms-small");
-    big.textContent = ""; small.textContent = "";
-
-    var hiddenEmpty = 0;
-    ROOMS.forEach(function(r){
-      var people = inRoom(r.id);
-      if(!editing && !r.big && people.length === 0){ hiddenEmpty++; return; }
-      var card = document.createElement("div");
-      card.className = "room" + (r.big ? " big" : "") + (people.length ? " filled" : "") + (people.length >= r.cap ? " full" : "");
-      card.dataset.room = r.id;
-
-      var h = document.createElement("div");
-      h.className = "room-h";
-      h.innerHTML = '<span class="nm">' + roomLabel(r) + '</span><span class="cap">' + people.length + ' / ' + r.cap + '</span>';
-      (function(room){
-        h.querySelector(".nm").addEventListener("click", function(e){
-          if(!editing) return;
-          e.stopPropagation();
-          var cur = roomLabel(room);
-          var val = window.prompt("房間名稱（拿到實際房號後可以改成房號，留白恢復預設）", cur);
-          if(val === null) return;
-          val = val.trim();
-          if(!state.names) state.names = {};
-          if(val === "" || val === room.name) delete state.names[room.id];
-          else state.names[room.id] = val;
-          save();
-        });
-      })(r);
-      card.appendChild(h);
-
-      var b = document.createElement("div");
-      b.className = "room-b";
-      people.forEach(function(p){ b.appendChild(personEl(p)); });
-      for(var k = people.length; k < r.cap; k++){
-        var slot = document.createElement("span");
-        slot.className = "slot"; slot.textContent = "空位";
-        b.appendChild(slot);
-      }
-      card.appendChild(b);
-      (r.big ? big : small).appendChild(card);
-    });
-    if(!editing && hiddenEmpty){
-      var note = document.createElement("p");
-      note.className = "emptynote";
-      note.textContent = "其餘 " + hiddenEmpty + " 間 4 人房尚未安排";
-      small.appendChild(note);
+async function refresh(force){
+  clearTimeout(timer);
+  try{
+    const dataRows=await runQuery(CONFIG.DATA_GID,'A1:I100');
+    const data=buildData(dataRows);
+    const hash=JSON.stringify(data);
+    if(force || hash!==currentHash){
+      currentHash=hash;
+      currentData=data;
+      render(data);
+      setStatus('最近更新：'+nowText());
+    }else{
+      currentData=data;
+      setStatus('最近檢查：'+nowText()+'（無變更）');
     }
-
-    var done = PEOPLE.length - unassigned.length;
-    $("s-done").textContent = done;
-    $("s-left").textContent = unassigned.length;
-    $("s-rooms").textContent = ROOMS.filter(function(r){ return inRoom(r.id).length > 0; }).length;
-    $("updated").textContent = state.updated || "—";
-    $("dock-t").textContent = "已分配 " + done + " / " + PEOPLE.length + " 人";
-  }
-
-  /* ───────── 指派 ───────── */
-  function assign(name, roomId){
-    if(!name) return;
-    if(roomId){
-      var r = roomById(roomId);
-      if(!r) return;
-      if(state.assign[name] !== roomId && inRoom(roomId).length >= r.cap){
-        toast(r.name + " 已經滿了");
-        return;
-      }
-      state.assign[name] = roomId;
-    } else {
-      delete state.assign[name];
-    }
-    save();
-  }
-
-  /* ───────── 拖拉（滑鼠與觸控通用）＋ 點兩下 ───────── */
-  var picked = null, dragging = null, startX = 0, startY = 0, moved = false;
-  var layer = $("drag-layer");
-
-  function clearPicked(){
-    picked = null;
-    Array.prototype.forEach.call(document.querySelectorAll(".person.picked"), function(el){ el.classList.remove("picked"); });
-  }
-  function clearDrop(){
-    Array.prototype.forEach.call(document.querySelectorAll(".drop"), function(el){ el.classList.remove("drop"); });
-  }
-  function targetAt(x, y){
-    var el = document.elementFromPoint(x, y);
-    while(el && el !== document.body){
-      if(el.dataset && el.dataset.room) return el.dataset.room;
-      if(el.id === "pool") return "";
-      el = el.parentElement;
-    }
+    setWarn('');
+    return data;
+  }catch(err){
+    showError(err);
     return null;
+  }finally{
+    timer=setTimeout(()=>refresh(false),CONFIG.CHECK_MS);
   }
+}
 
-  document.addEventListener("pointerdown", function(e){
-    if(!editing) return;
-    var el = e.target.closest ? e.target.closest(".person") : null;
-    if(!el) return;
-    e.preventDefault();
-    dragging = { name: el.dataset.name, src: el };
-    startX = e.clientX; startY = e.clientY; moved = false;
-    el.setPointerCapture && el.setPointerCapture(e.pointerId);
-  });
-
-  var autoTimer = null;
-  function autoScroll(y){
-    var edge = 90, speed = 0;
-    if(y < edge) speed = -Math.ceil((edge - y) / 6);
-    else if(y > window.innerHeight - edge) speed = Math.ceil((y - (window.innerHeight - edge)) / 6);
-    if(speed === 0){ if(autoTimer){ clearInterval(autoTimer); autoTimer = null; } return; }
-    if(autoTimer) return;
-    autoTimer = setInterval(function(){
-      if(!dragging){ clearInterval(autoTimer); autoTimer = null; return; }
-      window.scrollBy(0, speed * 2);
-    }, 16);
+/* 讀取失敗時，如果畫面上已經有資料就只掛一條提醒，不要把整張表洗掉。 */
+function showError(err){
+  const message=err&&err.message?err.message:String(err);
+  if(currentData){
+    setWarn('⚠️ 暫時讀不到 Google 試算表（'+message+'）。以下顯示的是最後一次成功讀取的內容，系統會自動重試。');
+    setStatus('更新失敗：'+nowText());
+    return;
   }
-  function stopScroll(){ if(autoTimer){ clearInterval(autoTimer); autoTimer = null; } }
+  setWarn('');
+  setStatus('讀取失敗：'+nowText());
+  const el=$('content');
+  if(!el)return;
+  el.className='status';
+  el.innerHTML=
+    '<div class="error-title">目前無法讀取 Google 試算表</div>'+
+    '<div>請確認這份試算表仍保持「發布到網路」。</div>'+
+    '<div style="margin-top:6px;font-size:15px">'+esc(message)+'</div>';
+}
 
-  document.addEventListener("pointermove", function(e){
-    if(!dragging) return;
-    var dx = e.clientX - startX, dy = e.clientY - startY;
-    if(!moved && Math.hypot(dx, dy) < 6) return;
-    if(!moved){
-      moved = true;
-      dragging.src.classList.add("ghost");
-      var clone = dragging.src.cloneNode(true);
-      clone.classList.remove("ghost","picked");
-      layer.appendChild(clone);
-      dragging.clone = clone;
+/* ---------- 整理資料 ---------- */
+function buildData(rows){
+  if(!rows || rows.length<4) throw new Error('Google 試算表沒有回傳完整勤務資料');
+  const groupRow=padSlice(rows[1]||[],1,9);
+  const dateRow=padSlice(rows[2]||[],1,9);
+  const timeRow=padSlice(rows[3]||[],1,9);
+  // 找出「備註」列。注意：GViz 會把 A 欄視為數字欄，
+  // 「日期」「時間」「備註」這類文字會被讀成空字串，所以不能只靠文字比對。
+  // 先試文字，讀不到就用「A 欄最後一個有編號的列」往下推。
+  let noteIndex=rows.findIndex(r=>String(r[0]||'').trim()==='備註');
+  if(noteIndex<0){
+    let lastLabel=-1;
+    for(let r=4;r<rows.length;r++){ if(cell(rows,r,0).trim())lastLabel=r; }
+    noteIndex=lastLabel>=0?lastLabel+1:rows.length;
+  }
+  const labels=[];
+  for(let r=4;r<noteIndex;r++){
+    const x=cell(rows,r,0).trim();
+    if(x)labels.push(x);
+  }
+  const groups=[];
+  let currentGroup='';
+  for(let i=0;i<8;i++){
+    const g=String(groupRow[i]||'').replace(/\s+/g,' ').trim();
+    if(g)currentGroup=g;
+    groups.push(currentGroup);
+  }
+  const days=[];
+  for(let c=0;c<8;c++){
+    const dateText=String(dateRow[c]||'').trim();
+    if(!dateText)continue;
+    const people=[];
+    for(let r=4;r<noteIndex;r++){
+      const name=cell(rows,r,c+1).trim();
+      if(name)people.push({no:cell(rows,r,0).trim(),name});
     }
-    dragging.clone.style.left = e.clientX + "px";
-    dragging.clone.style.top  = e.clientY + "px";
-    autoScroll(e.clientY);
-    clearDrop();
-    var t = targetAt(e.clientX, e.clientY);
-    if(t !== null){
-      var node = t === "" ? $("pool") : document.querySelector('[data-room="' + t + '"]');
-      if(node) node.classList.add("drop");
+    const notes=[];
+    for(let r=noteIndex;r<rows.length;r++){
+      const n=cell(rows,r,c+1).trim();
+      if(n)notes.push(n);
     }
-  });
-
-  document.addEventListener("pointerup", function(e){
-    if(!dragging) return;
-    var d = dragging; dragging = null;
-    stopScroll();
-    clearDrop();
-    if(d.clone) d.clone.remove();
-    d.src.classList.remove("ghost");
-
-    if(!moved){
-      // 當成點選
-      if(picked === d.name){ clearPicked(); }
-      else { clearPicked(); picked = d.name; d.src.classList.add("picked"); toast("已選取 " + d.name + "，再點一個房間"); }
-      return;
-    }
-    var t = targetAt(e.clientX, e.clientY);
-    if(t !== null) assign(d.name, t);
-  });
-
-  document.addEventListener("click", function(e){
-    if(!editing || !picked) return;
-    // 點到「剛剛選起來的那個人」= 取消選取，交給 pointer 流程；點別人則視為點到他所在的房間
-    var pEl = e.target.closest ? e.target.closest(".person") : null;
-    if(pEl && pEl.dataset.name === picked) return;
-    var roomEl = e.target.closest ? e.target.closest("[data-room]") : null;
-    var poolEl = e.target.closest ? e.target.closest("#pool") : null;
-    if(roomEl){ assign(picked, roomEl.dataset.room); clearPicked(); }
-    else if(poolEl){ assign(picked, ""); clearPicked(); }
-  });
-
-  /* ───────── 編輯模式 ───────── */
-  async function sha256(str){
-    var buf = new TextEncoder().encode(str);
-    var h = await crypto.subtle.digest("SHA-256", buf);
-    return Array.prototype.map.call(new Uint8Array(h), function(b){ return b.toString(16).padStart(2,"0"); }).join("");
+    days.push({
+      dateText,
+      isoDate:toIso(dateText),
+      group:groups[c]||'',
+      time:String(timeRow[c]||'').trim(),
+      people,
+      notes,
+      filled:people.length
+    });
   }
+  return {
+    rowLabels:labels,
+    days,
+    today:todayIso()
+  };
+}
 
-  function exitEdit(){
-    editing = false;
-    document.body.classList.remove("editing");
-    $("btn-edit").setAttribute("title", "承辦人員登入");
-    $("btn-edit").setAttribute("aria-label", "承辦人員登入");
-    clearPicked();
-    render();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+/* ---------- 畫面 ---------- */
+function render(data){
+  noteByName=buildNoteMap(data);
+  $('content').className='';
+  $('content').innerHTML=buildTable(data);
+  buildNotes(data);
+  updateScrollHint();
+}
+
+/* 從備註裡抓出「姓名：內容」，做成對照表，表格裡同名的人就能點開看 */
+function buildNoteMap(data){
+  const m=new Map();
+  (data.days||[]).forEach(d=>(d.notes||[]).forEach(t=>{
+    String(t).split(/\r?\n/).forEach(line=>{
+      const v=line.trim();
+      if(!v)return;
+      const mm=v.match(/^([^：:]{1,12})[：:]\s*(.+)$/);
+      if(!mm)return;
+      const k=mm[1].trim(), body=mm[2].trim();
+      if(!m.has(k))m.set(k,[]);
+      if(m.get(k).indexOf(body)<0)m.get(k).push(body);
+    });
+  }));
+  return m;
+}
+
+/* 備註改成表格下方的清單：一格裡用換行分開的多則會被拆成多行，
+   「姓名：內容」的姓名會加粗，方便掃。 */
+function buildNotes(data){
+  const box=$('notesBox');
+  if(!box)return;
+  const items=[];
+  (data.days||[]).forEach(d=>{
+    (d.notes||[]).forEach(t=>{
+      String(t).split(/\r?\n/).forEach(line=>{
+        const v=line.trim();
+        if(v && items.indexOf(v)<0) items.push(v);
+      });
+    });
+  });
+  if(!items.length){box.hidden=true;box.innerHTML='';return;}
+  box.innerHTML='<div class="notes-head">備註</div><div class="notes-list">'+
+    items.map(t=>{
+      const m=t.match(/^([^：:]{1,12})[：:]\s*(.+)$/);
+      return '<div class="note-item">'+
+        (m ? '<b>'+esc(m[1])+'</b>：'+esc(m[2]) : esc(t))+'</div>';
+    }).join('')+'</div>';
+  box.hidden=false;
+}
+function buildTable(data){
+  if(!data.days.length)return '<div class="status">目前沒有勤務資料。</div>';
+  const labels=data.rowLabels.length?data.rowLabels:Array.from({length:17},(_,i)=>String(i+1));
+  const gs=groupSpans(data.days);
+  const groupHtml=gs.map(g=>
+    `<th class="day-col ${g.start?'group-start':''}" colspan="${g.span}">${esc(g.name)}</th>`
+  ).join('');
+  const dateHtml=data.days.map((d,i)=>
+    `<th class="day-col ${todayClass(d,data)} ${groupStart(data.days,i)}">
+      ${esc(d.dateText).replace(/\r?\n/g,'<br>')}
+      ${d.isoDate===data.today?'<span class="today-mark">今天</span>':''}
+    </th>`
+  ).join('');
+  const timeHtml=data.days.map((d,i)=>
+    `<th class="day-col ${todayClass(d,data)} ${groupStart(data.days,i)}">
+      ${d.time?esc(d.time).replace(/\n/g,'<br>'):'—'}
+    </th>`
+  ).join('');
+  const countHtml=data.days.map((d,i)=>{
+    return `<th class="day-col ${todayClass(d,data)} ${groupStart(data.days,i)}">
+      <span class="cnt${d.filled?'':' cnt-zero'}">${d.filled} 人</span>
+    </th>`;
+  }).join('');
+  const body=labels.map(label=>{
+    const tds=data.days.map((d,i)=>{
+      const p=(d.people||[]).find(x=>String(x.no)===String(label));
+      let cell='<span class="empty">—</span>';
+      if(p){
+        cell = noteByName.has(p.name)
+          ? `<button type="button" class="person has-note" data-name="${esc(p.name)}" `+
+            `aria-label="${esc(p.name)}，有備註，點開查看">${esc(p.name)}<span class="mk">註</span></button>`
+          : `<span class="person">${esc(p.name)}</span>`;
+      }
+      return `<td class="day-col ${todayClass(d,data)} ${groupStart(data.days,i)}">${cell}</td>`;
+    }).join('');
+    return `<tr><th class="row-label">${esc(label)}</th>${tds}</tr>`;
+  }).join('');
+  return `<table>
+    <thead>
+      <tr class="group-row"><th class="corner">小組</th>${groupHtml}</tr>
+      <tr class="date-row"><th class="corner">日期</th>${dateHtml}</tr>
+      <tr class="time-row"><th class="corner">時間</th>${timeHtml}</tr>
+      <tr class="count-row"><th class="corner">人數</th>${countHtml}</tr>
+    </thead>
+    <tbody>${body}</tbody>
+  </table>`;
+}
+function groupSpans(days){
+  const out=[];let start=0;
+  while(start<days.length){
+    const name=days[start].group||'';
+    let end=start+1;
+    while(end<days.length&&(days[end].group||'')===name)end++;
+    out.push({name,span:end-start,start:start>0});
+    start=end;
   }
-  async function enterEdit(){
-    var code = window.prompt("請輸入承辦人員通行碼");
-    if(code === null) return;
-    var ok = false;
-    try { ok = (await sha256(code.trim())) === PASS_HASH; } catch(e){ ok = false; }
-    if(!ok){ toast("通行碼不正確"); return; }
-    editing = true;
-    document.body.classList.add("editing");
-    $("btn-edit").setAttribute("title", "結束編輯");
-    $("btn-edit").setAttribute("aria-label", "結束編輯");
-    render();
-    toast("可以開始拖拉分房了");
+  return out;
+}
+function groupStart(days,i){
+  if(i<=0)return '';
+  return (days[i].group||'')!==(days[i-1].group||'')?'group-start':'';
+}
+function todayClass(d,data){return d.isoDate===data.today?'today-col':''}
+
+/* 標題下方的四個階段：目前所在的那一個會反白 */
+function renderSteps(){
+  const box=$('steps'), list=CONFIG.PHASES||[];
+  if(!box||!list.length)return;
+  const cur=currentPhase();
+  box.innerHTML=list.map(p=>
+    `<span class="step${p===cur?' on':''}">`+
+    `<span class="top"><span class="num">${esc(p.n||'')}</span><span class="wh">${esc(p.wh||'')}</span></span>`+
+    `<span class="lb">${esc(p.lb||'')}</span></span>`
+  ).join('');
+  box.hidden=false;
+}
+
+let swipedOnce=false;   // 使用者左右滑過一次之後，提示就不再出現
+/* 表格右邊還有沒看到的日期時顯示右緣漸層；滑過一次就把提示收起來 */
+function updateScrollHint(){
+  const sc=$('tableScroll');
+  if(!sc||!sc.parentElement)return;
+  const canScroll=sc.scrollWidth-sc.clientWidth>4;
+  sc.parentElement.classList.toggle('more-right',
+    canScroll && sc.scrollWidth-sc.clientWidth-sc.scrollLeft>4);
+  const hint=$('swipeHint');
+  if(hint)hint.classList.toggle('gone', swipedOnce || !canScroll);
+}
+
+/* ---------- 備註氣泡 ---------- */
+let popBtn=null;          // 目前氣泡對應的名字按鈕
+let popRaf=0, popLast='';
+
+/* 把氣泡對到名字下方（放不下就翻到上方）；名字被捲出畫面就收起來 */
+function positionPop(){
+  if(!popBtn)return;
+  const pop=$('pop');
+  const r=popBtn.getBoundingClientRect();
+  // 算出名字「真正看得到」的左右範圍：
+  // 左右會被表格可視範圍裁掉，左邊還會被固定在最左的編號欄蓋住。
+  let vl=r.left, vr=r.right;
+  const sc=$('tableScroll');
+  if(sc){
+    const sr=sc.getBoundingClientRect();
+    const lab=sc.querySelector('.row-label,.corner');
+    const lw=lab?lab.getBoundingClientRect().width:0;
+    vl=Math.max(vl,sr.left+lw);
+    vr=Math.min(vr,sr.right);
   }
-  $("btn-edit").addEventListener("click", function(){ editing ? exitEdit() : enterEdit(); });
-  $("btn-done").addEventListener("click", exitEdit);
+  // 名字捲出畫面（上下），或被擠到幾乎看不見（左右）就收起來
+  if(r.bottom<0 || r.top>window.innerHeight || vr-vl<12){closePop();return;}
+  pop.classList.remove('above','below');
+  const cx=(vl+vr)/2;                       // 對準看得到的那一段的中心
+  const pw=pop.offsetWidth, ph=pop.offsetHeight, M=12;
+  let left=Math.max(M,Math.min(cx-pw/2,window.innerWidth-pw-M));
+  // 手機的報名鈕是浮在最底下的，氣泡不能躲到它後面
+  let limit=window.innerHeight-M;
+  const sb=document.querySelector('.signup');
+  if(sb&&getComputedStyle(sb).position==='fixed')limit=Math.min(limit,sb.getBoundingClientRect().top-8);
+  const below=r.bottom+10+ph<=limit;
+  const top=below ? r.bottom+10 : Math.max(M,r.top-10-ph);
+  pop.classList.add(below?'below':'above');
+  pop.style.left=left+'px';
+  pop.style.top=top+'px';
+  // 箭頭對準名字
+  pop.style.setProperty('--ax',Math.max(10,Math.min(cx-left-6.5,pw-24))+'px');
+}
+/* 氣泡開著時每幀盯著名字的位置：捲動、版面位移（例如滑動提示收起來）都跟得上 */
+function popTick(){
+  if(!popBtn){popRaf=0;return;}
+  const r=popBtn.getBoundingClientRect();
+  const key=Math.round(r.left)+','+Math.round(r.top)+','+Math.round(r.width);
+  if(key!==popLast){popLast=key;positionPop();}
+  popRaf=popBtn?requestAnimationFrame(popTick):0;
+}
+function openPop(btn){
+  const name=btn.dataset.name, list=noteByName.get(name);
+  if(!list||!list.length)return;
+  const pop=$('pop');
+  $('popName').textContent=name;
+  $('popBody').innerHTML=list.map(t=>'<p>'+esc(t)+'</p>').join('');
+  pop.hidden=false;          // 先顯示才量得到大小
+  popBtn=btn;
+  popLast='';
+  pop.dataset.open='1';
+  positionPop();
+  if(!popRaf)popRaf=requestAnimationFrame(popTick);
+}
+function closePop(){
+  const pop=$('pop');
+  if(!pop)return;
+  pop.hidden=true;
+  popBtn=null;
+  if(popRaf){cancelAnimationFrame(popRaf);popRaf=0;}
+  delete pop.dataset.open;
+}
 
-  /* ───────── 匯出 / 清空 ───────── */
-  $("btn-export").addEventListener("click", function(){
-    if(!editing){ toast("請先進入編輯模式"); return; }
-    state.updated = today();
-    var blob = new Blob([JSON.stringify({assign: state.assign, names: state.names || {}, updated: state.updated}, null, 2)],
-                        {type:"application/json"});
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "rooms-data.json";
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
-    toast("已下載 rooms-data.json，記得上傳到網站");
-  });
+/* ---------- 事件綁定 ---------- */
+$('content').addEventListener('click',e=>{
+  const btn=e.target.closest('.person.has-note');
+  if(!btn)return;
+  e.stopPropagation();
+  if($('pop').dataset.open==='1' && $('popName').textContent===btn.dataset.name){closePop();return;}
+  openPop(btn);
+});
+$('popX').addEventListener('click',closePop);
+document.addEventListener('click',e=>{
+  if($('pop').dataset.open==='1' && !e.target.closest('#pop'))closePop();
+});
+document.addEventListener('keydown',e=>{ if(e.key==='Escape')closePop(); });
 
-  $("btn-reset").addEventListener("click", function(){
-    if(!editing){ toast("請先進入編輯模式"); return; }
-    if(!window.confirm("確定要把所有人移回「待分配」嗎？")) return;
-    state.assign = {};
-    save();
-    toast("已清空");
-  });
-
-  loadPeople().then(function(live){
-    if(live){
-      PEOPLE = live;
-      $("src-people").textContent = "即時同步自報名表";
-    } else {
-      $("src-people").textContent = "備援名單";
-    }
-    load();
-  });
-})();
+$('tableScroll').addEventListener('scroll',()=>{
+  if($('tableScroll').scrollLeft>8)swipedOnce=true;
+  updateScrollHint();
+},{passive:true});
+window.addEventListener('resize',updateScrollHint);
+renderSteps();
 </script>
 </body>
 </html>
