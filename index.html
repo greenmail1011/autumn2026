@@ -688,14 +688,14 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
   <section class="band"><div class="wrap" id="報名">
     <h2 class="ribbon"><span>報名方式</span></h2>
     <div class="babycard" style="margin-top:0;margin-bottom:1.25rem">
-      <h3>填表前請先準備好這兩樣</h3>
+      <h3>報名前請先準備好這兩樣</h3>
       <ul>
         <li><strong>出生年月日</strong>　與　<strong>身分證字號</strong>　——　投保旅遊平安險用</li>
-        <li>因為要逐人投保，<strong>每位參加者各自填一份</strong>，小朋友也要單獨填</li>
+        <li>因為要逐人投保，<strong>每位參加者都要各自報名</strong>，小朋友也要</li>
       </ul>
     </div>
     <ol class="steps">
-      <li><span class="no">STEP 1</span><span class="h">填寫報名表單</span><span class="b">點「我要報名」開啟 Google 表單，填寫姓名、出生年月日、聯絡電話、身分證字號、是否可提供交通車輛，以及邀請您的人。</span></li>
+      <li><span class="no">STEP 1</span><span class="h">加入報名 LINE</span><span class="b">點「我要報名」加入承辦人員的 LINE，告知參加意願，由承辦人員協助您完成報名。</span></li>
       <li><span class="no">STEP 2</span><span class="h">完成繳費</span><span class="b">現金交給邀請人，或匯款至指定帳戶。<strong>兩種方式擇一即可</strong>，詳見下方。</span></li>
       <li><span class="no">STEP 3</span><span class="h">收到報名確認</span><span class="b">承辦人員核對後會與您聯繫，確認房間與交通安排。</span></li>
     </ol>
@@ -759,7 +759,7 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     </div>
     <p class="contact-note">
       交通原則上<strong>各自前往</strong>；若沒有交通工具，會安排<strong>共乘車輛</strong>，
-      實際共乘分配於<strong>活動前一週公布</strong>。報名表單裡有一欄「是否可提供交通車輛」，請記得填。
+      實際共乘分配於<strong>活動前一週公布</strong>。報名時請告知承辦人員<strong>是否可提供交通車輛</strong>。
     </p>
   </section>
 
@@ -798,10 +798,10 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
   "use strict";
 
   /* ─────────────────────────────────────────────
-     報名表單網址：Google 表單做好後，把網址填進下面這行的引號中間。
-     例：var REGISTER_URL = "https://forms.gle/xxxxxxxx";
+     「我要報名」按鈕的目的地。目前指向承辦人員的 LINE，
+     由承辦人員接手協助完成報名。
      ───────────────────────────────────────────── */
-  var REGISTER_URL = "https://forms.gle/h5HgSjjmsFeQ72cX6";
+  var REGISTER_URL = "https://line.me/ti/p/PIDoBE3SUS";
 
   /* 葉子形狀，給 CSS mask 用 */
   var MAPLE_D = "M50,3L57,24L69,18L66,33L84,28L79,41L97,47L74,59L80,71L57,67L52,97L48,97L43,67L20,71L26,59L3,47L21,41L16,28L34,33L31,18L43,24Z";
@@ -815,10 +815,10 @@ footer{border-top:2px dashed var(--line-strong);padding:2rem 0 3rem;color:var(--
     if(pending){
       el.setAttribute("data-pending","1");
       el.setAttribute("href","#報名");
-      el.textContent = "報名表單準備中";
+      el.textContent = "報名管道準備中";
       el.addEventListener("click", function(e){
         e.preventDefault();
-        showToast("報名表單開放後，這個按鈕就會直接連到表單");
+        showToast("報名開放後，這個按鈕就會直接開啟報名 LINE");
       });
     } else {
       el.setAttribute("href", REGISTER_URL);
