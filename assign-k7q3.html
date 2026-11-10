@@ -38,7 +38,7 @@ button:hover{border-color:var(--accent)}
 </head>
 <body>
 <h1>2026 教定區秋聚｜房間安排（內部用）</h1>
-<div class="sub">拖曳姓名到其他房間即可調整；拖到「已有人」的姓名上會與對方互換。每間上限 4 人。調整會自動儲存在此瀏覽器。</div>
+<div class="sub">拖曳姓名到其他房間即可調整；拖到「已有人」的姓名上會與對方互換。每間上限 4 人。姓名中間以「O」代替以保護隱私；調整會自動儲存在此瀏覽器。</div>
 <div class="bar">
   <button id="copy">複製房間名單</button>
   <button id="reset">還原初始安排</button>
@@ -47,16 +47,16 @@ button:hover{border-color:var(--accent)}
 <div class="pool" data-zone="pool"><h2 style="font-size:.95rem;margin:0 0 8px">待安排區（<span id="pc">0</span>）</h2><div class="list" id="pool"></div></div>
 <div id="toast"></div>
 <script>
-const CAP=4, KEY="autumn2026-rooms-v2";
-const PIN=["莊銘勳","蔡梅烽","張德光","林蜂"];
+const CAP=4, KEY="autumn2026-rooms-v3";
+const PIN=["莊O勳","蔡O烽","張O光","林O"];
 const INIT={
  rooms:[
   PIN.slice(),
-  ["周義順","莊佳容","陳錦秀","張素環"],
-  ["李鉢卿","李冠德","彭浩維","林佳慧"],
-  ["江陳紅桂","江敏娟","蔡志涼","劉慶明"],
-  ["廖德鈴","莊銘章","范植勇","范珮倫"],
-  ["吳新蘭"]
+  ["周O順","莊O容","陳O秀","張O環"],
+  ["李O卿","李O德","彭O維","林O慧"],
+  ["江O桂","江O娟","蔡O涼","劉O明"],
+  ["廖O鈴","莊O章","范O勇","范O倫"],
+  ["吳O蘭"]
  ],pool:[]};
 let S;
 try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
