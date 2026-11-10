@@ -61,7 +61,7 @@ const INIT={
   ["吳O蘭"]
  ],pool:[]};
 const $=s=>document.querySelector(s);
-const API="";  // 部署 Apps Script 後填入網址；留空則只存本機
+const API="https://script.google.com/macros/s/AKfycbxzrklfBMLvaCg3IAIMKyfCCS5Wf8iVoE9BSG1uFBFDYFkEOHE5Ts6Rva7rqXtjS67l/exec";  // 部署 Apps Script 後填入網址；留空則只存本機
 const clone=o=>JSON.parse(JSON.stringify(o));
 let S;
 try{S=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem("autumn2026-rooms-v3"))}catch(e){}
