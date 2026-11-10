@@ -24,6 +24,7 @@ button:hover{border-color:var(--accent)}
 .cnt.full{color:var(--ok);border-color:var(--ok)}
 .slots{display:grid;grid-template-columns:1fr 1fr;gap:6px}.slot{min-height:46px;border:1px dashed var(--line);border-radius:8px;opacity:.5}
 .chip{display:flex;align-items:center;justify-content:center;min-height:46px;padding:6px 2px;white-space:nowrap;border-radius:8px;background:var(--bg);border:1px solid var(--line);cursor:grab;touch-action:none}
+.locked .chip{cursor:default;touch-action:auto}
 .chip.drag{opacity:.35}
 .chip.target{outline:2px dashed var(--accent)}
 .chip.pin{border-color:var(--accent);border-width:2px}
@@ -38,8 +39,9 @@ button:hover{border-color:var(--accent)}
 </head>
 <body>
 <h1>2026 教定區秋聚｜房間安排（內部用）</h1>
-<div class="sub">拖曳姓名到其他房間即可調整；拖到「已有人」的姓名上會與對方互換。每間 4 格。橘框＝指定同房。姓名中間以「O」代替以保護隱私；調整會自動儲存在此瀏覽器。</div>
+<div class="sub">拖曳姓名到其他房間即可調整；拖到「已有人」的姓名上會與對方互換。每間 4 格。橘框＝指定同房。姓名中間以「O」代替以保護隱私；調整後自動儲存並同步給所有人，需先按「解鎖編輯」輸入密碼。</div>
 <div class="bar">
+  <button id="lock" hidden>🔒 解鎖編輯</button>
   <button id="copy">複製房間名單</button>
   <button id="reset">還原初始安排</button>
 </div>
@@ -58,11 +60,32 @@ const INIT={
   ["廖O鈴","莊O章","范O勇","范O倫"],
   ["吳O蘭"]
  ],pool:[]};
+const $=s=>document.querySelector(s);
+const API="";  // 部署 Apps Script 後填入網址；留空則只存本機
+const clone=o=>JSON.parse(JSON.stringify(o));
 let S;
 try{S=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem("autumn2026-rooms-v3"))}catch(e){}
-if(!S||!S.rooms||S.rooms.length!==6)S=JSON.parse(JSON.stringify(INIT));
+if(!S||!S.rooms||S.rooms.length!==6)S=clone(INIT);
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
-const $=s=>document.querySelector(s);
+let ver=0,busy=false,pw=localStorage.getItem("autumn2026-pw")||"",LOCKED=!!API&&!pw;
+async function post(o){const r=await fetch(API,{method:"POST",headers:{"Content-Type":"text/plain"},body:JSON.stringify(o)});return r.json()}
+async function pull(){
+  if(!API||busy||drag)return;
+  try{const r=await (await fetch(API)).json();ver=r.ver;
+    if(r.state&&JSON.stringify(r.state)!==JSON.stringify(S)){S=r.state;save();render()}}catch(e){}
+}
+async function commit(){
+  save();if(!API)return;busy=true;
+  try{const r=await post({pw,baseVer:ver,state:S});
+    if(r.ok)ver=r.ver;
+    else if(r.err==="conflict"){S=r.state;ver=r.ver;save();render();toast("別人剛調整過，已更新為最新版")}
+    else if(r.err==="pw"){pw="";localStorage.removeItem("autumn2026-pw");setLock(true);toast("密碼錯誤，請重新解鎖");busy=false;await pull()}
+  }catch(e){toast("儲存失敗，請檢查網路")}
+  busy=false;
+}
+function setLock(v){LOCKED=v;document.body.classList.toggle("locked",v);
+  const b=$("#lock");if(b){b.hidden=!API;b.textContent=v?"🔒 解鎖編輯":"🔓 編輯中"}
+  $("#reset").hidden=!!v}
 function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("on"),1600)}
 function chip(n){const d=document.createElement("div");d.className="chip"+(PIN.includes(n)?" pin":"");d.dataset.name=n;d.textContent=n;return d}
 function render(){
@@ -80,9 +103,9 @@ function render(){
   document.querySelector(".pool").style.display=S.pool.length?"":"block";
 }
 function list(z){return z==="pool"?S.pool:S.rooms[+z]}
-let drag=null;
+var drag=null;
 document.addEventListener("pointerdown",e=>{
-  const c=e.target.closest(".chip");if(!c||e.button>0)return;
+  const c=e.target.closest(".chip");if(!c||e.button>0||LOCKED)return;
   const g=c.cloneNode(true);g.classList.add("ghost");document.body.append(g);
   drag={name:c.dataset.name,el:c,g,from:c.closest("[data-zone]").dataset.zone};
   c.classList.add("drag");move(e);e.preventDefault();
@@ -109,16 +132,24 @@ function end(cancel){
     if(to!=="pool"&&dst.length>=CAP){const z=d.zone;z.classList.add("reject");setTimeout(()=>z.classList.remove("reject"),500);toast("這間已滿 4 人，請拖到姓名上互換");return}
     src.splice(src.indexOf(d.name),1);dst.push(d.name);
   }
-  save();render();
+  commit();render();
 }
 document.addEventListener("pointerup",()=>end(false));
 document.addEventListener("pointercancel",()=>end(true));
-$("#reset").onclick=()=>{if(confirm("確定還原成初始安排？")){S=JSON.parse(JSON.stringify(INIT));save();render()}};
+$("#reset").onclick=()=>{if(confirm("確定還原成初始安排？")){S=clone(INIT);render();commit()}};
 $("#copy").onclick=async()=>{
   const t=S.rooms.map((m,i)=>`第${i+1}間：${m.join("、")||"（空）"}`).join("\n")+(S.pool.length?`\n待安排：${S.pool.join("、")}`:"");
   try{await navigator.clipboard.writeText(t);toast("已複製")}catch(e){prompt("請手動複製",t)}
 };
-render();
+$("#lock").onclick=async()=>{
+  if(!LOCKED)return;const p=prompt("請輸入編輯密碼");if(!p)return;
+  try{const r=await post({action:"check",pw:p});
+    if(!r.ok){toast("密碼錯誤");return}
+    pw=p;localStorage.setItem("autumn2026-pw",p);setLock(false);toast("已解鎖，可拖曳調整");
+    if(ver===0)commit();
+  }catch(e){toast("連線失敗")}
+};
+render();setLock(LOCKED);pull();if(API)setInterval(pull,15000);
 </script>
 </body>
 </html>
