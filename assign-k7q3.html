@@ -46,7 +46,7 @@ button:hover{border-color:var(--accent)}
   <button id="reset">還原初始安排</button>
 </div>
 <div class="grid" id="rooms"></div>
-<div class="pool" data-zone="pool"><h2 style="font-size:.95rem;margin:0 0 8px">待安排區（<span id="pc">0</span>）</h2><div class="list" id="pool"></div></div>
+<div class="pool" data-zone="pool"><h2 style="font-size:.95rem;margin:0 0 8px">不住宿（<span id="pc">0</span>）</h2><div class="list" id="pool"></div></div>
 <div id="toast"></div>
 <script>
 const CAP=4, KEY="autumn2026-rooms-v4";
@@ -59,7 +59,7 @@ const INIT={
   ["范O倫","莊O容","林O慧","蔡O涼"],
   ["劉O明","廖O鈴","吳O蘭"],
   ["范O勇","莊O章","李O卿"]
- ],pool:[]};
+ ],pool:["曾O錦","姜O崴"]};
 const $=s=>document.querySelector(s);
 const API="https://script.google.com/macros/s/AKfycbxzrklfBMLvaCg3IAIMKyfCCS5Wf8iVoE9BSG1uFBFDYFkEOHE5Ts6Rva7rqXtjS67l/exec";  // 部署 Apps Script 後填入網址；留空則只存本機
 const clone=o=>JSON.parse(JSON.stringify(o));
@@ -138,7 +138,7 @@ document.addEventListener("pointerup",()=>end(false));
 document.addEventListener("pointercancel",()=>end(true));
 $("#reset").onclick=()=>{if(confirm("確定還原成初始安排？")){S=clone(INIT);render();commit()}};
 $("#copy").onclick=async()=>{
-  const t=S.rooms.map((m,i)=>`第${i+1}間：${m.join("、")||"（空）"}`).join("\n")+(S.pool.length?`\n待安排：${S.pool.join("、")}`:"");
+  const t=S.rooms.map((m,i)=>`第${i+1}間：${m.join("、")||"（空）"}`).join("\n")+(S.pool.length?`\n不住宿：${S.pool.join("、")}`:"");
   try{await navigator.clipboard.writeText(t);toast("已複製")}catch(e){prompt("請手動複製",t)}
 };
 $("#lock").onclick=async()=>{
