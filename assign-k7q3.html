@@ -47,7 +47,7 @@ button:hover{border-color:var(--accent)}
 <div class="pool" data-zone="pool"><h2 style="font-size:.95rem;margin:0 0 8px">待安排區（<span id="pc">0</span>）</h2><div class="list" id="pool"></div></div>
 <div id="toast"></div>
 <script>
-const CAP=4, KEY="autumn2026-rooms-v1";
+const CAP=4, KEY="autumn2026-rooms-v2";
 const PIN=["莊銘勳","蔡梅烽","張德光","林蜂"];
 const INIT={
  rooms:[
@@ -56,7 +56,7 @@ const INIT={
   ["李鉢卿","李冠德","彭浩維","林佳慧"],
   ["江陳紅桂","江敏娟","蔡志涼","劉慶明"],
   ["廖德鈴","莊銘章","范植勇","范珮倫"],
-  ["曾玉錦","姜詠崴","吳新蘭"]
+  ["吳新蘭"]
  ],pool:[]};
 let S;
 try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
