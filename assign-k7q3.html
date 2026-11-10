@@ -59,7 +59,7 @@ const INIT={
   ["吳O蘭"]
  ],pool:[]};
 let S;
-try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+try{S=JSON.parse(localStorage.getItem(KEY)||localStorage.getItem("autumn2026-rooms-v3"))}catch(e){}
 if(!S||!S.rooms||S.rooms.length!==6)S=JSON.parse(JSON.stringify(INIT));
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
 const $=s=>document.querySelector(s);
