@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>2026 秋聚｜房間安排</title>
+<style>
+:root{--bg:#f7f0e1;--card:#fffaf0;--ink:#3b2f22;--line:#d9c7a3;--accent:#c8741a;--ok:#6b7d2e;--bad:#b3392b}
+@media(prefers-color-scheme:dark){:root{--bg:#2a2119;--card:#3a2e23;--ink:#f1e6d2;--line:#5a4837;--accent:#e0954a;--ok:#a3b85a;--bad:#e0705f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,"Noto Sans TC","PingFang TC",sans-serif;padding:16px;-webkit-user-select:none;user-select:none}
+h1{font-size:1.25rem;margin:0 0 4px}
+.sub{font-size:.85rem;opacity:.75;margin-bottom:12px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+button{font:inherit;font-size:.85rem;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+button:hover{border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.room{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:10px;min-height:236px;transition:border-color .15s,background .15s}
+.room.over{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,var(--card))}
+.room.reject{border-color:var(--bad)}
+.room h2{font-size:.95rem;margin:0 0 8px;display:flex;justify-content:space-between;align-items:center}
+.cnt{font-size:.8rem;padding:1px 8px;border-radius:99px;border:1px solid var(--line)}
+.cnt.full{color:var(--ok);border-color:var(--ok)}
+.chip{display:flex;align-items:center;gap:6px;padding:8px 10px;margin-bottom:6px;border-radius:8px;background:var(--bg);border:1px solid var(--line);cursor:grab;touch-action:none}
+.chip::before{content:"⋮⋮";opacity:.4;font-size:.8rem}
+.chip.drag{opacity:.35}
+.chip.target{outline:2px dashed var(--accent)}
+.chip .pin{margin-left:auto;font-size:.75rem;opacity:.7}
+.ghost{position:fixed;z-index:99;pointer-events:none;width:180px;box-shadow:0 6px 18px #0004;background:var(--card);border-color:var(--accent)}
+.pool{margin-top:16px;background:var(--card);border:2px dashed var(--line);border-radius:12px;padding:10px}
+.pool.over{border-color:var(--accent)}
+.pool .list{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0 8px}
+.empty{opacity:.5;font-size:.85rem;padding:4px}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:99px;font-size:.85rem;opacity:0;transition:opacity .2s;pointer-events:none}
+#toast.on{opacity:1}
+</style>
+</head>
+<body>
+<h1>2026 教定區秋聚｜房間安排（內部用）</h1>
+<div class="sub">拖曳姓名到其他房間即可調整；拖到「已有人」的姓名上會與對方互換。每間上限 4 人。調整會自動儲存在此瀏覽器。</div>
+<div class="bar">
+  <button id="copy">複製房間名單</button>
+  <button id="reset">還原初始安排</button>
+</div>
+<div class="grid" id="rooms"></div>
+<div class="pool" data-zone="pool"><h2 style="font-size:.95rem;margin:0 0 8px">待安排區（<span id="pc">0</span>）</h2><div class="list" id="pool"></div></div>
+<div id="toast"></div>
+<script>
+const CAP=4, KEY="autumn2026-rooms-v1";
+const PIN=["莊銘勳","蔡梅烽","張德光","林蜂"];
+const INIT={
+ rooms:[
+  PIN.slice(),
+  ["周義順","莊佳容","陳錦秀","張素環"],
+  ["李鉢卿","李冠德","彭浩維","林佳慧"],
+  ["江陳紅桂","江敏娟","蔡志涼","劉慶明"],
+  ["廖德鈴","莊銘章","范植勇","范珮倫"],
+  ["曾玉錦","姜詠崴","吳新蘭"]
+ ],pool:[]};
+let S;
+try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!S||!S.rooms||S.rooms.length!==6)S=JSON.parse(JSON.stringify(INIT));
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const $=s=>document.querySelector(s);
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("on"),1600)}
+function chip(n){const d=document.createElement("div");d.className="chip";d.dataset.name=n;d.textContent=n;
+  if(PIN.includes(n)){const p=document.createElement("span");p.className="pin";p.textContent="同房";d.append(p)}return d}
+function render(){
+  const R=$("#rooms");R.innerHTML="";
+  S.rooms.forEach((m,i)=>{
+    const r=document.createElement("div");r.className="room";r.dataset.zone=i;
+    r.innerHTML=`<h2>第 ${i+1} 間<span class="cnt ${m.length===CAP?"full":""}">${m.length}/${CAP}</span></h2>`;
+    m.forEach(n=>r.append(chip(n)));
+    if(!m.length){const e=document.createElement("div");e.className="empty";e.textContent="（空房）";r.append(e)}
+    R.append(r)});
+  const P=$("#pool");P.innerHTML="";S.pool.forEach(n=>P.append(chip(n)));
+  $("#pc").textContent=S.pool.length;
+  document.querySelector(".pool").style.display=S.pool.length?"":"block";
+}
+function list(z){return z==="pool"?S.pool:S.rooms[+z]}
+let drag=null;
+document.addEventListener("pointerdown",e=>{
+  const c=e.target.closest(".chip");if(!c||e.button>0)return;
+  const g=c.cloneNode(true);g.classList.add("ghost");document.body.append(g);
+  drag={name:c.dataset.name,el:c,g,from:c.closest("[data-zone]").dataset.zone};
+  c.classList.add("drag");move(e);e.preventDefault();
+});
+function move(e){
+  drag.g.style.left=(e.clientX-90)+"px";drag.g.style.top=(e.clientY-20)+"px";
+  drag.g.style.display="none";const t=document.elementFromPoint(e.clientX,e.clientY);drag.g.style.display="";
+  document.querySelectorAll(".over,.target").forEach(x=>x.classList.remove("over","target"));
+  const z=t&&t.closest("[data-zone]");const ch=t&&t.closest(".chip");
+  drag.zone=z;drag.chip=ch&&ch!==drag.el?ch:null;
+  if(drag.chip)drag.chip.classList.add("target");else if(z)z.classList.add("over");
+}
+document.addEventListener("pointermove",e=>{if(drag)move(e)});
+function end(cancel){
+  if(!drag)return;const d=drag;drag=null;d.g.remove();
+  document.querySelectorAll(".over,.target,.drag").forEach(x=>x.classList.remove("over","target","drag"));
+  if(cancel||!d.zone)return;
+  const to=d.zone.dataset.zone,src=list(d.from),dst=list(to);
+  if(d.chip){ // swap or insert before
+    const other=d.chip.dataset.name,oz=d.chip.closest("[data-zone]").dataset.zone,ol=list(oz);
+    if(oz===d.from){const a=src.indexOf(d.name),b=src.indexOf(other);src.splice(a,1);src.splice(src.indexOf(other),0,d.name)}
+    else{const a=src.indexOf(d.name),b=ol.indexOf(other);src[a]=other;ol[b]=d.name;toast(`${d.name} ⇄ ${other}`)}
+  }else if(to!==d.from){
+    if(to!=="pool"&&dst.length>=CAP){const z=d.zone;z.classList.add("reject");setTimeout(()=>z.classList.remove("reject"),500);toast("這間已滿 4 人，請拖到姓名上互換");return}
+    src.splice(src.indexOf(d.name),1);dst.push(d.name);
+  }
+  save();render();
+}
+document.addEventListener("pointerup",()=>end(false));
+document.addEventListener("pointercancel",()=>end(true));
+$("#reset").onclick=()=>{if(confirm("確定還原成初始安排？")){S=JSON.parse(JSON.stringify(INIT));save();render()}};
+$("#copy").onclick=async()=>{
+  const t=S.rooms.map((m,i)=>`第${i+1}間：${m.join("、")||"（空）"}`).join("\n")+(S.pool.length?`\n待安排：${S.pool.join("、")}`:"");
+  try{await navigator.clipboard.writeText(t);toast("已複製")}catch(e){prompt("請手動複製",t)}
+};
+render();
+</script>
+</body>
+</html>
